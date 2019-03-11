@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Sing Sing a Song</title>
+  <title>三大类跨域问题之Cookie跨域 | Sing Sing a Song</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Someone knock at the door.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Sing Sing a Song">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="三大类跨域问题之Cookie跨域 跨域是浏览器的安全策略，是为了控制js不操作不同域的数据  注意：cookie 的不区分协议与端口 ###一、ajax可以传送cookie，为什么还要单独解决cookie的跨域问题？ 一种情况是：不同子目录的cookie跨域问题，  在同一个服务器上有目录如下：/test/,/test/cd/,/test/dd/，现设一个cookie1的path为/test/，c">
+<meta name="keywords" content="跨域">
+<meta property="og:type" content="article">
+<meta property="og:title" content="三大类跨域问题之Cookie跨域">
+<meta property="og:url" content="http://yoursite.com/2019/02/27/跨域问题/三大类跨域问题之Cookie跨域/index.html">
 <meta property="og:site_name" content="Sing Sing a Song">
-<meta property="og:description" content="Someone knock at the door.">
+<meta property="og:description" content="三大类跨域问题之Cookie跨域 跨域是浏览器的安全策略，是为了控制js不操作不同域的数据  注意：cookie 的不区分协议与端口 ###一、ajax可以传送cookie，为什么还要单独解决cookie的跨域问题？ 一种情况是：不同子目录的cookie跨域问题，  在同一个服务器上有目录如下：/test/,/test/cd/,/test/dd/，现设一个cookie1的path为/test/，c">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-03-11T05:30:41.015Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Sing Sing a Song">
-<meta name="twitter:description" content="Someone knock at the door.">
+<meta name="twitter:title" content="三大类跨域问题之Cookie跨域">
+<meta name="twitter:description" content="三大类跨域问题之Cookie跨域 跨域是浏览器的安全策略，是为了控制js不操作不同域的数据  注意：cookie 的不区分协议与端口 ###一、ajax可以传送cookie，为什么还要单独解决cookie的跨域问题？ 一种情况是：不同子目录的cookie跨域问题，  在同一个服务器上有目录如下：/test/,/test/cd/,/test/dd/，现设一个cookie1的path为/test/，c">
   
     <link rel="alternative" href="/atom.xml" title="Sing Sing a Song" type="application/atom+xml">
   
@@ -147,36 +149,77 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-跨域问题/三大类跨域问题之Cookie跨域" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      三大类跨域问题之Cookie跨域
+    </h1>
+  
+
+        
+        <a href="/2019/02/27/跨域问题/三大类跨域问题之Cookie跨域/" class="archive-article-date">
+  	<time datetime="2019-02-27T09:07:22.161Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="三大类跨域问题之Cookie跨域"><a href="#三大类跨域问题之Cookie跨域" class="headerlink" title="三大类跨域问题之Cookie跨域"></a>三大类跨域问题之Cookie跨域</h1><blockquote>
+<p>跨域是浏览器的安全策略，是为了控制js不操作不同域的数据</p>
+</blockquote>
+<p><strong><em><em>注意：cookie 的不区分协议与端口</em></em></strong></p>
+<p>###一、ajax可以传送cookie，为什么还要单独解决cookie的跨域问题？</p>
+<h4 id="一种情况是："><a href="#一种情况是：" class="headerlink" title="一种情况是："></a>一种情况是：</h4><p>不同子目录的cookie跨域问题，</p>
+<blockquote>
+<p>在同一个服务器上有目录如下：<code>/test/</code>,<code>/test/cd/</code>,<code>/test/dd/</code>，<br>现设一个cookie1的path为<code>/test/</code>，cookie2的path为<code>/test/cd/</code>，那么test下的所有页面都可以访问到cookie1，而<code>/test/</code>和<code>/test/dd/</code>的子页面不能访问cookie2。这是因为cookie能让其path路径下的页面访问。</p>
+</blockquote>
+<h5 id="其他可能情况是："><a href="#其他可能情况是：" class="headerlink" title="其他可能情况是："></a>其他可能情况是：</h5><blockquote>
+<p>如果是一个集群项目，一个前端页面对应n个服务器接口，<strong>每个接口的端口不同</strong>，其他相同。<br>如果其中一台服务器挂了，马上就会连到另外一台，但是它们跨域了👆。这时必须解决cookie的跨域问题。</p>
+</blockquote>
+<h4 id="二、综上，cookie跨域问题需要结合domain和path。"><a href="#二、综上，cookie跨域问题需要结合domain和path。" class="headerlink" title="二、综上，cookie跨域问题需要结合domain和path。"></a>二、综上，cookie跨域问题需要结合<code>domain</code>和<code>path</code>。</h4><p><code>domain</code>属性将指定可访问此cookie的域名，<code>path</code>属性将指定该cookie的页面路径。</p>
+<h6 id="1-设置cookie的path："><a href="#1-设置cookie的path：" class="headerlink" title="1.设置cookie的path："></a>1.设置cookie的path：</h6><p><code>document.cookie = &quot;name=aaa;path=/&quot;</code></p>
+<h6 id="2-设置domain"><a href="#2-设置domain" class="headerlink" title="2.设置domain"></a>2.设置domain</h6><p>域A为<code>t1.test.com</code>，域B为<code>t2.test.com</code>，那么在域A生产一个令域A和域B都能访问的cookie就要将该cookie的domain设置为<code>.test.com</code>；</p>
+<p><a href="http://lihaiming.iteye.com/blog/2234372" target="_blank" rel="noopener">参考</a></p>
+<p>第三种方法，后台服务器nginx反向代理。（不了解，暂不展开）</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>如果是一杯拿铁就更棒了！<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/weixin.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/27/跨域问题/三大类跨域问题之AJAX跨域/" class="archive-article-date">
-  	<time datetime="2019-02-27T09:07:22.161Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/27/跨域问题/三大类跨域问题之AJAX跨域/">三大类跨域问题之AJAX跨域</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -188,306 +231,135 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/02/27/跨域问题/三大类跨域问题之Cookie跨域/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/27/跨域问题/三大类跨域问题之Cookie跨域/" class="archive-article-date">
-  	<time datetime="2019-02-27T09:07:22.161Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2019/02/27/跨域问题/三大类跨域问题之AJAX跨域/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          三大类跨域问题之AJAX跨域
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/02/27/跨域问题/三大类跨域问题之iframe跨域/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">三大类跨域问题之iframe跨域</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/27/跨域问题/三大类跨域问题之Cookie跨域/">三大类跨域问题之Cookie跨域</a>
-    </h1>
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="跨域问题/三大类跨域问题之Cookie跨域" data-title="三大类跨域问题之Cookie跨域" data-url="http://yoursite.com/2019/02/27/跨域问题/三大类跨域问题之Cookie跨域/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+  
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">跨域</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/27/跨域问题/三大类跨域问题之iframe跨域/" class="archive-article-date">
-  	<time datetime="2019-02-27T09:07:22.161Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/27/跨域问题/三大类跨域问题之iframe跨域/">三大类跨域问题之iframe跨域</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">跨域</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/27/跨域问题/CORS跨域/" class="archive-article-date">
-  	<time datetime="2019-02-27T09:07:22.156Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/27/跨域问题/CORS跨域/">CORS跨域</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">跨域</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/27/设计模式/设计模式概述/" class="archive-article-date">
-  	<time datetime="2019-02-27T09:07:22.156Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/27/设计模式/设计模式概述/">设计模式概述</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/27/设计模式/单例模式/" class="archive-article-date">
-  	<time datetime="2019-02-27T09:07:22.155Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/27/设计模式/单例模式/">单例模式</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/27/数据结构/排序算法/" class="archive-article-date">
-  	<time datetime="2019-02-27T09:07:22.146Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/27/数据结构/排序算法/">排序算法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/27/工具/Debugger for Chrome/" class="archive-article-date">
-  	<time datetime="2019-02-27T09:07:22.133Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/27/工具/Debugger for Chrome/">Debugger for Chrome插件</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vscode插件</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/27/3D/3D问题搞一波/" class="archive-article-date">
-  	<time datetime="2019-02-27T09:07:21.806Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -510,8 +382,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

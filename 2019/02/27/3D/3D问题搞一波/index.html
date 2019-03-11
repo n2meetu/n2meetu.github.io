@@ -6,18 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Sing Sing a Song</title>
+  <title>Sing Sing a Song</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Someone knock at the door.">
-<meta property="og:type" content="website">
+  <meta name="description" content="3d学习总结 title:  3d学习总结 tags: 3d1.有哪些基本要素？场景、贴图、相机 2.threejs组成一个场景需要哪些元素？3.threejs中怎样让一个物体不受光照的影响。方法1：设置环境光为白色，emmissive也为白色。 方法2：设置其他光线与物体的夹角为0.，怎么计算法向量？怎么计算夹角？ 4.webGL中，生成一个模型，比如立方体，八个顶点各自都是三个面公用的，怎么计">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Sing Sing a Song">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/02/27/3D/3D问题搞一波/index.html">
 <meta property="og:site_name" content="Sing Sing a Song">
-<meta property="og:description" content="Someone knock at the door.">
+<meta property="og:description" content="3d学习总结 title:  3d学习总结 tags: 3d1.有哪些基本要素？场景、贴图、相机 2.threejs组成一个场景需要哪些元素？3.threejs中怎样让一个物体不受光照的影响。方法1：设置环境光为白色，emmissive也为白色。 方法2：设置其他光线与物体的夹角为0.，怎么计算法向量？怎么计算夹角？ 4.webGL中，生成一个模型，比如立方体，八个顶点各自都是三个面公用的，怎么计">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2019/02/27/3D/3D问题搞一波/media/15373418515303.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/02/27/3D/3D问题搞一波/media/15373425277371.jpg">
+<meta property="og:updated_time" content="2019-03-11T05:28:09.056Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Sing Sing a Song">
-<meta name="twitter:description" content="Someone knock at the door.">
+<meta name="twitter:description" content="3d学习总结 title:  3d学习总结 tags: 3d1.有哪些基本要素？场景、贴图、相机 2.threejs组成一个场景需要哪些元素？3.threejs中怎样让一个物体不受光照的影响。方法1：设置环境光为白色，emmissive也为白色。 方法2：设置其他光线与物体的夹角为0.，怎么计算法向量？怎么计算夹角？ 4.webGL中，生成一个模型，比如立方体，八个顶点各自都是三个面公用的，怎么计">
+<meta name="twitter:image" content="http://yoursite.com/2019/02/27/3D/3D问题搞一波/media/15373418515303.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Sing Sing a Song" type="application/atom+xml">
   
@@ -147,347 +151,178 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-3D/3D问题搞一波" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="3d学习总结"><a href="#3d学习总结" class="headerlink" title="3d学习总结"></a>3d学习总结</h1><hr>
+<p>title:  3d学习总结</p>
+<h2 id="tags-3d"><a href="#tags-3d" class="headerlink" title="tags: 3d"></a>tags: 3d</h2><h4 id="1-有哪些基本要素？"><a href="#1-有哪些基本要素？" class="headerlink" title="1.有哪些基本要素？"></a>1.有哪些基本要素？</h4><p>场景、贴图、相机</p>
+<h4 id="2-threejs组成一个场景需要哪些元素？"><a href="#2-threejs组成一个场景需要哪些元素？" class="headerlink" title="2.threejs组成一个场景需要哪些元素？"></a>2.threejs组成一个场景需要哪些元素？</h4><h4 id="3-threejs中怎样让一个物体不受光照的影响。"><a href="#3-threejs中怎样让一个物体不受光照的影响。" class="headerlink" title="3.threejs中怎样让一个物体不受光照的影响。"></a>3.threejs中怎样让一个物体不受光照的影响。</h4><p>方法1：设置环境光为白色，emmissive也为白色。</p>
+<p>方法2：设置其他光线与物体的夹角为0.，怎么计算法向量？怎么计算夹角？</p>
+<h4 id="4-webGL中，生成一个模型，比如立方体，八个顶点各自都是三个面公用的，怎么计算？"><a href="#4-webGL中，生成一个模型，比如立方体，八个顶点各自都是三个面公用的，怎么计算？" class="headerlink" title="4.webGL中，生成一个模型，比如立方体，八个顶点各自都是三个面公用的，怎么计算？"></a>4.webGL中，生成一个模型，比如立方体，八个顶点各自都是三个面公用的，怎么计算？</h4><h4 id="5-讲讲片元着色器和和顶点着色器，以及一个object的渲染过程。"><a href="#5-讲讲片元着色器和和顶点着色器，以及一个object的渲染过程。" class="headerlink" title="5.讲讲片元着色器和和顶点着色器，以及一个object的渲染过程。"></a>5.讲讲片元着色器和和顶点着色器，以及一个object的渲染过程。</h4><h4 id="6-怎么把屏幕坐标系转换为webgl坐标系？世界坐标系、本地坐标系、视觉坐标系之间的转换方法？还有什么坐标系？"><a href="#6-怎么把屏幕坐标系转换为webgl坐标系？世界坐标系、本地坐标系、视觉坐标系之间的转换方法？还有什么坐标系？" class="headerlink" title="6.怎么把屏幕坐标系转换为webgl坐标系？世界坐标系、本地坐标系、视觉坐标系之间的转换方法？还有什么坐标系？"></a>6.怎么把屏幕坐标系转换为webgl坐标系？世界坐标系、本地坐标系、视觉坐标系之间的转换方法？还有什么坐标系？</h4><h4 id="7-threejs的raycaster的原理是什么，除了intersect-数组之外还会返回那些值？"><a href="#7-threejs的raycaster的原理是什么，除了intersect-数组之外还会返回那些值？" class="headerlink" title="7.threejs的raycaster的原理是什么，除了intersect[ ]数组之外还会返回那些值？"></a>7.threejs的raycaster的原理是什么，除了intersect[ ]数组之外还会返回那些值？</h4><h4 id="8-怎么优化3D页面的加载或者渲染速度？加载不出来怎么办"><a href="#8-怎么优化3D页面的加载或者渲染速度？加载不出来怎么办" class="headerlink" title="8.怎么优化3D页面的加载或者渲染速度？加载不出来怎么办?"></a>8.怎么优化3D页面的加载或者渲染速度？加载不出来怎么办?</h4><p>图片太多的时候，就不能初始化的时候一次性加载。<br>比如这次的项目，有多个场景，每个场景的贴图特别大，那么其中一种处理方法先加载一部分，剩下的场景，只能切换的时候再加载。</p>
+<h4 id="10-webgl怎么生成一个模型？具体怎么实现？怎么定义坐标？index？着色器？"><a href="#10-webgl怎么生成一个模型？具体怎么实现？怎么定义坐标？index？着色器？" class="headerlink" title="10.webgl怎么生成一个模型？具体怎么实现？怎么定义坐标？index？着色器？"></a>10.webgl怎么生成一个模型？具体怎么实现？怎么定义坐标？index？着色器？</h4><p><strong>步骤：</strong><br>1.获取定点坐标<br>2.图元装配（画出一个个小三角形）<br>3.光栅化（生成片元，即一个个像素点）<br><img src="media/15373418515303.jpg" alt></p>
+<h4 id="补充：three-js完整运行流程"><a href="#补充：three-js完整运行流程" class="headerlink" title="补充：three.js完整运行流程"></a>补充：three.js完整运行流程</h4><p><img src="media/15373425277371.jpg" alt></p>
+<p><a href="https://juejin.im/entry/59098a0b61ff4b0066f0ea22" target="_blank" rel="noopener">参考</a></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>如果是一杯拿铁就更棒了！<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/weixin.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/27/跨域问题/三大类跨域问题之AJAX跨域/" class="archive-article-date">
-  	<time datetime="2019-02-27T09:07:22.161Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/27/跨域问题/三大类跨域问题之AJAX跨域/">三大类跨域问题之AJAX跨域</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">跨域</a>
-        		</li>
-      		
-		</ul>
-	</div>
+      
 
-          
-
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/02/27/3D/3D问题搞一波/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/27/跨域问题/三大类跨域问题之Cookie跨域/" class="archive-article-date">
-  	<time datetime="2019-02-27T09:07:22.161Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2019/02/27/工具/Debugger for Chrome/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Debugger for Chrome插件
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/27/跨域问题/三大类跨域问题之Cookie跨域/">三大类跨域问题之Cookie跨域</a>
-    </h1>
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="3D/3D问题搞一波" data-title data-url="http://yoursite.com/2019/02/27/3D/3D问题搞一波/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+  
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">跨域</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/27/跨域问题/三大类跨域问题之iframe跨域/" class="archive-article-date">
-  	<time datetime="2019-02-27T09:07:22.161Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/27/跨域问题/三大类跨域问题之iframe跨域/">三大类跨域问题之iframe跨域</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">跨域</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/27/跨域问题/CORS跨域/" class="archive-article-date">
-  	<time datetime="2019-02-27T09:07:22.156Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/27/跨域问题/CORS跨域/">CORS跨域</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">跨域</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/27/设计模式/设计模式概述/" class="archive-article-date">
-  	<time datetime="2019-02-27T09:07:22.156Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/27/设计模式/设计模式概述/">设计模式概述</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/27/设计模式/单例模式/" class="archive-article-date">
-  	<time datetime="2019-02-27T09:07:22.155Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/27/设计模式/单例模式/">单例模式</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/27/数据结构/排序算法/" class="archive-article-date">
-  	<time datetime="2019-02-27T09:07:22.146Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/27/数据结构/排序算法/">排序算法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/27/工具/Debugger for Chrome/" class="archive-article-date">
-  	<time datetime="2019-02-27T09:07:22.133Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/27/工具/Debugger for Chrome/">Debugger for Chrome插件</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vscode插件</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/27/3D/3D问题搞一波/" class="archive-article-date">
-  	<time datetime="2019-02-27T09:07:21.806Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -510,8 +345,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

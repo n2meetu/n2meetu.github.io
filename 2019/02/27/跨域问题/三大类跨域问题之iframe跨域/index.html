@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Sing Sing a Song</title>
+  <title>三大类跨域问题之iframe跨域 | Sing Sing a Song</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Someone knock at the door.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Sing Sing a Song">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="三大类跨域问题之iframe跨域 跨域是浏览器的安全策略，是为了控制js不操作不同域的数据  共四种方法：  片段标识符 window.name（内容比较少时） window.postMessage（计算量比较大时） LocalStorage（H5的。兼容低版本时不建议用）  1.片段标识符url中“#”后面部分。onhashchange方法，URL 参数列表只要变化就会调用它。 123456wi">
+<meta name="keywords" content="跨域">
+<meta property="og:type" content="article">
+<meta property="og:title" content="三大类跨域问题之iframe跨域">
+<meta property="og:url" content="http://yoursite.com/2019/02/27/跨域问题/三大类跨域问题之iframe跨域/index.html">
 <meta property="og:site_name" content="Sing Sing a Song">
-<meta property="og:description" content="Someone knock at the door.">
+<meta property="og:description" content="三大类跨域问题之iframe跨域 跨域是浏览器的安全策略，是为了控制js不操作不同域的数据  共四种方法：  片段标识符 window.name（内容比较少时） window.postMessage（计算量比较大时） LocalStorage（H5的。兼容低版本时不建议用）  1.片段标识符url中“#”后面部分。onhashchange方法，URL 参数列表只要变化就会调用它。 123456wi">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-03-11T05:30:41.364Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Sing Sing a Song">
-<meta name="twitter:description" content="Someone knock at the door.">
+<meta name="twitter:title" content="三大类跨域问题之iframe跨域">
+<meta name="twitter:description" content="三大类跨域问题之iframe跨域 跨域是浏览器的安全策略，是为了控制js不操作不同域的数据  共四种方法：  片段标识符 window.name（内容比较少时） window.postMessage（计算量比较大时） LocalStorage（H5的。兼容低版本时不建议用）  1.片段标识符url中“#”后面部分。onhashchange方法，URL 参数列表只要变化就会调用它。 123456wi">
   
     <link rel="alternative" href="/atom.xml" title="Sing Sing a Song" type="application/atom+xml">
   
@@ -147,36 +149,111 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-跨域问题/三大类跨域问题之iframe跨域" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      三大类跨域问题之iframe跨域
+    </h1>
+  
+
+        
+        <a href="/2019/02/27/跨域问题/三大类跨域问题之iframe跨域/" class="archive-article-date">
+  	<time datetime="2019-02-27T09:07:22.161Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="三大类跨域问题之iframe跨域"><a href="#三大类跨域问题之iframe跨域" class="headerlink" title="三大类跨域问题之iframe跨域"></a>三大类跨域问题之iframe跨域</h1><blockquote>
+<p>跨域是浏览器的安全策略，是为了控制js不操作不同域的数据</p>
+</blockquote>
+<p>共四种方法：</p>
+<ol>
+<li>片段标识符</li>
+<li>window.name（内容比较少时）</li>
+<li>window.postMessage（计算量比较大时）</li>
+<li>LocalStorage（H5的。兼容低版本时不建议用）</li>
+</ol>
+<h3 id="1-片段标识符"><a href="#1-片段标识符" class="headerlink" title="1.片段标识符"></a>1.片段标识符</h3><p>url中“<code>#</code>”后面部分。<br><code>onhashchange</code>方法，URL 参数列表只要变化就会调用它。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">window.onhashchange = checkMessage;</span><br><span class="line"></span><br><span class="line">function checkMessage() &#123;</span><br><span class="line">  var message = window.location.hash;</span><br><span class="line">  // ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>改变某个页面的片段标识符：<br><code>xxx.location.href = target + &#39;#&#39; + hash;</code></p>
+<h3 id="2-window-name"><a href="#2-window-name" class="headerlink" title="2.window.name"></a>2.window.name</h3><h4 id="2-1-如果是父-子窗口："><a href="#2-1-如果是父-子窗口：" class="headerlink" title="2.1 如果是父/子窗口："></a>2.1 如果是父/子窗口：</h4><blockquote>
+<p>1.从主窗口<code>iframe1</code>打开一个子窗口<code>iframe2</code>，把数据data写入<code>iframe2</code>的<code>window.name</code>属性里。（实际上就是给<code>iframe2</code>起了个名字，名字就是要传输的数据data）</p>
+</blockquote>
+<blockquote>
+<p>2.然后让<code>iframe2</code>的<code>location</code>跳去一个和<code>iframe1</code>一个域的地址。（必须父窗口和子窗口同源，父窗口才能读取到子窗口的name）</p>
+</blockquote>
+<blockquote>
+<p>3.<code>iframe1</code>去读<code>iframe2</code>的<code>window.name</code>的值，也就是数据data。</p>
+<p>有三个页面：</p>
+</blockquote>
+<ul>
+<li><p><strong>页面a</strong>: a.com/app.html：<strong>应用页面</strong>。</p>
+</li>
+<li><p><strong>页面c</strong>: a.com/proxy.html：<strong>代理文件</strong>，一般是一个没有任何内容的html文件，需要<em>和应用页面在同一域下</em>。</p>
+</li>
+<li><p><strong>页面b</strong>: b.com/data.html：应用页面需要获取数据的页面，可称为数据页面。</p>
+</li>
+</ul>
+<blockquote>
+<p>在a页面（a.com/app.html）中创建一个iframe，把其src指向b页面（b.com/data.html）。<br><code>iframe.src = &#39;http://b.com/data.html&#39;;</code></p>
+</blockquote>
+<blockquote>
+<p>b页面里写window.name = “数据内容(字符串，json都行)”</p>
+<p><em><em>a页面监听iframe的onload事件，监听到了，就将iframe的src指向本地域的代理文件c。</em></em>（c页面和a页面是同一个域的）</p>
+<p><code>iframe.contentWindow.location = &quot;http://a.com/proxy.html&quot;;</code></p>
+</blockquote>
+<blockquote>
+<p>b页面拿到数据，a页面小会iframe，释放内存</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">var state = 0;</span><br><span class="line">iframe = document.createElement(&apos;iframe&apos;);</span><br><span class="line">var loadfn = function()&#123;</span><br><span class="line">    if(state === 0)&#123;</span><br><span class="line">        state = 1;</span><br><span class="line">        iframe.contentWindow.location = &quot;http://a.com/proxy.html&quot;;</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        var data = iframe.contentWindow.name;</span><br><span class="line">        console.log(data); //拿到数据</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">iframe.src = &quot;http://b.com/data.html&quot;;</span><br><span class="line">if(iframe.attachEvent)&#123;</span><br><span class="line">    iframe.attachEvent(&apos;onload&apos;,loadfn);</span><br><span class="line">&#125;else&#123;</span><br><span class="line">    iframe.onload = loadfn;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">document.body.appendChild(child);</span><br></pre></td></tr></table></figure>
+<p>总结：如果跨域了，通过iframe的src跳转一下，指向一个代理文件。代理文件和发送数据的文件是一个域下面的，跨域成功，拿到数据。拿完就把iframe销毁，免得随便谁来了它都src跳转。</p>
+<h4 id="2-2-如果是在同一个窗口："><a href="#2-2-如果是在同一个窗口：" class="headerlink" title="2.2 如果是在同一个窗口："></a>2.2 如果是在同一个窗口：</h4><p>先打开A，然后输入新的地址，还是这个窗口，跳转到B，window.name是不变的，而且B还能读到。</p>
+<p><a href="http://www.cnblogs.com/rainman/archive/2011/02/21/1960044.html" target="_blank" rel="noopener">参考</a></p>
+<h3 id="3-window-postMessage"><a href="#3-window-postMessage" class="headerlink" title="3.window.postMessage"></a>3.window.postMessage</h3><p>父窗口 <a href="http://aaa.com" target="_blank" rel="noopener">http://aaa.com</a> 向子窗口 <a href="http://bbb.com" target="_blank" rel="noopener">http://bbb.com</a> 发消息:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var popup = window.open(&quot;http://bbb.com&quot;,&quot;title&quot;);</span><br><span class="line"></span><br><span class="line">popup.postMessage(&quot;hello&quot;,&quot;http://bbb.com&quot;);</span><br></pre></td></tr></table></figure>
+<p>子窗口向父窗口发送消息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">window.opener.postMessage(&apos;Nice to see you&apos;,&quot;http://aaa.com&quot;);</span><br></pre></td></tr></table></figure>
+<h4 id="4-LocalStorage"><a href="#4-LocalStorage" class="headerlink" title="4.LocalStorage"></a>4.LocalStorage</h4><p>子窗口将父窗口发来的消息写入自己的localStorage；<br>（没用过，整理了也记不住。暂时只写这些）</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>如果是一杯拿铁就更棒了！<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/weixin.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/27/跨域问题/三大类跨域问题之AJAX跨域/" class="archive-article-date">
-  	<time datetime="2019-02-27T09:07:22.161Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/27/跨域问题/三大类跨域问题之AJAX跨域/">三大类跨域问题之AJAX跨域</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -188,306 +265,135 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/02/27/跨域问题/三大类跨域问题之iframe跨域/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/27/跨域问题/三大类跨域问题之Cookie跨域/" class="archive-article-date">
-  	<time datetime="2019-02-27T09:07:22.161Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2019/02/27/跨域问题/三大类跨域问题之Cookie跨域/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          三大类跨域问题之Cookie跨域
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/02/27/跨域问题/CORS跨域/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CORS跨域</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/27/跨域问题/三大类跨域问题之Cookie跨域/">三大类跨域问题之Cookie跨域</a>
-    </h1>
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="跨域问题/三大类跨域问题之iframe跨域" data-title="三大类跨域问题之iframe跨域" data-url="http://yoursite.com/2019/02/27/跨域问题/三大类跨域问题之iframe跨域/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+  
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">跨域</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/27/跨域问题/三大类跨域问题之iframe跨域/" class="archive-article-date">
-  	<time datetime="2019-02-27T09:07:22.161Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/27/跨域问题/三大类跨域问题之iframe跨域/">三大类跨域问题之iframe跨域</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">跨域</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/27/跨域问题/CORS跨域/" class="archive-article-date">
-  	<time datetime="2019-02-27T09:07:22.156Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/27/跨域问题/CORS跨域/">CORS跨域</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">跨域</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/27/设计模式/设计模式概述/" class="archive-article-date">
-  	<time datetime="2019-02-27T09:07:22.156Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/27/设计模式/设计模式概述/">设计模式概述</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/27/设计模式/单例模式/" class="archive-article-date">
-  	<time datetime="2019-02-27T09:07:22.155Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/27/设计模式/单例模式/">单例模式</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/27/数据结构/排序算法/" class="archive-article-date">
-  	<time datetime="2019-02-27T09:07:22.146Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/27/数据结构/排序算法/">排序算法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/27/工具/Debugger for Chrome/" class="archive-article-date">
-  	<time datetime="2019-02-27T09:07:22.133Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/27/工具/Debugger for Chrome/">Debugger for Chrome插件</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vscode插件</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/27/3D/3D问题搞一波/" class="archive-article-date">
-  	<time datetime="2019-02-27T09:07:21.806Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -510,8 +416,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
