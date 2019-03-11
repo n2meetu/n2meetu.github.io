@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
@@ -24,14 +25,13 @@
 <meta name="twitter:description" content="1.有哪些基本要素？场景、贴图、相机 2.threejs组成一个场景需要哪些元素？3.threejs中怎样让一个物体不受光照的影响。方法1：设置环境光为白色，emmissive也为白色。 方法2：设置其他光线与物体的夹角为0.，怎么计算法向量？怎么计算夹角？ 4.webGL中，生成一个模型，比如立方体，八个顶点各自都是三个面公用的，怎么计算？5.讲讲片元着色器和和顶点着色器，以及一个object的">
 <meta name="twitter:image" content="http://yoursite.com/2019/02/27/3D/3D问题搞一波/media/15373418515303.jpg">
   
-    <link rel="alternative" href="/atom.xml" title="Sing Sing a Song" type="application/atom+xml">
+  <link rel="alternative" href="/atom.xml" title="Sing Sing a Song" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png">
+  <link rel="icon" href="/img/favicon.jpg">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
-  
     #container.show {
       background: linear-gradient(200deg,#a0cfe4,#e8c37e);
     }
@@ -40,8 +40,7 @@
 
   
 
-</head>
-</html>
+</head></html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -320,33 +319,40 @@
 
 
   
-  <div class="duoshuo">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="3D/3D问题搞一波" data-title="3d学习总结" data-url="http://yoursite.com/2019/02/27/3D/3D问题搞一波/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"true"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- 多说公共JS代码 end -->
-</div>
-
   
   
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "http://yoursite.com/2019/02/27/3D/3D问题搞一波/", 
+    sourceId: "3D/3D问题搞一波",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
   
 
   
 
   
 
+  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "http://yoursite.com/2019/02/27/3D/3D问题搞一波/",
+  owner: 'n2meetu',
+  repo: 'n2meetu.github.io',
+  oauth: {
+    client_id: 'dc345222d32b37c332c3',
+    client_secret: '9e31f24fea08467f9532b22ef7392af359cb34fa',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
   
 
 
