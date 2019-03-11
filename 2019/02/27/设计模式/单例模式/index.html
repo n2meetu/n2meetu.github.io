@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>单例模式 | Sing Sing a Song</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="单例模式 1、单例类只能有一个实例。2、单例类必须自己创建自己的唯一实例。3、单例类必须给所有其他对象提供这一实例。  1.如何理解：一个班只有一个班长 怎么保证在班级中只有一个班长（被称为单例的特殊类）？ 2.一个类只有一个实例班长这个类底下只有李明一个人。想new一个班长，首先判断一下现在班级是否有班长，如果还没有，可以new；如果有了，尊重班长，不可以随便换人…… 3.适用场景希望在某个系统">
+  <meta name="description" content="1、单例类只能有一个实例。2、单例类必须自己创建自己的唯一实例。3、单例类必须给所有其他对象提供这一实例。  1.如何理解：一个班只有一个班长 怎么保证在班级中只有一个班长（被称为单例的特殊类）？ 2.一个类只有一个实例班长这个类底下只有李明一个人。想new一个班长，首先判断一下现在班级是否有班长，如果还没有，可以new；如果有了，尊重班长，不可以随便换人…… 3.适用场景希望在某个系统中，某个">
 <meta name="keywords" content="设计模式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="单例模式">
 <meta property="og:url" content="http://yoursite.com/2019/02/27/设计模式/单例模式/index.html">
 <meta property="og:site_name" content="Sing Sing a Song">
-<meta property="og:description" content="单例模式 1、单例类只能有一个实例。2、单例类必须自己创建自己的唯一实例。3、单例类必须给所有其他对象提供这一实例。  1.如何理解：一个班只有一个班长 怎么保证在班级中只有一个班长（被称为单例的特殊类）？ 2.一个类只有一个实例班长这个类底下只有李明一个人。想new一个班长，首先判断一下现在班级是否有班长，如果还没有，可以new；如果有了，尊重班长，不可以随便换人…… 3.适用场景希望在某个系统">
+<meta property="og:description" content="1、单例类只能有一个实例。2、单例类必须自己创建自己的唯一实例。3、单例类必须给所有其他对象提供这一实例。  1.如何理解：一个班只有一个班长 怎么保证在班级中只有一个班长（被称为单例的特殊类）？ 2.一个类只有一个实例班长这个类底下只有李明一个人。想new一个班长，首先判断一下现在班级是否有班长，如果还没有，可以new；如果有了，尊重班长，不可以随便换人…… 3.适用场景希望在某个系统中，某个">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-11T05:29:39.001Z">
+<meta property="og:updated_time" content="2019-03-11T05:32:06.933Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="单例模式">
-<meta name="twitter:description" content="单例模式 1、单例类只能有一个实例。2、单例类必须自己创建自己的唯一实例。3、单例类必须给所有其他对象提供这一实例。  1.如何理解：一个班只有一个班长 怎么保证在班级中只有一个班长（被称为单例的特殊类）？ 2.一个类只有一个实例班长这个类底下只有李明一个人。想new一个班长，首先判断一下现在班级是否有班长，如果还没有，可以new；如果有了，尊重班长，不可以随便换人…… 3.适用场景希望在某个系统">
+<meta name="twitter:description" content="1、单例类只能有一个实例。2、单例类必须自己创建自己的唯一实例。3、单例类必须给所有其他对象提供这一实例。  1.如何理解：一个班只有一个班长 怎么保证在班级中只有一个班长（被称为单例的特殊类）？ 2.一个类只有一个实例班长这个类底下只有李明一个人。想new一个班长，首先判断一下现在班级是否有班长，如果还没有，可以new；如果有了，尊重班长，不可以随便换人…… 3.适用场景希望在某个系统中，某个">
   
     <link rel="alternative" href="/atom.xml" title="Sing Sing a Song" type="application/atom+xml">
   
@@ -169,7 +169,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h1><blockquote>
+        <blockquote>
 <p>1、单例类只能有一个实例。<br>2、单例类必须自己创建自己的唯一实例。<br>3、单例类必须给所有其他对象提供这一实例。</p>
 </blockquote>
 <h3 id="1-如何理解："><a href="#1-如何理解：" class="headerlink" title="1.如何理解："></a>1.如何理解：</h3><p>一个班只有一个班长</p>
@@ -285,11 +285,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/02/27/设计模式/设计模式概述/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/02/27/跨域问题/CORS跨域/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          设计模式概述
+          CORS跨域
         
       </div>
     </a>
@@ -434,7 +434,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color3">3d</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vscode插件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -442,11 +446,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">跨域</a>
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vscode插件</a>
+                <a href="javascript:void(0)" class="js-tag color3">跨域</a>
               </li>
             
             <div class="clearfix"></div>

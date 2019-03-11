@@ -149,99 +149,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-跨域问题/三大类跨域问题之AJAX跨域" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/27/跨域问题/三大类跨域问题之AJAX跨域/">三大类跨域问题之AJAX跨域</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/27/跨域问题/三大类跨域问题之AJAX跨域/" class="archive-article-date">
-  	<time datetime="2019-02-27T09:07:22.161Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="三大类跨域问题之AJAX跨域"><a href="#三大类跨域问题之AJAX跨域" class="headerlink" title="三大类跨域问题之AJAX跨域"></a>三大类跨域问题之AJAX跨域</h1><blockquote>
-<p>跨域是浏览器的安全策略，是为了控制js不操作不同域的数据</p>
-</blockquote>
-<p>1.cookie跨域<br>2.DOM无法获得<br>3.AJAX请求不能发送</p>
-<p>本文讨论上述第3种。</p>
-<h2 id="AJAX跨域"><a href="#AJAX跨域" class="headerlink" title="AJAX跨域"></a>AJAX跨域</h2><p>同源策略规定，AJAX请求只能发给同源的网址，否则就报错。</p>
-<p>三种方法：</p>
-<h3 id="1-CORS"><a href="#1-CORS" class="headerlink" title="1.CORS"></a>1.CORS</h3><blockquote>
-<h5 id="浏览器发送简单请求时会自动在http头字段中加入：Origin字段，说明本次请求来自哪个源，"><a href="#浏览器发送简单请求时会自动在http头字段中加入：Origin字段，说明本次请求来自哪个源，" class="headerlink" title="浏览器发送简单请求时会自动在http头字段中加入：Origin字段，说明本次请求来自哪个源，"></a>浏览器发送简单请求时会自动在http头字段中加入：<code>Origin</code>字段，说明本次请求来自哪个源，</h5></blockquote>
-<blockquote>
-<h5 id="服务器认为我的地址在许可范围内，它返回的响应，会多出几个头信息字段，其中有个字段是必须的，即Access-control-allow-origin。（acao）"><a href="#服务器认为我的地址在许可范围内，它返回的响应，会多出几个头信息字段，其中有个字段是必须的，即Access-control-allow-origin。（acao）" class="headerlink" title="服务器认为我的地址在许可范围内，它返回的响应，会多出几个头信息字段，其中有个字段是必须的，即Access-control-allow-origin。（acao）"></a>服务器认为我的地址在许可范围内，它返回的响应，会多出几个头信息字段，其中有个字段是必须的，即<code>Access-control-allow-origin</code>。（acao）</h5></blockquote>
-<p>注意，CORS请求默认不发送Cookie和HTTP认证信息。</p>
-<p>想要发<strong><em>送Cookie</em></strong>，需要服务器和浏览器两边配合：</p>
-<blockquote>
-<h6 id="服务器：添加Access-control-origin-allow字段"><a href="#服务器：添加Access-control-origin-allow字段" class="headerlink" title="服务器：添加Access-control-origin-allow字段"></a>服务器：添加<code>Access-control-origin-allow</code>字段</h6><h6 id="浏览器：ajax请求中添加-withCredentials：true"><a href="#浏览器：ajax请求中添加-withCredentials：true" class="headerlink" title="浏览器：ajax请求中添加 withCredentials：true"></a>浏览器：ajax请求中添加 <code>withCredentials：true</code></h6></blockquote>
-<h3 id="2-Websocket协议"><a href="#2-Websocket协议" class="headerlink" title="2.Websocket协议"></a>2.Websocket协议</h3><blockquote>
-<p>把自己的ip绑定一个163的host，通知后台将我的ip加入白名单。<br>服务器根据<code>Origin</code>字段判断请求来自哪个源，如果域名在白名单内，就允许通信。</p>
-</blockquote>
-<h3 id="3-JSONP"><a href="#3-JSONP" class="headerlink" title="3.JSONP"></a>3.JSONP</h3><p>只能发GET请求。<br><strong>原理</strong>：因为任何带有src属性的标签都可以跨域，比如图片、js文件等)</p>
-<p><a href="https://segmentfault.com/a/1190000012469713" target="_blank" rel="noopener">参考</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">跨域</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/27/跨域问题/三大类跨域问题之AJAX跨域/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-跨域问题/三大类跨域问题之Cookie跨域" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -262,7 +169,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="三大类跨域问题之Cookie跨域"><a href="#三大类跨域问题之Cookie跨域" class="headerlink" title="三大类跨域问题之Cookie跨域"></a>三大类跨域问题之Cookie跨域</h1><blockquote>
+        <blockquote>
 <p>跨域是浏览器的安全策略，是为了控制js不操作不同域的数据</p>
 </blockquote>
 <p><strong><em><em>注意：cookie 的不区分协议与端口</em></em></strong></p>
@@ -332,6 +239,97 @@
 
 
   
+    <article id="post-跨域问题/三大类跨域问题之AJAX跨域" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/27/跨域问题/三大类跨域问题之AJAX跨域/">三大类跨域问题之AJAX跨域</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/27/跨域问题/三大类跨域问题之AJAX跨域/" class="archive-article-date">
+  	<time datetime="2019-02-27T09:07:22.161Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>跨域是浏览器的安全策略，是为了控制js不操作不同域的数据</p>
+</blockquote>
+<p>1.cookie跨域<br>2.DOM无法获得<br>3.AJAX请求不能发送</p>
+<p>本文讨论上述第3种。</p>
+<h2 id="AJAX跨域"><a href="#AJAX跨域" class="headerlink" title="AJAX跨域"></a>AJAX跨域</h2><p>同源策略规定，AJAX请求只能发给同源的网址，否则就报错。</p>
+<p>三种方法：</p>
+<h3 id="1-CORS"><a href="#1-CORS" class="headerlink" title="1.CORS"></a>1.CORS</h3><blockquote>
+<h5 id="浏览器发送简单请求时会自动在http头字段中加入：Origin字段，说明本次请求来自哪个源，"><a href="#浏览器发送简单请求时会自动在http头字段中加入：Origin字段，说明本次请求来自哪个源，" class="headerlink" title="浏览器发送简单请求时会自动在http头字段中加入：Origin字段，说明本次请求来自哪个源，"></a>浏览器发送简单请求时会自动在http头字段中加入：<code>Origin</code>字段，说明本次请求来自哪个源，</h5><h5 id="服务器认为我的地址在许可范围内，它返回的响应，会多出几个头信息字段，其中有个字段是必须的，即Access-control-allow-origin。（acao）"><a href="#服务器认为我的地址在许可范围内，它返回的响应，会多出几个头信息字段，其中有个字段是必须的，即Access-control-allow-origin。（acao）" class="headerlink" title="服务器认为我的地址在许可范围内，它返回的响应，会多出几个头信息字段，其中有个字段是必须的，即Access-control-allow-origin。（acao）"></a>服务器认为我的地址在许可范围内，它返回的响应，会多出几个头信息字段，其中有个字段是必须的，即<code>Access-control-allow-origin</code>。（acao）</h5><p>注意，CORS请求默认不发送Cookie和HTTP认证信息。</p>
+</blockquote>
+<p>想要发<strong><em>送Cookie</em></strong>，需要服务器和浏览器两边配合：</p>
+<blockquote>
+<h6 id="服务器：添加Access-control-origin-allow字段"><a href="#服务器：添加Access-control-origin-allow字段" class="headerlink" title="服务器：添加Access-control-origin-allow字段"></a>服务器：添加<code>Access-control-origin-allow</code>字段</h6><h6 id="浏览器：ajax请求中添加-withCredentials：true"><a href="#浏览器：ajax请求中添加-withCredentials：true" class="headerlink" title="浏览器：ajax请求中添加 withCredentials：true"></a>浏览器：ajax请求中添加 <code>withCredentials：true</code></h6></blockquote>
+<h3 id="2-Websocket协议"><a href="#2-Websocket协议" class="headerlink" title="2.Websocket协议"></a>2.Websocket协议</h3><blockquote>
+<p>把自己的ip绑定一个163的host，通知后台将我的ip加入白名单。<br>服务器根据<code>Origin</code>字段判断请求来自哪个源，如果域名在白名单内，就允许通信。</p>
+</blockquote>
+<h3 id="3-JSONP"><a href="#3-JSONP" class="headerlink" title="3.JSONP"></a>3.JSONP</h3><p>只能发GET请求。<br><strong>原理</strong>：因为任何带有src属性的标签都可以跨域，比如图片、js文件等)</p>
+<p><a href="https://segmentfault.com/a/1190000012469713" target="_blank" rel="noopener">参考</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">跨域</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/27/跨域问题/三大类跨域问题之AJAX跨域/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-跨域问题/三大类跨域问题之iframe跨域" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -352,7 +350,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="三大类跨域问题之iframe跨域"><a href="#三大类跨域问题之iframe跨域" class="headerlink" title="三大类跨域问题之iframe跨域"></a>三大类跨域问题之iframe跨域</h1><blockquote>
+        <blockquote>
 <p>跨域是浏览器的安全策略，是为了控制js不操作不同域的数据</p>
 </blockquote>
 <p>共四种方法：</p>
@@ -456,6 +454,80 @@
 
 
   
+    <article id="post-设计模式/设计模式概述" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/27/设计模式/设计模式概述/">设计模式概述</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/27/设计模式/设计模式概述/" class="archive-article-date">
+  	<time datetime="2019-02-27T09:07:22.156Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="常见问题："><a href="#常见问题：" class="headerlink" title="常见问题："></a>常见问题：</h3><p>讲一下自己了解的js设计模式。<br>单例模式：一个对象下面只有一个实例。如果已经有了，就直接用；除非没有，那才new一个。<br>比如<code>window</code>这样的全局变量。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/27/设计模式/设计模式概述/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-跨域问题/CORS跨域" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -476,7 +548,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="CORS跨域"><a href="#CORS跨域" class="headerlink" title="CORS跨域"></a>CORS跨域</h1><blockquote>
+        <blockquote>
 <p>跨域是浏览器的安全策略，是为了控制js不操作不同域的数据</p>
 </blockquote>
 <p>Cross-Origin resource sharing</p>
@@ -548,80 +620,6 @@
 
 
   
-    <article id="post-设计模式/设计模式概述" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/27/设计模式/设计模式概述/">设计模式概述</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/27/设计模式/设计模式概述/" class="archive-article-date">
-  	<time datetime="2019-02-27T09:07:22.156Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="设计模式概述"><a href="#设计模式概述" class="headerlink" title="设计模式概述"></a>设计模式概述</h1><h3 id="常见问题："><a href="#常见问题：" class="headerlink" title="常见问题："></a>常见问题：</h3><p>讲一下自己了解的js设计模式。<br>单例模式：一个对象下面只有一个实例。如果已经有了，就直接用；除非没有，那才new一个。<br>比如<code>window</code>这样的全局变量。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/27/设计模式/设计模式概述/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-设计模式/单例模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -642,7 +640,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h1><blockquote>
+        <blockquote>
 <p>1、单例类只能有一个实例。<br>2、单例类必须自己创建自己的唯一实例。<br>3、单例类必须给所有其他对象提供这一实例。</p>
 </blockquote>
 <h3 id="1-如何理解："><a href="#1-如何理解：" class="headerlink" title="1.如何理解："></a>1.如何理解：</h3><p>一个班只有一个班长</p>
@@ -722,7 +720,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a>排序算法</h1><h3 id="插入排序："><a href="#插入排序：" class="headerlink" title="插入排序："></a>插入排序：</h3><ul>
+        <h3 id="插入排序："><a href="#插入排序：" class="headerlink" title="插入排序："></a>插入排序：</h3><ul>
 <li>直接插入排序</li>
 <li>折半插入排序：适合原序列已经有序的情况</li>
 </ul>
@@ -807,7 +805,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Debugger-for-Chrome"><a href="#Debugger-for-Chrome" class="headerlink" title="Debugger for Chrome"></a>Debugger for Chrome</h1><h3 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h3><p><img src="media/15396754152990.jpg" alt></p>
+        <h3 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h3><p><img src="media/15396754152990.jpg" alt></p>
 <h3 id="解决方式："><a href="#解决方式：" class="headerlink" title="解决方式："></a>解决方式：</h3><p><img src="media/15396755164839.jpg" alt></p>
 <h4 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h4><p>在 <code>launch.json</code>文件中设置：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    // 使用 IntelliSense 了解相关属性。 </span><br><span class="line">    // 悬停以查看现有属性的描述。</span><br><span class="line">    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387</span><br><span class="line">    &quot;version&quot;: &quot;0.2.0&quot;,</span><br><span class="line">    &quot;configurations&quot;: [</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;type&quot;: &quot;chrome&quot;,</span><br><span class="line">            &quot;request&quot;: &quot;launch&quot;,</span><br><span class="line">            &quot;name&quot;: &quot;Launch Chrome against localhost&quot;,</span><br><span class="line">            &quot;url&quot;: &quot;http://localhost:8080&quot;,</span><br><span class="line">            &quot;webRoot&quot;: &quot;$&#123;workspaceRoot&#125;&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;type&quot;: &quot;chrome&quot;,</span><br><span class="line">            &quot;request&quot;: &quot;attach&quot;,</span><br><span class="line">            &quot;name&quot;: &quot;Attach to Chrome&quot;,</span><br><span class="line">            &quot;port&quot;: 9222,</span><br><span class="line">            &quot;webRoot&quot;: &quot;$&#123;workspaceRoot&#125;&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;name&quot;: &quot;debug *.html&quot;,</span><br><span class="line">            &quot;type&quot;: &quot;chrome&quot;,</span><br><span class="line">            &quot;request&quot;: &quot;launch&quot;,</span><br><span class="line">            &quot;sourceMaps&quot;: false,</span><br><span class="line">            &quot;file&quot;: &quot;$&#123;workspaceRoot&#125;/yield.html&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;type&quot;: &quot;node&quot;,</span><br><span class="line">            &quot;request&quot;: &quot;launch&quot;,</span><br><span class="line">            &quot;name&quot;: &quot;启动程序&quot;,</span><br><span class="line">            &quot;program&quot;: &quot;$&#123;workspaceFolder&#125;/yield.js&quot;</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -866,11 +864,24 @@
     <article id="post-3D/3D问题搞一波" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/27/3D/3D问题搞一波/">3d学习总结</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/27/3D/3D问题搞一波/" class="archive-article-date">
+  	<time datetime="2019-02-27T09:07:21.806Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="3d学习总结"><a href="#3d学习总结" class="headerlink" title="3d学习总结"></a>3d学习总结</h1><hr>
-<p>title:  3d学习总结</p>
-<h2 id="tags-3d"><a href="#tags-3d" class="headerlink" title="tags: 3d"></a>tags: 3d</h2><h4 id="1-有哪些基本要素？"><a href="#1-有哪些基本要素？" class="headerlink" title="1.有哪些基本要素？"></a>1.有哪些基本要素？</h4><p>场景、贴图、相机</p>
+        <h4 id="1-有哪些基本要素？"><a href="#1-有哪些基本要素？" class="headerlink" title="1.有哪些基本要素？"></a>1.有哪些基本要素？</h4><p>场景、贴图、相机</p>
 <h4 id="2-threejs组成一个场景需要哪些元素？"><a href="#2-threejs组成一个场景需要哪些元素？" class="headerlink" title="2.threejs组成一个场景需要哪些元素？"></a>2.threejs组成一个场景需要哪些元素？</h4><h4 id="3-threejs中怎样让一个物体不受光照的影响。"><a href="#3-threejs中怎样让一个物体不受光照的影响。" class="headerlink" title="3.threejs中怎样让一个物体不受光照的影响。"></a>3.threejs中怎样让一个物体不受光照的影响。</h4><p>方法1：设置环境光为白色，emmissive也为白色。</p>
 <p>方法2：设置其他光线与物体的夹角为0.，怎么计算法向量？怎么计算夹角？</p>
 <h4 id="4-webGL中，生成一个模型，比如立方体，八个顶点各自都是三个面公用的，怎么计算？"><a href="#4-webGL中，生成一个模型，比如立方体，八个顶点各自都是三个面公用的，怎么计算？" class="headerlink" title="4.webGL中，生成一个模型，比如立方体，八个顶点各自都是三个面公用的，怎么计算？"></a>4.webGL中，生成一个模型，比如立方体，八个顶点各自都是三个面公用的，怎么计算？</h4><h4 id="5-讲讲片元着色器和和顶点着色器，以及一个object的渲染过程。"><a href="#5-讲讲片元着色器和和顶点着色器，以及一个object的渲染过程。" class="headerlink" title="5.讲讲片元着色器和和顶点着色器，以及一个object的渲染过程。"></a>5.讲讲片元着色器和和顶点着色器，以及一个object的渲染过程。</h4><h4 id="6-怎么把屏幕坐标系转换为webgl坐标系？世界坐标系、本地坐标系、视觉坐标系之间的转换方法？还有什么坐标系？"><a href="#6-怎么把屏幕坐标系转换为webgl坐标系？世界坐标系、本地坐标系、视觉坐标系之间的转换方法？还有什么坐标系？" class="headerlink" title="6.怎么把屏幕坐标系转换为webgl坐标系？世界坐标系、本地坐标系、视觉坐标系之间的转换方法？还有什么坐标系？"></a>6.怎么把屏幕坐标系转换为webgl坐标系？世界坐标系、本地坐标系、视觉坐标系之间的转换方法？还有什么坐标系？</h4><h4 id="7-threejs的raycaster的原理是什么，除了intersect-数组之外还会返回那些值？"><a href="#7-threejs的raycaster的原理是什么，除了intersect-数组之外还会返回那些值？" class="headerlink" title="7.threejs的raycaster的原理是什么，除了intersect[ ]数组之外还会返回那些值？"></a>7.threejs的raycaster的原理是什么，除了intersect[ ]数组之外还会返回那些值？</h4><h4 id="8-怎么优化3D页面的加载或者渲染速度？加载不出来怎么办"><a href="#8-怎么优化3D页面的加载或者渲染速度？加载不出来怎么办" class="headerlink" title="8.怎么优化3D页面的加载或者渲染速度？加载不出来怎么办?"></a>8.怎么优化3D页面的加载或者渲染速度？加载不出来怎么办?</h4><p>图片太多的时候，就不能初始化的时候一次性加载。<br>比如这次的项目，有多个场景，每个场景的贴图特别大，那么其中一种处理方法先加载一部分，剩下的场景，只能切换的时候再加载。</p>
@@ -885,6 +896,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">3d</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -1004,7 +1026,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color3">3d</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vscode插件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1012,11 +1038,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">跨域</a>
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vscode插件</a>
+                <a href="javascript:void(0)" class="js-tag color3">跨域</a>
               </li>
             
             <div class="clearfix"></div>

@@ -6,21 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Sing Sing a Song</title>
+  <title>3d学习总结 | Sing Sing a Song</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="3d学习总结 title:  3d学习总结 tags: 3d1.有哪些基本要素？场景、贴图、相机 2.threejs组成一个场景需要哪些元素？3.threejs中怎样让一个物体不受光照的影响。方法1：设置环境光为白色，emmissive也为白色。 方法2：设置其他光线与物体的夹角为0.，怎么计算法向量？怎么计算夹角？ 4.webGL中，生成一个模型，比如立方体，八个顶点各自都是三个面公用的，怎么计">
+  <meta name="description" content="1.有哪些基本要素？场景、贴图、相机 2.threejs组成一个场景需要哪些元素？3.threejs中怎样让一个物体不受光照的影响。方法1：设置环境光为白色，emmissive也为白色。 方法2：设置其他光线与物体的夹角为0.，怎么计算法向量？怎么计算夹角？ 4.webGL中，生成一个模型，比如立方体，八个顶点各自都是三个面公用的，怎么计算？5.讲讲片元着色器和和顶点着色器，以及一个object的">
+<meta name="keywords" content="3d">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Sing Sing a Song">
+<meta property="og:title" content="3d学习总结">
 <meta property="og:url" content="http://yoursite.com/2019/02/27/3D/3D问题搞一波/index.html">
 <meta property="og:site_name" content="Sing Sing a Song">
-<meta property="og:description" content="3d学习总结 title:  3d学习总结 tags: 3d1.有哪些基本要素？场景、贴图、相机 2.threejs组成一个场景需要哪些元素？3.threejs中怎样让一个物体不受光照的影响。方法1：设置环境光为白色，emmissive也为白色。 方法2：设置其他光线与物体的夹角为0.，怎么计算法向量？怎么计算夹角？ 4.webGL中，生成一个模型，比如立方体，八个顶点各自都是三个面公用的，怎么计">
+<meta property="og:description" content="1.有哪些基本要素？场景、贴图、相机 2.threejs组成一个场景需要哪些元素？3.threejs中怎样让一个物体不受光照的影响。方法1：设置环境光为白色，emmissive也为白色。 方法2：设置其他光线与物体的夹角为0.，怎么计算法向量？怎么计算夹角？ 4.webGL中，生成一个模型，比如立方体，八个顶点各自都是三个面公用的，怎么计算？5.讲讲片元着色器和和顶点着色器，以及一个object的">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/2019/02/27/3D/3D问题搞一波/media/15373418515303.jpg">
 <meta property="og:image" content="http://yoursite.com/2019/02/27/3D/3D问题搞一波/media/15373425277371.jpg">
-<meta property="og:updated_time" content="2019-03-11T05:28:09.056Z">
+<meta property="og:updated_time" content="2019-03-11T05:32:06.923Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Sing Sing a Song">
-<meta name="twitter:description" content="3d学习总结 title:  3d学习总结 tags: 3d1.有哪些基本要素？场景、贴图、相机 2.threejs组成一个场景需要哪些元素？3.threejs中怎样让一个物体不受光照的影响。方法1：设置环境光为白色，emmissive也为白色。 方法2：设置其他光线与物体的夹角为0.，怎么计算法向量？怎么计算夹角？ 4.webGL中，生成一个模型，比如立方体，八个顶点各自都是三个面公用的，怎么计">
+<meta name="twitter:title" content="3d学习总结">
+<meta name="twitter:description" content="1.有哪些基本要素？场景、贴图、相机 2.threejs组成一个场景需要哪些元素？3.threejs中怎样让一个物体不受光照的影响。方法1：设置环境光为白色，emmissive也为白色。 方法2：设置其他光线与物体的夹角为0.，怎么计算法向量？怎么计算夹角？ 4.webGL中，生成一个模型，比如立方体，八个顶点各自都是三个面公用的，怎么计算？5.讲讲片元着色器和和顶点着色器，以及一个object的">
 <meta name="twitter:image" content="http://yoursite.com/2019/02/27/3D/3D问题搞一波/media/15373418515303.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Sing Sing a Song" type="application/atom+xml">
@@ -154,11 +155,24 @@
             <article id="post-3D/3D问题搞一波" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      3d学习总结
+    </h1>
+  
+
+        
+        <a href="/2019/02/27/3D/3D问题搞一波/" class="archive-article-date">
+  	<time datetime="2019-02-27T09:07:21.806Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="3d学习总结"><a href="#3d学习总结" class="headerlink" title="3d学习总结"></a>3d学习总结</h1><hr>
-<p>title:  3d学习总结</p>
-<h2 id="tags-3d"><a href="#tags-3d" class="headerlink" title="tags: 3d"></a>tags: 3d</h2><h4 id="1-有哪些基本要素？"><a href="#1-有哪些基本要素？" class="headerlink" title="1.有哪些基本要素？"></a>1.有哪些基本要素？</h4><p>场景、贴图、相机</p>
+        <h4 id="1-有哪些基本要素？"><a href="#1-有哪些基本要素？" class="headerlink" title="1.有哪些基本要素？"></a>1.有哪些基本要素？</h4><p>场景、贴图、相机</p>
 <h4 id="2-threejs组成一个场景需要哪些元素？"><a href="#2-threejs组成一个场景需要哪些元素？" class="headerlink" title="2.threejs组成一个场景需要哪些元素？"></a>2.threejs组成一个场景需要哪些元素？</h4><h4 id="3-threejs中怎样让一个物体不受光照的影响。"><a href="#3-threejs中怎样让一个物体不受光照的影响。" class="headerlink" title="3.threejs中怎样让一个物体不受光照的影响。"></a>3.threejs中怎样让一个物体不受光照的影响。</h4><p>方法1：设置环境光为白色，emmissive也为白色。</p>
 <p>方法2：设置其他光线与物体的夹角为0.，怎么计算法向量？怎么计算夹角？</p>
 <h4 id="4-webGL中，生成一个模型，比如立方体，八个顶点各自都是三个面公用的，怎么计算？"><a href="#4-webGL中，生成一个模型，比如立方体，八个顶点各自都是三个面公用的，怎么计算？" class="headerlink" title="4.webGL中，生成一个模型，比如立方体，八个顶点各自都是三个面公用的，怎么计算？"></a>4.webGL中，生成一个模型，比如立方体，八个顶点各自都是三个面公用的，怎么计算？</h4><h4 id="5-讲讲片元着色器和和顶点着色器，以及一个object的渲染过程。"><a href="#5-讲讲片元着色器和和顶点着色器，以及一个object的渲染过程。" class="headerlink" title="5.讲讲片元着色器和和顶点着色器，以及一个object的渲染过程。"></a>5.讲讲片元着色器和和顶点着色器，以及一个object的渲染过程。</h4><h4 id="6-怎么把屏幕坐标系转换为webgl坐标系？世界坐标系、本地坐标系、视觉坐标系之间的转换方法？还有什么坐标系？"><a href="#6-怎么把屏幕坐标系转换为webgl坐标系？世界坐标系、本地坐标系、视觉坐标系之间的转换方法？还有什么坐标系？" class="headerlink" title="6.怎么把屏幕坐标系转换为webgl坐标系？世界坐标系、本地坐标系、视觉坐标系之间的转换方法？还有什么坐标系？"></a>6.怎么把屏幕坐标系转换为webgl坐标系？世界坐标系、本地坐标系、视觉坐标系之间的转换方法？还有什么坐标系？</h4><h4 id="7-threejs的raycaster的原理是什么，除了intersect-数组之外还会返回那些值？"><a href="#7-threejs的raycaster的原理是什么，除了intersect-数组之外还会返回那些值？" class="headerlink" title="7.threejs的raycaster的原理是什么，除了intersect[ ]数组之外还会返回那些值？"></a>7.threejs的raycaster的原理是什么，除了intersect[ ]数组之外还会返回那些值？</h4><h4 id="8-怎么优化3D页面的加载或者渲染速度？加载不出来怎么办"><a href="#8-怎么优化3D页面的加载或者渲染速度？加载不出来怎么办" class="headerlink" title="8.怎么优化3D页面的加载或者渲染速度？加载不出来怎么办?"></a>8.怎么优化3D页面的加载或者渲染速度？加载不出来怎么办?</h4><p>图片太多的时候，就不能初始化的时候一次性加载。<br>比如这次的项目，有多个场景，每个场景的贴图特别大，那么其中一种处理方法先加载一部分，剩下的场景，只能切换的时候再加载。</p>
@@ -199,6 +213,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">3d</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -297,7 +322,7 @@
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="3D/3D问题搞一波" data-title data-url="http://yoursite.com/2019/02/27/3D/3D问题搞一波/"></div>
+	<div class="ds-thread" data-thread-key="3D/3D问题搞一波" data-title="3d学习总结" data-url="http://yoursite.com/2019/02/27/3D/3D问题搞一波/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -407,7 +432,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color3">3d</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vscode插件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -415,11 +444,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">跨域</a>
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vscode插件</a>
+                <a href="javascript:void(0)" class="js-tag color3">跨域</a>
               </li>
             
             <div class="clearfix"></div>
