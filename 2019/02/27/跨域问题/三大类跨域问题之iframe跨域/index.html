@@ -59,10 +59,6 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/前端/">技术</a></li>
-	        
-				<li><a href="/tags/相册/">相册</a></li>
-	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
@@ -73,6 +69,10 @@
             
     			
     			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
+    			
+            
+    			
+    			<a q-on="click: openSlider(e, 'front-end')" href="javascript:void(0)">前端</a>
     			
             
 		</nav>
@@ -109,10 +109,6 @@
 			
 				
 			
-				
-			
-				
-			
 			
 			
 			<nav class="header-nav">
@@ -126,14 +122,10 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 70%">
+				<ul style="width: 50%">
 				
 				
-					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
-		        
-					<li style="width: 33.333333333333336%"><a href="/tags/前端/">技术</a></li>
-		        
-					<li style="width: 33.333333333333336%"><a href="/tags/相册/">相册</a></li>
+					<li style="width: 100%"><a href="/">主页</a></li>
 		        
 				</ul>
 			</nav>
@@ -328,18 +320,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/02/27/跨域问题/三大类跨域问题之Cookie跨域/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          三大类跨域问题之Cookie跨域
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/02/27/设计模式/设计模式概述/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">设计模式概述</div>
+    <a href="/2019/02/27/跨域问题/三大类跨域问题之AJAX跨域/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">三大类跨域问题之AJAX跨域</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -367,39 +350,33 @@
   
   
   
-  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
-<script>
-  var cloudTieConfig = {
-    url: "http://yoursite.com/2019/02/27/跨域问题/三大类跨域问题之iframe跨域/", 
-    sourceId: "跨域问题/三大类跨域问题之iframe跨域",
-    productKey: "true",
-    target: "cloud-tie-wrapper"
-  };
-</script>
-<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
-  
 
   
 
   
 
   
-  <div id="gitment-ctn"></div> 
-<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
-<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-var gitment = new Gitment({
-  id: "http://yoursite.com/2019/02/27/跨域问题/三大类跨域问题之iframe跨域/",
-  owner: 'n2meetu',
-  repo: 'n2meetu.github.io',
-  oauth: {
-    client_id: 'dc345222d32b37c332c3',
-    client_secret: '9e31f24fea08467f9532b22ef7392af359cb34fa',
-  },
-})
-gitment.render('gitment-ctn')
-</script>
-  
+
+   <!-- 来必力City版安装代码 -->
+ 
+  <!-- 这一句是适配样式 -->
+  <section class="duoshuo" id="comments">
+  <!-- 以下是 来必力City版安装代码 -->
+  <div id="lv-container" data-id="city" data-uid="MTAyMC8zNjg1My8xMzM4OQ==">
+    <script type="text/javascript">
+     (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+       if (typeof LivereTower === 'function') { return; }
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+       e.parentNode.insertBefore(j, e);
+     })(document, 'script');
+    </script>
+  <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+  </div>
+  </section>
+
 
 
           </div>
@@ -430,7 +407,7 @@ gitment.render('gitment-ctn')
 		toc_hide_index: true,
 		root: "/",
 		innerArchive: true,
-		showTags: false
+		showTags: true
 	}
 </script>
 
@@ -453,17 +430,25 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
       
     
+      
+      
+      
+    
     
 
     <ul style="width: 70%">
     
     
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      
+        
+      
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'front-end')"><a href="javascript:void(0)" q-class="active:front-end">前端</a></li>
       
         
     </ul>
@@ -484,15 +469,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">3d</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vscode插件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -500,7 +477,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">3d</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">跨域</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
             
             <div class="clearfix"></div>
