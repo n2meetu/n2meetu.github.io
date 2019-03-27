@@ -9,18 +9,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>三大类跨域问题之Cookie跨域 | Sing Sing a Song</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="跨域是浏览器的安全策略，是为了控制js不操作不同域的数据  注意：cookie 的不区分协议与端口 一、ajax可以传送cookie，为什么还要单独解决cookie的跨域问题？一种情况是：不同子目录的cookie跨域问题，  在同一个服务器上有目录如下：/test/,/test/cd/,/test/dd/，现设一个cookie1的path为/test/，cookie2的path为/test/cd">
+  <meta name="description" content="跨域是浏览器的安全策略，是为了控制js不操作不同域的数据  注意：cookie 的不区分协议与端口">
 <meta name="keywords" content="跨域">
 <meta property="og:type" content="article">
 <meta property="og:title" content="三大类跨域问题之Cookie跨域">
 <meta property="og:url" content="http://yoursite.com/2019/02/27/跨域问题/三大类跨域问题之Cookie跨域/index.html">
 <meta property="og:site_name" content="Sing Sing a Song">
-<meta property="og:description" content="跨域是浏览器的安全策略，是为了控制js不操作不同域的数据  注意：cookie 的不区分协议与端口 一、ajax可以传送cookie，为什么还要单独解决cookie的跨域问题？一种情况是：不同子目录的cookie跨域问题，  在同一个服务器上有目录如下：/test/,/test/cd/,/test/dd/，现设一个cookie1的path为/test/，cookie2的path为/test/cd">
+<meta property="og:description" content="跨域是浏览器的安全策略，是为了控制js不操作不同域的数据  注意：cookie 的不区分协议与端口">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-11T05:38:37.784Z">
+<meta property="og:updated_time" content="2019-03-27T13:51:01.362Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="三大类跨域问题之Cookie跨域">
-<meta name="twitter:description" content="跨域是浏览器的安全策略，是为了控制js不操作不同域的数据  注意：cookie 的不区分协议与端口 一、ajax可以传送cookie，为什么还要单独解决cookie的跨域问题？一种情况是：不同子目录的cookie跨域问题，  在同一个服务器上有目录如下：/test/,/test/cd/,/test/dd/，现设一个cookie1的path为/test/，cookie2的path为/test/cd">
+<meta name="twitter:description" content="跨域是浏览器的安全策略，是为了控制js不操作不同域的数据  注意：cookie 的不区分协议与端口">
   
   <link rel="alternative" href="/atom.xml" title="Sing Sing a Song" type="application/atom+xml">
   
@@ -164,6 +164,7 @@
 <p>跨域是浏览器的安全策略，是为了控制js不操作不同域的数据</p>
 </blockquote>
 <p><strong><em><em>注意：cookie 的不区分协议与端口</em></em></strong></p>
+<a id="more"></a>
 <h3 id="一、ajax可以传送cookie，为什么还要单独解决cookie的跨域问题？"><a href="#一、ajax可以传送cookie，为什么还要单独解决cookie的跨域问题？" class="headerlink" title="一、ajax可以传送cookie，为什么还要单独解决cookie的跨域问题？"></a>一、ajax可以传送cookie，为什么还要单独解决cookie的跨域问题？</h3><h4 id="一种情况是："><a href="#一种情况是：" class="headerlink" title="一种情况是："></a>一种情况是：</h4><p>不同子目录的cookie跨域问题，</p>
 <blockquote>
 <p>在同一个服务器上有目录如下：<code>/test/</code>,<code>/test/cd/</code>,<code>/test/dd/</code>，<br>现设一个cookie1的path为<code>/test/</code>，cookie2的path为<code>/test/cd/</code>，那么test下的所有页面都可以访问到cookie1，而<code>/test/</code>和<code>/test/dd/</code>的子页面不能访问cookie2。这是因为cookie能让其path路径下的页面访问。</p>
@@ -285,9 +286,18 @@
   
 <nav id="article-nav">
   
+    <a href="/2019/02/27/跨域问题/三大类跨域问题之iframe跨域/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          三大类跨域问题之iframe跨域
+        
+      </div>
+    </a>
   
-    <a href="/2019/02/27/跨域问题/三大类跨域问题之AJAX跨域/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">三大类跨域问题之AJAX跨域</div>
+  
+    <a href="/2019/02/27/设计模式/设计模式概述/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">设计模式概述</div>
       <i class="icon-circle-right"></i>
     </a>
   
