@@ -140,130 +140,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-跨域问题/三大类跨域问题之iframe跨域" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/27/跨域问题/三大类跨域问题之iframe跨域/">三大类跨域问题之iframe跨域</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/27/跨域问题/三大类跨域问题之iframe跨域/" class="archive-article-date">
-  	<time datetime="2019-02-27T09:07:22.161Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>跨域是浏览器的安全策略，是为了控制js不操作不同域的数据</p>
-</blockquote>
-<p>共四种方法：</p>
-<ol>
-<li>片段标识符</li>
-<li>window.name（内容比较少时）</li>
-<li>window.postMessage（计算量比较大时）</li>
-<li>LocalStorage（H5的。兼容低版本时不建议用）</li>
-</ol>
-<h3 id="1-片段标识符"><a href="#1-片段标识符" class="headerlink" title="1.片段标识符"></a>1.片段标识符</h3><p>url中“<code>#</code>”后面部分。<br><code>onhashchange</code>方法，URL 参数列表只要变化就会调用它。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">window.onhashchange = checkMessage;</span><br><span class="line"></span><br><span class="line">function checkMessage() &#123;</span><br><span class="line">  var message = window.location.hash;</span><br><span class="line">  // ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>改变某个页面的片段标识符：<br><code>xxx.location.href = target + &#39;#&#39; + hash;</code></p>
-<h3 id="2-window-name"><a href="#2-window-name" class="headerlink" title="2.window.name"></a>2.window.name</h3><h4 id="2-1-如果是父-子窗口："><a href="#2-1-如果是父-子窗口：" class="headerlink" title="2.1 如果是父/子窗口："></a>2.1 如果是父/子窗口：</h4><blockquote>
-<p>1.从主窗口<code>iframe1</code>打开一个子窗口<code>iframe2</code>，把数据data写入<code>iframe2</code>的<code>window.name</code>属性里。（实际上就是给<code>iframe2</code>起了个名字，名字就是要传输的数据data）</p>
-</blockquote>
-<blockquote>
-<p>2.然后让<code>iframe2</code>的<code>location</code>跳去一个和<code>iframe1</code>一个域的地址。（必须父窗口和子窗口同源，父窗口才能读取到子窗口的name）</p>
-</blockquote>
-<blockquote>
-<p>3.<code>iframe1</code>去读<code>iframe2</code>的<code>window.name</code>的值，也就是数据data。</p>
-<p>有三个页面：</p>
-</blockquote>
-<ul>
-<li><p><strong>页面a</strong>: a.com/app.html：<strong>应用页面</strong>。</p>
-</li>
-<li><p><strong>页面c</strong>: a.com/proxy.html：<strong>代理文件</strong>，一般是一个没有任何内容的html文件，需要<em>和应用页面在同一域下</em>。</p>
-</li>
-<li><p><strong>页面b</strong>: b.com/data.html：应用页面需要获取数据的页面，可称为数据页面。</p>
-</li>
-</ul>
-<blockquote>
-<p>在a页面（a.com/app.html）中创建一个iframe，把其src指向b页面（b.com/data.html）。<br><code>iframe.src = &#39;http://b.com/data.html&#39;;</code></p>
-</blockquote>
-<blockquote>
-<p>b页面里写window.name = “数据内容(字符串，json都行)”</p>
-<p><em><em>a页面监听iframe的onload事件，监听到了，就将iframe的src指向本地域的代理文件c。</em></em>（c页面和a页面是同一个域的）</p>
-<p><code>iframe.contentWindow.location = &quot;http://a.com/proxy.html&quot;;</code></p>
-</blockquote>
-<blockquote>
-<p>b页面拿到数据，a页面小会iframe，释放内存</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">var state = 0;</span><br><span class="line">iframe = document.createElement(&apos;iframe&apos;);</span><br><span class="line">var loadfn = function()&#123;</span><br><span class="line">    if(state === 0)&#123;</span><br><span class="line">        state = 1;</span><br><span class="line">        iframe.contentWindow.location = &quot;http://a.com/proxy.html&quot;;</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        var data = iframe.contentWindow.name;</span><br><span class="line">        console.log(data); //拿到数据</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">iframe.src = &quot;http://b.com/data.html&quot;;</span><br><span class="line">if(iframe.attachEvent)&#123;</span><br><span class="line">    iframe.attachEvent(&apos;onload&apos;,loadfn);</span><br><span class="line">&#125;else&#123;</span><br><span class="line">    iframe.onload = loadfn;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">document.body.appendChild(child);</span><br></pre></td></tr></table></figure>
-<p>总结：如果跨域了，通过iframe的src跳转一下，指向一个代理文件。代理文件和发送数据的文件是一个域下面的，跨域成功，拿到数据。拿完就把iframe销毁，免得随便谁来了它都src跳转。</p>
-<h4 id="2-2-如果是在同一个窗口："><a href="#2-2-如果是在同一个窗口：" class="headerlink" title="2.2 如果是在同一个窗口："></a>2.2 如果是在同一个窗口：</h4><p>先打开A，然后输入新的地址，还是这个窗口，跳转到B，window.name是不变的，而且B还能读到。</p>
-<p><a href="http://www.cnblogs.com/rainman/archive/2011/02/21/1960044.html" target="_blank" rel="noopener">参考</a></p>
-<h3 id="3-window-postMessage"><a href="#3-window-postMessage" class="headerlink" title="3.window.postMessage"></a>3.window.postMessage</h3><p>父窗口 <a href="http://aaa.com" target="_blank" rel="noopener">http://aaa.com</a> 向子窗口 <a href="http://bbb.com" target="_blank" rel="noopener">http://bbb.com</a> 发消息:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var popup = window.open(&quot;http://bbb.com&quot;,&quot;title&quot;);</span><br><span class="line"></span><br><span class="line">popup.postMessage(&quot;hello&quot;,&quot;http://bbb.com&quot;);</span><br></pre></td></tr></table></figure>
-<p>子窗口向父窗口发送消息：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">window.opener.postMessage(&apos;Nice to see you&apos;,&quot;http://aaa.com&quot;);</span><br></pre></td></tr></table></figure>
-<h4 id="4-LocalStorage"><a href="#4-LocalStorage" class="headerlink" title="4.LocalStorage"></a>4.LocalStorage</h4><p>子窗口将父窗口发来的消息写入自己的localStorage；<br>（没用过，整理了也记不住。暂时只写这些）</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">跨域</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/27/跨域问题/三大类跨域问题之iframe跨域/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-跨域问题/三大类跨域问题之Cookie跨域" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -415,6 +291,91 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/02/27/跨域问题/三大类跨域问题之AJAX跨域/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-跨域问题/三大类跨域问题之iframe跨域" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/27/跨域问题/三大类跨域问题之iframe跨域/">三大类跨域问题之iframe跨域</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/27/跨域问题/三大类跨域问题之iframe跨域/" class="archive-article-date">
+  	<time datetime="2019-02-27T09:07:22.161Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>跨域是浏览器的安全策略，是为了控制js不操作不同域的数据</p>
+</blockquote>
+<p>共四种方法：</p>
+<ol>
+<li>片段标识符</li>
+<li>window.name（内容比较少时）</li>
+<li>window.postMessage（计算量比较大时）</li>
+<li>LocalStorage（H5的。兼容低版本时不建议用）</li>
+</ol>
+        
+          <a class="article-more-a" href="/2019/02/27/跨域问题/三大类跨域问题之iframe跨域/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">跨域</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/27/跨域问题/三大类跨域问题之iframe跨域/">展开全文 >></a>
         </p>
       
 
@@ -1024,7 +985,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color3">3d</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1032,15 +993,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">3d</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">跨域</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
             
             <div class="clearfix"></div>

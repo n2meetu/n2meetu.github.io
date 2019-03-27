@@ -9,18 +9,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>三大类跨域问题之iframe跨域 | Sing Sing a Song</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="跨域是浏览器的安全策略，是为了控制js不操作不同域的数据  共四种方法：  片段标识符 window.name（内容比较少时） window.postMessage（计算量比较大时） LocalStorage（H5的。兼容低版本时不建议用）  1.片段标识符url中“#”后面部分。onhashchange方法，URL 参数列表只要变化就会调用它。 123456window.onhashchang">
+  <meta name="description" content="跨域是浏览器的安全策略，是为了控制js不操作不同域的数据  共四种方法：  片段标识符 window.name（内容比较少时） window.postMessage（计算量比较大时） LocalStorage（H5的。兼容低版本时不建议用）">
 <meta name="keywords" content="跨域">
 <meta property="og:type" content="article">
 <meta property="og:title" content="三大类跨域问题之iframe跨域">
 <meta property="og:url" content="http://yoursite.com/2019/02/27/跨域问题/三大类跨域问题之iframe跨域/index.html">
 <meta property="og:site_name" content="Sing Sing a Song">
-<meta property="og:description" content="跨域是浏览器的安全策略，是为了控制js不操作不同域的数据  共四种方法：  片段标识符 window.name（内容比较少时） window.postMessage（计算量比较大时） LocalStorage（H5的。兼容低版本时不建议用）  1.片段标识符url中“#”后面部分。onhashchange方法，URL 参数列表只要变化就会调用它。 123456window.onhashchang">
+<meta property="og:description" content="跨域是浏览器的安全策略，是为了控制js不操作不同域的数据  共四种方法：  片段标识符 window.name（内容比较少时） window.postMessage（计算量比较大时） LocalStorage（H5的。兼容低版本时不建议用）">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-11T05:32:06.944Z">
+<meta property="og:updated_time" content="2019-03-27T13:47:25.287Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="三大类跨域问题之iframe跨域">
-<meta name="twitter:description" content="跨域是浏览器的安全策略，是为了控制js不操作不同域的数据  共四种方法：  片段标识符 window.name（内容比较少时） window.postMessage（计算量比较大时） LocalStorage（H5的。兼容低版本时不建议用）  1.片段标识符url中“#”后面部分。onhashchange方法，URL 参数列表只要变化就会调用它。 123456window.onhashchang">
+<meta name="twitter:description" content="跨域是浏览器的安全策略，是为了控制js不操作不同域的数据  共四种方法：  片段标识符 window.name（内容比较少时） window.postMessage（计算量比较大时） LocalStorage（H5的。兼容低版本时不建议用）">
   
   <link rel="alternative" href="/atom.xml" title="Sing Sing a Song" type="application/atom+xml">
   
@@ -170,6 +170,7 @@
 <li>window.postMessage（计算量比较大时）</li>
 <li>LocalStorage（H5的。兼容低版本时不建议用）</li>
 </ol>
+<a id="more"></a>
 <h3 id="1-片段标识符"><a href="#1-片段标识符" class="headerlink" title="1.片段标识符"></a>1.片段标识符</h3><p>url中“<code>#</code>”后面部分。<br><code>onhashchange</code>方法，URL 参数列表只要变化就会调用它。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">window.onhashchange = checkMessage;</span><br><span class="line"></span><br><span class="line">function checkMessage() &#123;</span><br><span class="line">  var message = window.location.hash;</span><br><span class="line">  // ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>改变某个页面的片段标识符：<br><code>xxx.location.href = target + &#39;#&#39; + hash;</code></p>
@@ -320,9 +321,18 @@
   
 <nav id="article-nav">
   
+    <a href="/2019/02/27/跨域问题/三大类跨域问题之AJAX跨域/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          三大类跨域问题之AJAX跨域
+        
+      </div>
+    </a>
   
-    <a href="/2019/02/27/跨域问题/三大类跨域问题之Cookie跨域/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">三大类跨域问题之Cookie跨域</div>
+  
+    <a href="/2019/02/27/设计模式/设计模式概述/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">设计模式概述</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -469,7 +479,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color3">3d</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -477,15 +487,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">3d</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">跨域</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
             
             <div class="clearfix"></div>
