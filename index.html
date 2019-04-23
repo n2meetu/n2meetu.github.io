@@ -585,86 +585,6 @@
 
 
   
-    <article id="post-CSS3/绝对定位和fixed" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/27/CSS3/绝对定位和fixed/">绝对定位和fixed</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/27/CSS3/绝对定位和fixed/" class="archive-article-date">
-  	<time datetime="2019-03-27T08:24:28.637Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>这两个货分别是相对于哪个标签进行定位？？</p>
-<p>##场景：<br>css：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.a&#123;</span><br><span class="line">    position: relative;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.b&#123;</span><br><span class="line">    position: fixed;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.c&#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>html:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;a&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;b&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;c&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
-<h4 id="问-div-c相对于-a还是b进行定位？？"><a href="#问-div-c相对于-a还是b进行定位？？" class="headerlink" title="问: div.c相对于 a还是b进行定位？？"></a>问: div.c相对于 a还是b进行定位？？</h4><h2 id="demo"><a href="#demo" class="headerlink" title="demo"></a><a href="https://codepen.io/singsingasong/pen/EebeEe?editors=1100" target="_blank" rel="noopener">demo</a></h2><h3 id="1-absolute"><a href="#1-absolute" class="headerlink" title="1.absolute"></a>1.absolute</h3><p>相对于static定位以外的第一个父元素进行定位。</p>
-<hr>
-<h3 id="2-fixed"><a href="#2-fixed" class="headerlink" title="2.fixed"></a>2.fixed</h3><p>相对于浏览器的位置进行定位</p>
-<h4 id="譬如，浏览器滚动的时候，fixed定位的元素不动，absolute定位的元素会移动。"><a href="#譬如，浏览器滚动的时候，fixed定位的元素不动，absolute定位的元素会移动。" class="headerlink" title="譬如，浏览器滚动的时候，fixed定位的元素不动，absolute定位的元素会移动。"></a>譬如，浏览器滚动的时候，fixed定位的元素不动，absolute定位的元素会移动。</h4><hr>
-<h3 id="✨答案"><a href="#✨答案" class="headerlink" title="✨答案:"></a>✨答案:</h3><h6 id="相对于div-b"><a href="#相对于div-b" class="headerlink" title="相对于div.b"></a>相对于div.b</h6>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/27/CSS3/绝对定位和fixed/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-CSS3/圣杯布局和双飞翼布局" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -873,22 +793,72 @@
 
 
   
-    <article id="post-CSS3/清除浮动的方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-移动端适配/rem" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <hr>
-<p>title: 清除浮动</p>
-<h2 id="tags-CSS"><a href="#tags-CSS" class="headerlink" title="tags: CSS"></a>tags: CSS</h2><p><a href="https://codepen.io/singsingasong/pen/GXejMP?editors=1100" target="_blank" rel="noopener">清除浮动的原理</a></p>
-<h3 id="方案一：clear-both"><a href="#方案一：clear-both" class="headerlink" title="方案一：clear:both"></a>方案一：<code>clear:both</code></h3><p>在包含浮动元素的父级div内，在所有div的后面加入一个没有内容的<strong><em>块级</em></strong> 元素(必须是块级）。<br>
+        <html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 2.66666667rem;
+            height: 2.66666667rem;
+            background: red;
+        }
+
+        .a{
+            position: relative;
+        }
+
+        .b{
+            position: fixed;
+        }
+
+        .c{
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="a">
+        <div class="b">
+            <div class="c"></div>
+        </div>
+    </div>
+    <div class="box"></div>
+
+    <script>
+        var scale = 1 / window.devicePixelRatio;
+        document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=device-width,initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no');
+
+        document.documentElement.style.fontSize = document.documentElement.clientWidth / 10 + 'px';
+    </script>
+    <script>
+        // 动态设置meta标签中content属性
+        // 获取屏幕宽度，设置html标签的font-size大小。
+        var scale = 1/window.devicePixelRatio; // dpr的倒数
+        document.documentElement.style.fontSize=document.documentElement.clientWidth/10 +'px'; 
+        document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=device-width,initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no');
         
-          <a class="article-more-a" href="/2019/03/27/CSS3/清除浮动的方法/#more">more >></a>
-        
+    </script>
+</body>
+
+</html>
       
 
       
-    </p></div>
+    </div>
     <div class="article-info article-info-index">
       
       
@@ -896,7 +866,58 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/27/CSS3/清除浮动的方法/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/27/移动端适配/rem/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-移动端适配/1px问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1px问题"><a href="#1px问题" class="headerlink" title="1px问题"></a>1px问题</h1><p><a href="http://peunzhang.cnblogs.com/" target="_blank" rel="noopener">1px问题</a><br><a href="https://github.com/AlloyTeam/Mars/blob/master/solutions/border-1px.md#%E4%B8%80%E4%BD%BF%E7%94%A8border-image%E5%AE%9E%E7%8E%B0%E7%B1%BB%E4%BC%BCios7%E7%9A%841px%E5%BA%95%E8%BE%B9" target="_blank" rel="noopener">github文章参考</a></p>
+<p><a href="https://segmentfault.com/a/1190000007604842" target="_blank" rel="noopener">推荐参考</a><br><a href="https://juejin.im/entry/584e427361ff4b006cd22c7c" target="_blank" rel="noopener">参考2</a></p>
+<p>##1、 原因<br>因为dpr = 2;我们用1px设置border的宽度，在设备上就会被放大成两倍粗的线条。</p>
+<h4 id="比如需要1px的下边框"><a href="#比如需要1px的下边框" class="headerlink" title="比如需要1px的下边框"></a>比如需要1px的下边框</h4><h2 id="2、解决方法"><a href="#2、解决方法" class="headerlink" title="2、解决方法"></a>2、解决方法</h2><h3 id="2-1-border-image"><a href="#2-1-border-image" class="headerlink" title="2.1 border-image"></a>2.1 border-image</h3><p>准备2px高度的图片，<br>一半透明，一半有颜色。<br><code>border-width: 0 0 2px 0;</code>，<code>border-image:url(&quot;xxx.png&quot; 0 0 2 0 stretch)</code></p>
+<h3 id="2-2-transform-scaleY-0-5"><a href="#2-2-transform-scaleY-0-5" class="headerlink" title="2.2 transform:scaleY(0.5)"></a>2.2 transform:scaleY(0.5)</h3>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/27/移动端适配/1px问题/">展开全文 >></a>
         </p>
       
 
@@ -1023,11 +1044,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">3d</a>
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+                <a href="javascript:void(0)" class="js-tag color3">3d</a>
               </li>
              
               <li class="article-tag-list-item">
