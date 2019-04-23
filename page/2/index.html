@@ -140,70 +140,33 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-移动端适配/穿透问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-跨域问题/三大类跨域问题之Cookie跨域" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="穿透问题"><a href="#穿透问题" class="headerlink" title="穿透问题"></a>穿透问题</h1><h2 id="啥事穿透？"><a href="#啥事穿透？" class="headerlink" title="啥事穿透？"></a>啥事穿透？</h2><p>两个元素，明明不是父子级关系，可能是同级的兄弟元素，A的z-index比B 要高。他们位置上有所重叠。点击A，A消失后，B的<code>click</code>事件也被触发了。</p>
-<h2 id="怎么解决？"><a href="#怎么解决？" class="headerlink" title="怎么解决？"></a>怎么解决？</h2><p>在touch事件的某个处理函数中 执行 <code>e.preverDefault</code>即可</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/27/移动端适配/穿透问题/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
+      <header class="article-header">
         
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
-    <article id="post-优化/性能优化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/27/跨域问题/三大类跨域问题之Cookie跨域/">三大类跨域问题之Cookie跨域</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/27/跨域问题/三大类跨域问题之Cookie跨域/" class="archive-article-date">
+  	<time datetime="2019-02-27T09:07:22.161Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h1><h3 id="一、加载优化"><a href="#一、加载优化" class="headerlink" title="一、加载优化"></a>一、加载优化</h3><h4 id="http"><a href="#http" class="headerlink" title="http"></a>http</h4><p>首次加载的时候，减少HTTP请求数量。合并css、js；小图片合并雪碧图；</p>
-<h4 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h4><p>静态资源尽量缓存；<br>用外联形式引用CSS,JS</p>
-<h4 id="压缩"><a href="#压缩" class="headerlink" title="压缩"></a>压缩</h4><p>压缩html,css,js，多余的空格、缩进和换行符</p>
-<h4 id="loading"><a href="#loading" class="headerlink" title="loading"></a>loading</h4><p>预加载的时候放一个loading动画（但是不好太长，最好控制在3s）</p>
-<h4 id="按需加载"><a href="#按需加载" class="headerlink" title="按需加载"></a>按需加载</h4><p>###二、 渲染优化</p>
-<h4 id="减少DOM节点和DOM操作"><a href="#减少DOM节点和DOM操作" class="headerlink" title="减少DOM节点和DOM操作"></a>减少DOM节点和DOM操作</h4><h4 id="动画优化"><a href="#动画优化" class="headerlink" title="动画优化"></a>动画优化</h4><p>用requestAnimationFrame代替setTImeout<br>尽量用CSS，少用JS</p>
-<h4 id="三、脚本优化"><a href="#三、脚本优化" class="headerlink" title="三、脚本优化"></a>三、脚本优化</h4><p>CSS写在头部<br>JS写在尾部或者异步</p>
-<h4 id="四、css优化"><a href="#四、css优化" class="headerlink" title="四、css优化"></a>四、css优化</h4><p>避免图片和iFrame等的空src</p>
-<h4 id="五、渲染优化"><a href="#五、渲染优化" class="headerlink" title="五、渲染优化"></a>五、渲染优化</h4><p><img src="media/15373431386544.jpg" alt></p>
-
+        <blockquote>
+<p>跨域是浏览器的安全策略，是为了控制js不操作不同域的数据</p>
+</blockquote>
+<p><strong><em><em>注意：cookie 的不区分协议与端口</em></em></strong></p>
+        
+          <a class="article-more-a" href="/2019/02/27/跨域问题/三大类跨域问题之Cookie跨域/#more">more >></a>
+        
       
 
       
@@ -211,11 +174,22 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">跨域</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/27/优化/性能优化/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/02/27/跨域问题/三大类跨域问题之Cookie跨域/">展开全文 >></a>
         </p>
       
 
@@ -330,113 +304,28 @@
 
 
   
-    <article id="post-跨域问题/三大类跨域问题之AJAX跨域" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-设计模式/设计模式概述" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/27/跨域问题/三大类跨域问题之AJAX跨域/">三大类跨域问题之AJAX跨域</a>
+      <a class="article-title" href="/2019/02/27/设计模式/设计模式概述/">设计模式概述</a>
     </h1>
   
 
         
-        <a href="/2019/02/27/跨域问题/三大类跨域问题之AJAX跨域/" class="archive-article-date">
-  	<time datetime="2019-02-27T09:07:22.161Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
+        <a href="/2019/02/27/设计模式/设计模式概述/" class="archive-article-date">
+  	<time datetime="2019-02-27T09:07:22.156Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>跨域是浏览器的安全策略，是为了控制js不操作不同域的数据</p>
-</blockquote>
-<p>1.cookie跨域<br>2.DOM无法获得<br>3.AJAX请求不能发送</p>
-<p>本文讨论上述第3种。<br>
-        
-          <a class="article-more-a" href="/2019/02/27/跨域问题/三大类跨域问题之AJAX跨域/#more">more >></a>
-        
-      
+        <h3 id="常见问题："><a href="#常见问题：" class="headerlink" title="常见问题："></a>常见问题：</h3><p>讲一下自己了解的js设计模式。<br>单例模式：一个对象下面只有一个实例。如果已经有了，就直接用；除非没有，那才new一个。<br>比如<code>window</code>这样的全局变量。</p>
 
-      
-    </p></div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">跨域</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/27/跨域问题/三大类跨域问题之AJAX跨域/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-跨域问题/三大类跨域问题之Cookie跨域" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/27/跨域问题/三大类跨域问题之Cookie跨域/">三大类跨域问题之Cookie跨域</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/27/跨域问题/三大类跨域问题之Cookie跨域/" class="archive-article-date">
-  	<time datetime="2019-02-27T09:07:22.161Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>跨域是浏览器的安全策略，是为了控制js不操作不同域的数据</p>
-</blockquote>
-<p><strong><em><em>注意：cookie 的不区分协议与端口</em></em></strong></p>
-        
-          <a class="article-more-a" href="/2019/02/27/跨域问题/三大类跨域问题之Cookie跨域/#more">more >></a>
-        
       
 
       
@@ -449,7 +338,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">跨域</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
         		</li>
       		
 		</ul>
@@ -459,7 +348,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/27/跨域问题/三大类跨域问题之Cookie跨域/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/02/27/设计模式/设计模式概述/">展开全文 >></a>
         </p>
       
 
@@ -552,80 +441,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/02/27/跨域问题/CORS跨域/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-设计模式/设计模式概述" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/27/设计模式/设计模式概述/">设计模式概述</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/27/设计模式/设计模式概述/" class="archive-article-date">
-  	<time datetime="2019-02-27T09:07:22.156Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="常见问题："><a href="#常见问题：" class="headerlink" title="常见问题："></a>常见问题：</h3><p>讲一下自己了解的js设计模式。<br>单例模式：一个对象下面只有一个实例。如果已经有了，就直接用；除非没有，那才new一个。<br>比如<code>window</code>这样的全局变量。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/27/设计模式/设计模式概述/">展开全文 >></a>
         </p>
       
 
@@ -896,9 +711,89 @@
 
 
   
+    <article id="post-3D/3D问题搞一波" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/27/3D/3D问题搞一波/">3d学习总结</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/27/3D/3D问题搞一波/" class="archive-article-date">
+  	<time datetime="2019-02-27T09:07:21.806Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="1-有哪些基本要素？"><a href="#1-有哪些基本要素？" class="headerlink" title="1.有哪些基本要素？"></a>1.有哪些基本要素？</h4><p>场景、贴图、相机</p>
+<h4 id="2-threejs组成一个场景需要哪些元素？"><a href="#2-threejs组成一个场景需要哪些元素？" class="headerlink" title="2.threejs组成一个场景需要哪些元素？"></a>2.threejs组成一个场景需要哪些元素？</h4><h4 id="3-threejs中怎样让一个物体不受光照的影响。"><a href="#3-threejs中怎样让一个物体不受光照的影响。" class="headerlink" title="3.threejs中怎样让一个物体不受光照的影响。"></a>3.threejs中怎样让一个物体不受光照的影响。</h4><p>方法1：设置环境光为白色，emmissive也为白色。</p>
+<p>方法2：设置其他光线与物体的夹角为0.，怎么计算法向量？怎么计算夹角？</p>
+<h4 id="4-webGL中，生成一个模型，比如立方体，八个顶点各自都是三个面公用的，怎么计算？"><a href="#4-webGL中，生成一个模型，比如立方体，八个顶点各自都是三个面公用的，怎么计算？" class="headerlink" title="4.webGL中，生成一个模型，比如立方体，八个顶点各自都是三个面公用的，怎么计算？"></a>4.webGL中，生成一个模型，比如立方体，八个顶点各自都是三个面公用的，怎么计算？</h4><h4 id="5-讲讲片元着色器和和顶点着色器，以及一个object的渲染过程。"><a href="#5-讲讲片元着色器和和顶点着色器，以及一个object的渲染过程。" class="headerlink" title="5.讲讲片元着色器和和顶点着色器，以及一个object的渲染过程。"></a>5.讲讲片元着色器和和顶点着色器，以及一个object的渲染过程。</h4><h4 id="6-怎么把屏幕坐标系转换为webgl坐标系？世界坐标系、本地坐标系、视觉坐标系之间的转换方法？还有什么坐标系？"><a href="#6-怎么把屏幕坐标系转换为webgl坐标系？世界坐标系、本地坐标系、视觉坐标系之间的转换方法？还有什么坐标系？" class="headerlink" title="6.怎么把屏幕坐标系转换为webgl坐标系？世界坐标系、本地坐标系、视觉坐标系之间的转换方法？还有什么坐标系？"></a>6.怎么把屏幕坐标系转换为webgl坐标系？世界坐标系、本地坐标系、视觉坐标系之间的转换方法？还有什么坐标系？</h4><h4 id="7-threejs的raycaster的原理是什么，除了intersect-数组之外还会返回那些值？"><a href="#7-threejs的raycaster的原理是什么，除了intersect-数组之外还会返回那些值？" class="headerlink" title="7.threejs的raycaster的原理是什么，除了intersect[ ]数组之外还会返回那些值？"></a>7.threejs的raycaster的原理是什么，除了intersect[ ]数组之外还会返回那些值？</h4><h4 id="8-怎么优化3D页面的加载或者渲染速度？加载不出来怎么办"><a href="#8-怎么优化3D页面的加载或者渲染速度？加载不出来怎么办" class="headerlink" title="8.怎么优化3D页面的加载或者渲染速度？加载不出来怎么办?"></a>8.怎么优化3D页面的加载或者渲染速度？加载不出来怎么办?</h4><p>图片太多的时候，就不能初始化的时候一次性加载。<br>比如这次的项目，有多个场景，每个场景的贴图特别大，那么其中一种处理方法先加载一部分，剩下的场景，只能切换的时候再加载。</p>
+<h4 id="10-webgl怎么生成一个模型？具体怎么实现？怎么定义坐标？index？着色器？"><a href="#10-webgl怎么生成一个模型？具体怎么实现？怎么定义坐标？index？着色器？" class="headerlink" title="10.webgl怎么生成一个模型？具体怎么实现？怎么定义坐标？index？着色器？"></a>10.webgl怎么生成一个模型？具体怎么实现？怎么定义坐标？index？着色器？</h4><p><strong>步骤：</strong><br>1.获取定点坐标<br>2.图元装配（画出一个个小三角形）<br>3.光栅化（生成片元，即一个个像素点）<br><img src="media/15373418515303.jpg" alt></p>
+<h4 id="补充：three-js完整运行流程"><a href="#补充：three-js完整运行流程" class="headerlink" title="补充：three.js完整运行流程"></a>补充：three.js完整运行流程</h4><p><img src="media/15373425277371.jpg" alt></p>
+<p><a href="https://juejin.im/entry/59098a0b61ff4b0066f0ea22" target="_blank" rel="noopener">参考</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">3d</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/27/3D/3D问题搞一波/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
     </nav>
   
 
@@ -997,15 +892,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">3d</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vscode插件</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">3d</a>
               </li>
              
               <li class="article-tag-list-item">
