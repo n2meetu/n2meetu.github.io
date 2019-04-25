@@ -162,12 +162,9 @@
       
         <p>这两个货分别是相对于哪个标签进行定位？？</p>
 <p>##场景：<br>css：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.a&#123;</span><br><span class="line">    position: relative;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.b&#123;</span><br><span class="line">    position: fixed;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.c&#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>html:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;a&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;b&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;c&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
-<h4 id="问-div-c相对于-a还是b进行定位？？"><a href="#问-div-c相对于-a还是b进行定位？？" class="headerlink" title="问: div.c相对于 a还是b进行定位？？"></a>问: div.c相对于 a还是b进行定位？？</h4><h2 id="demo"><a href="#demo" class="headerlink" title="demo"></a><a href="https://codepen.io/singsingasong/pen/EebeEe?editors=1100" target="_blank" rel="noopener">demo</a></h2><h3 id="1-absolute"><a href="#1-absolute" class="headerlink" title="1.absolute"></a>1.absolute</h3><p>相对于static定位以外的第一个父元素进行定位。</p>
-<hr>
-<h3 id="2-fixed"><a href="#2-fixed" class="headerlink" title="2.fixed"></a>2.fixed</h3><p>相对于浏览器的位置进行定位</p>
-<h4 id="譬如，浏览器滚动的时候，fixed定位的元素不动，absolute定位的元素会移动。"><a href="#譬如，浏览器滚动的时候，fixed定位的元素不动，absolute定位的元素会移动。" class="headerlink" title="譬如，浏览器滚动的时候，fixed定位的元素不动，absolute定位的元素会移动。"></a>譬如，浏览器滚动的时候，fixed定位的元素不动，absolute定位的元素会移动。</h4><hr>
-<h3 id="✨答案"><a href="#✨答案" class="headerlink" title="✨答案:"></a>✨答案:</h3><h6 id="相对于div-b"><a href="#相对于div-b" class="headerlink" title="相对于div.b"></a>相对于div.b</h6>
+        
+          <a class="article-more-a" href="/2019/03/27/CSS3/绝对定位和fixed/#more">more >></a>
+        
       
 
       
@@ -405,21 +402,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="一、div-水平垂直居中"><a href="#一、div-水平垂直居中" class="headerlink" title="一、div 水平垂直居中"></a>一、div 水平垂直居中</h2><h3 id="1-flex方法"><a href="#1-flex方法" class="headerlink" title="1.flex方法"></a>1.flex方法</h3><p><code>display:flex</code> + <code>align-items</code> + <code>justify-content</code></p>
-<h3 id="2-绝对定位-margin-（需设置子元素宽高）"><a href="#2-绝对定位-margin-（需设置子元素宽高）" class="headerlink" title="2.绝对定位 + margin （需设置子元素宽高）"></a>2.绝对定位 + <code>margin</code> （需设置子元素宽高）</h3><p><strong><em>需要设置父元素的宽高</em></strong></p>
-<h3 id="3-绝对定位-transform-50-50"><a href="#3-绝对定位-transform-50-50" class="headerlink" title="3.绝对定位 + transform(-50%,-50%)"></a>3.绝对定位 + <code>transform(-50%,-50%)</code></h3><p><strong><em>需要设置父元素的宽高</em></strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;parent&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;child&quot;&gt;Demo&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line"> .parent &#123;</span><br><span class="line">       border:1px solid blue;</span><br><span class="line">       position: relative;</span><br><span class="line">       width:100px;</span><br><span class="line">       height:100px;</span><br><span class="line">  &#125;</span><br><span class="line">  .child &#123;</span><br><span class="line">        border:1px solid red;</span><br><span class="line">        position: absolute;</span><br><span class="line">        left: 50%;</span><br><span class="line">        top: 50%;</span><br><span class="line">        transform: translate(-50%, -50%);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="4-给父元素设置display-box-box-pack-box-align"><a href="#4-给父元素设置display-box-box-pack-box-align" class="headerlink" title="4.给父元素设置display;box + box-pack + box-align"></a>4.给父元素设置<code>display;box</code> + <code>box-pack</code> + <code>box-align</code></h3><p>适合子元素不知道宽高的情况<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;parent&quot;&gt;</span><br><span class="line">     &lt;div class=&quot;child&quot;&gt;Demo&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">.parent&#123;</span><br><span class="line">    height: 100px;</span><br><span class="line">    width:100px;</span><br><span class="line">    border:1px solid red;</span><br><span class="line">    display: -webkit-box;</span><br><span class="line">    -webkit-box-align: center;</span><br><span class="line">    -webkit-box-pack: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="5-绝对定位-把top-right-left-bottom四方向都设置为0；"><a href="#5-绝对定位-把top-right-left-bottom四方向都设置为0；" class="headerlink" title="5.绝对定位 + 把top|right|left|bottom四方向都设置为0；"></a>5.绝对定位 + 把<code>top|right|left|bottom</code>四方向都设置为0；</h3><h3 id="6-table方法"><a href="#6-table方法" class="headerlink" title="6.table方法"></a>6.table方法</h3><p><code>table-cell</code> + <code>text-align</code> + <code>vertical-align</code> + <code>inline-block</code></p>
-<pre><code>vertical-align的百分比是相对于 line-height 设置的，不是相对于字号或者别的元素的属性。切记
-</code></pre><p>注意：如果不知道子元素的宽高，用<code>1</code>、<code>4</code>种方法。</p>
-<p><a href="https://codepen.io/singsingasong/pen/MqryRd" target="_blank" rel="noopener">参考我的codepen</a></p>
-<h5 id="面试时面试官常问-不定宽、高的情况下，怎么水平、垂直居中？"><a href="#面试时面试官常问-不定宽、高的情况下，怎么水平、垂直居中？" class="headerlink" title="面试时面试官常问:不定宽、高的情况下，怎么水平、垂直居中？"></a>面试时面试官常问:不定宽、高的情况下，怎么水平、垂直居中？</h5><h2 id="二、文本-水平垂直居中"><a href="#二、文本-水平垂直居中" class="headerlink" title="二、文本 水平垂直居中"></a>二、文本 水平垂直居中</h2><p> <code>line-height</code> + <code>height</code> + <code>text-align</code><br>让 line-height = height<br><a href="https://codepen.io/singsingasong/pen/vzpyNN?editors=1100" target="_blank" rel="noopener">代码：我的codepen</a></p>
-<h3 id="多行文本"><a href="#多行文本" class="headerlink" title="多行文本"></a>多行文本</h3><p><code>table</code>+<code>verticle-align</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=&quot;display:table;height:400px;&quot;&gt;</span><br><span class="line">    &lt;span style=&quot;display:table-cell;vertical-align:middle;&quot;&gt;你要填写的内容你好&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
-
+        <h2 id="一、div-水平垂直居中"><a href="#一、div-水平垂直居中" class="headerlink" title="一、div 水平垂直居中"></a>一、div 水平垂直居中</h2><p> 1.flex方法<br><code>display:flex</code> + <code>align-items</code> + <code>justify-content</code></p>
+<p>2.绝对定位 + <code>margin</code> （需设置子元素宽高）<br><strong><em>需要设置父元素的宽高</em></strong><br>
+        
+          <a class="article-more-a" href="/2019/03/27/CSS3/水平垂直居中/#more">more >></a>
+        
       
 
       
-    </div>
+    </p></div>
     <div class="article-info article-info-index">
       
       
@@ -572,18 +563,9 @@
       
         <p><a href="https://segmentfault.com/a/1190000013647777#articleHeader0" target="_blank" rel="noopener">BFC文章参考</a></p>
 <p>同一个BFC中的div之间会存在外边距重合：<br><img src="media/15375205343584.jpg" alt></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">div&#123;</span><br><span class="line">    width: 100px;</span><br><span class="line">    height: 100px;</span><br><span class="line">    background: lightblue;</span><br><span class="line">    margin: 100px;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
-<p>因为两个 div 元素都处于同一个 BFC 容器下 (这里指 body 元素) 所以第一个 div 的下边距和第二个 div 的上边距发生了重叠，所以两个盒子之间距离只有 100px，而不是 200px。</p>
-<h4 id="解决办法-放到不同的BFC中去"><a href="#解决办法-放到不同的BFC中去" class="headerlink" title="解决办法:放到不同的BFC中去"></a>解决办法:放到不同的BFC中去</h4><p><a href="https://codepen.io/singsingasong/pen/JazbzQ" target="_blank" rel="noopener">BFC demo</a></p>
-<h3 id="BFC能清除浮动"><a href="#BFC能清除浮动" class="headerlink" title="BFC能清除浮动"></a>BFC能清除浮动</h3><p>因为BFC有一个重要的特性是，BFC区域和float元素不会发生重叠。</p>
-<p>所以在float的元素外面，包一个父级div，让这个父级div<code>overflow:hidden</code>，创建一个BFC区域，就可以解决高度塌陷问题。</p>
-<h3 id="还有哪些常见特性？"><a href="#还有哪些常见特性？" class="headerlink" title="还有哪些常见特性？"></a>还有哪些常见特性？</h3><ol>
-<li>和float不重合，可以清除浮动</li>
-<li>从上到下垂直排列，盒子间距由margin决定</li>
-<li>同一个BFC会出现<strong>垂直外边</strong>距重合问题</li>
-<li>独立的元素，BFC里面的布局不影响外面的元素</li>
-</ol>
-
+        
+          <a class="article-more-a" href="/2019/03/27/CSS3/bfc/#more">more >></a>
+        
       
 
       
@@ -596,11 +578,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">BFC</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">BFC</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
         		</li>
       		
 		</ul>
@@ -660,17 +642,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="transition-过渡：比如-transition-all-0-5s"><a href="#transition-过渡：比如-transition-all-0-5s" class="headerlink" title="transition 过渡：比如 transition:all 0.5s"></a>transition 过渡：比如 <code>transition:all 0.5s</code></h3><h3 id="transform-变形：缩放、旋转、移动、倾斜"><a href="#transform-变形：缩放、旋转、移动、倾斜" class="headerlink" title="transform 变形：缩放、旋转、移动、倾斜"></a>transform 变形：缩放、旋转、移动、倾斜</h3><h5 id="translate-移动：translate只是transform的一个属性值，即移动"><a href="#translate-移动：translate只是transform的一个属性值，即移动" class="headerlink" title="translate 移动：translate只是transform的一个属性值，即移动"></a><code>translate</code> 移动：translate只是transform的一个属性值，即移动</h5><h3 id="animation-动画：有6个属性"><a href="#animation-动画：有6个属性" class="headerlink" title="animation 动画：有6个属性"></a>animation 动画：有6个属性</h3><h3 id="例子1"><a href="#例子1" class="headerlink" title="例子1"></a>例子1</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;title&gt;transition&lt;/title&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">#box &#123;</span><br><span class="line">  height: 100px;</span><br><span class="line">  width: 100px;</span><br><span class="line">  background: green;</span><br><span class="line">  transition: transform 1s ease-in 1s;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#box:hover &#123;</span><br><span class="line">    transform: rotate(180deg) scale(.5, .5);</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div id=&quot;box&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<p>transition 产生动画的条件是 它所设置的<code>property</code>发生变化，需要<code>事件驱动</code>.</p>
-<h5 id="不足："><a href="#不足：" class="headerlink" title="不足："></a>不足：</h5><p>1.事件驱动<br>2.不会重复，除非重复触发<br>3.只能定义两个状态：开始和结束，无中间状态。</p>
-<h5 id="语法：transition-property-duration-timing-function-delay"><a href="#语法：transition-property-duration-timing-function-delay" class="headerlink" title="语法：transition: property duration timing-function delay;"></a>语法：<code>transition: property duration timing-function delay;</code></h5><h4 id="例子2"><a href="#例子2" class="headerlink" title="例子2"></a>例子2</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line"></span><br><span class="line">.box &#123;</span><br><span class="line">  height: 100px;</span><br><span class="line">  width: 100px;</span><br><span class="line">  border: 15px solid black;</span><br><span class="line">  animation: changebox 1s ease-in-out 1s infinite alternate running forwards;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.box:hover &#123;</span><br><span class="line">    animation-play-state: paused;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@keyframes changebox &#123;</span><br><span class="line"></span><br><span class="line">  10% &#123;</span><br><span class="line">      background: red;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  50% &#123;</span><br><span class="line">      width: 80px;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  70% &#123;</span><br><span class="line">      border: 15px solid yellow;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  100% &#123;</span><br><span class="line">    width: 180px;</span><br><span class="line">    height: 180px;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">    &lt;div class=&quot;box&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
-<p>animation就是好多个transition的叠加</p>
-<h2 id="需求：绕着某个原点旋转360"><a href="#需求：绕着某个原点旋转360" class="headerlink" title="需求：绕着某个原点旋转360"></a>需求：绕着某个原点旋转360</h2><p>页面加载完就自动旋转，不需要事件触发，且一直转–&gt;animation</p>
-
+        <h3 id="transition-过渡：比如-transition-all-0-5s"><a href="#transition-过渡：比如-transition-all-0-5s" class="headerlink" title="transition 过渡：比如 transition:all 0.5s"></a>transition 过渡：比如 <code>transition:all 0.5s</code></h3><h3 id="transform-变形：缩放、旋转、移动、倾斜"><a href="#transform-变形：缩放、旋转、移动、倾斜" class="headerlink" title="transform 变形：缩放、旋转、移动、倾斜"></a>transform 变形：缩放、旋转、移动、倾斜</h3><p> <code>translate</code> 移动：translate只是transform的一个属性值，即移动</p>
+<p>animation 动画：有6个属性<br>
+        
+          <a class="article-more-a" href="/2019/03/27/CSS3/动画/#more">more >></a>
+        
       
 
       
-    </div>
+    </p></div>
     <div class="article-info article-info-index">
       
       
@@ -694,6 +674,86 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/03/27/CSS3/动画/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-跨域问题/三大类跨域问题之AJAX跨域" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/27/跨域问题/三大类跨域问题之AJAX跨域/">三大类跨域问题之AJAX跨域</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/27/跨域问题/三大类跨域问题之AJAX跨域/" class="archive-article-date">
+  	<time datetime="2019-02-27T09:07:22.161Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>跨域是浏览器的安全策略，是为了控制js不操作不同域的数据</p>
+</blockquote>
+<p>1.cookie跨域<br>2.DOM无法获得<br>3.AJAX请求不能发送</p>
+<p>本文讨论上述第3种。<br>
+        
+          <a class="article-more-a" href="/2019/02/27/跨域问题/三大类跨域问题之AJAX跨域/#more">more >></a>
+        
+      
+
+      
+    </p></div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">跨域</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/27/跨域问题/三大类跨域问题之AJAX跨域/">展开全文 >></a>
         </p>
       
 
@@ -887,86 +947,6 @@
 
 
   
-    <article id="post-跨域问题/三大类跨域问题之AJAX跨域" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/27/跨域问题/三大类跨域问题之AJAX跨域/">三大类跨域问题之AJAX跨域</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/27/跨域问题/三大类跨域问题之AJAX跨域/" class="archive-article-date">
-  	<time datetime="2019-02-27T09:07:22.161Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>跨域是浏览器的安全策略，是为了控制js不操作不同域的数据</p>
-</blockquote>
-<p>1.cookie跨域<br>2.DOM无法获得<br>3.AJAX请求不能发送</p>
-<p>本文讨论上述第3种。<br>
-        
-          <a class="article-more-a" href="/2019/02/27/跨域问题/三大类跨域问题之AJAX跨域/#more">more >></a>
-        
-      
-
-      
-    </p></div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">跨域</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/27/跨域问题/三大类跨域问题之AJAX跨域/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -1064,15 +1044,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">bootstrap</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">响应式</a>
+                <a href="javascript:void(0)" class="js-tag color3">3d</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1080,7 +1052,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">3d</a>
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">bootstrap</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">响应式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">个人博客</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1088,11 +1076,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">动画</a>
+                <a href="javascript:void(0)" class="js-tag color5">圣杯和双飞翼的区别</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">圣杯和双飞翼的区别</a>
+                <a href="javascript:void(0)" class="js-tag color3">动画</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1112,15 +1100,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">个人博客</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vscode插件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1133,10 +1117,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
