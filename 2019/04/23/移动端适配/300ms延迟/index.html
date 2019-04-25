@@ -7,19 +7,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Sing Sing a Song</title>
+  <title>300ms delay | Sing Sing a Song</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="穿透问题啥事穿透？两个元素，明明不是父子级关系，可能是同级的兄弟元素，A的z-index比B 要高。他们位置上有所重叠。点击A，A消失后，B的click事件也被触发了。 怎么解决？在touch事件的某个处理函数中 执行 e.preverDefault即可">
+  <meta name="description" content="一.什么是300ms延迟？我们点击页面的时候移动端浏览器并不是立即作出反应，而是会等上一小会儿才会出现点击的效果 二.为什么有延迟？因为移动端有双击缩放事件，所以当我们点击touch屏幕后，浏览器会等一会儿，确定是否会点击第二次形成缩放事件。 三.怎么解决？方案1：禁用缩放。。。。 方案2 ：&amp;lt;meta content=&amp;quot;width=device-width&amp;quot;&amp;gt;浏览">
+<meta name="keywords" content="移动端,前端">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Sing Sing a Song">
-<meta property="og:url" content="http://yoursite.com/2019/03/27/移动端适配/穿透问题/index.html">
+<meta property="og:title" content="300ms delay">
+<meta property="og:url" content="http://yoursite.com/2019/04/23/移动端适配/300ms延迟/index.html">
 <meta property="og:site_name" content="Sing Sing a Song">
-<meta property="og:description" content="穿透问题啥事穿透？两个元素，明明不是父子级关系，可能是同级的兄弟元素，A的z-index比B 要高。他们位置上有所重叠。点击A，A消失后，B的click事件也被触发了。 怎么解决？在touch事件的某个处理函数中 执行 e.preverDefault即可">
+<meta property="og:description" content="一.什么是300ms延迟？我们点击页面的时候移动端浏览器并不是立即作出反应，而是会等上一小会儿才会出现点击的效果 二.为什么有延迟？因为移动端有双击缩放事件，所以当我们点击touch屏幕后，浏览器会等一会儿，确定是否会点击第二次形成缩放事件。 三.怎么解决？方案1：禁用缩放。。。。 方案2 ：&amp;lt;meta content=&amp;quot;width=device-width&amp;quot;&amp;gt;浏览">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-27T08:24:34.000Z">
+<meta property="og:updated_time" content="2019-04-25T14:07:57.158Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Sing Sing a Song">
-<meta name="twitter:description" content="穿透问题啥事穿透？两个元素，明明不是父子级关系，可能是同级的兄弟元素，A的z-index比B 要高。他们位置上有所重叠。点击A，A消失后，B的click事件也被触发了。 怎么解决？在touch事件的某个处理函数中 执行 e.preverDefault即可">
+<meta name="twitter:title" content="300ms delay">
+<meta name="twitter:description" content="一.什么是300ms延迟？我们点击页面的时候移动端浏览器并不是立即作出反应，而是会等上一小会儿才会出现点击的效果 二.为什么有延迟？因为移动端有双击缩放事件，所以当我们点击touch屏幕后，浏览器会等一会儿，确定是否会点击第二次形成缩放事件。 三.怎么解决？方案1：禁用缩放。。。。 方案2 ：&amp;lt;meta content=&amp;quot;width=device-width&amp;quot;&amp;gt;浏览">
   
   <link rel="alternative" href="/atom.xml" title="Sing Sing a Song" type="application/atom+xml">
   
@@ -139,13 +140,34 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-移动端适配/穿透问题" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-移动端适配/300ms延迟" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      300ms delay
+    </h1>
+  
+
+        
+        <a href="/2019/04/23/移动端适配/300ms延迟/" class="archive-article-date">
+  	<time datetime="2019-04-23T11:19:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-23</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="穿透问题"><a href="#穿透问题" class="headerlink" title="穿透问题"></a>穿透问题</h1><h2 id="啥事穿透？"><a href="#啥事穿透？" class="headerlink" title="啥事穿透？"></a>啥事穿透？</h2><p>两个元素，明明不是父子级关系，可能是同级的兄弟元素，A的z-index比B 要高。他们位置上有所重叠。点击A，A消失后，B的<code>click</code>事件也被触发了。</p>
-<h2 id="怎么解决？"><a href="#怎么解决？" class="headerlink" title="怎么解决？"></a>怎么解决？</h2><p>在touch事件的某个处理函数中 执行 <code>e.preverDefault</code>即可</p>
+        <h2 id="一-什么是300ms延迟？"><a href="#一-什么是300ms延迟？" class="headerlink" title="一.什么是300ms延迟？"></a>一.什么是300ms延迟？</h2><p>我们点击页面的时候移动端浏览器并不是立即作出反应，而是会等上一小会儿才会出现点击的效果</p>
+<h2 id="二-为什么有延迟？"><a href="#二-为什么有延迟？" class="headerlink" title="二.为什么有延迟？"></a>二.为什么有延迟？</h2><p>因为移动端有双击缩放事件，所以当我们点击touch屏幕后，浏览器会等一会儿，确定是否会点击第二次形成缩放事件。</p>
+<h2 id="三-怎么解决？"><a href="#三-怎么解决？" class="headerlink" title="三.怎么解决？"></a>三.怎么解决？</h2><h4 id="方案1：禁用缩放"><a href="#方案1：禁用缩放" class="headerlink" title="方案1：禁用缩放"></a>方案1：禁用缩放</h4><p>。。。。</p>
+<h4 id="方案2-："><a href="#方案2-：" class="headerlink" title="方案2 ："></a>方案2 ：</h4><p><code>&lt;meta content=&quot;width=device-width&quot;&gt;</code><br>浏览器知道网页已经响应式布局，会自动取消缩放事件</p>
+<p>不是完全禁用缩放，只是禁用了浏览器默认的<strong>双击缩放</strong>行为，但用户仍然可以通过双指缩放操作来缩放页面。</p>
+<h4 id="方案3："><a href="#方案3：" class="headerlink" title="方案3："></a>方案3：</h4><p>在touch事件的某个处理函数中 执行 <code>e.preverDefault</code>即可</p>
+<p>touch行为比click要优先，那在touch的时候组织click事件触发，也是种思路。</p>
+<p><a href="https://github.com/n2meetu/InterviewPreparation/blob/master/%E7%A7%BB%E5%8A%A8%E7%AB%AF/delay300ms.html" target="_blank" rel="noopener">拿这个html自己试一下</a></p>
 
       
 
@@ -180,6 +202,21 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">移动端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -230,7 +267,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/03/27/移动端适配/穿透问题/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/04/23/移动端适配/300ms延迟/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -244,18 +281,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/03/27/CSS3/水平垂直居中/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/04/23/移动端适配/移动端适配/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          水平垂直居中
+          适配问题
         
       </div>
     </a>
   
   
-    <a href="/2019/03/27/CSS3/预处理器/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">CSS预处理器</div>
+    <a href="/2019/04/23/移动端适配/1px问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">1px问题</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -402,15 +439,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">3d</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">em 和 rem</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">BFC</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -422,7 +459,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BFC</a>
+                <a href="javascript:void(0)" class="js-tag color5">圣杯和双飞翼的区别</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -434,11 +471,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">圣杯和双飞翼的区别</a>
+                <a href="javascript:void(0)" class="js-tag color2">水平垂直居中</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">水平垂直居中</a>
+                <a href="javascript:void(0)" class="js-tag color5">清除浮动</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">定位</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -454,11 +495,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">清除浮动</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">定位</a>
+                <a href="javascript:void(0)" class="js-tag color3">3d</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -466,7 +503,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">1px问题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">移动端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -475,10 +528,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
             
             <div class="clearfix"></div>

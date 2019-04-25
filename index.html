@@ -223,6 +223,362 @@
 
 
   
+    <article id="post-移动端适配/穿透问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/23/移动端适配/穿透问题/">穿透问题</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/23/移动端适配/穿透问题/" class="archive-article-date">
+  	<time datetime="2019-04-23T11:19:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="啥事穿透？"><a href="#啥事穿透？" class="headerlink" title="啥事穿透？"></a>啥事穿透？</h2><p>两个元素，明明不是父子级关系，可能是同级的兄弟元素，A的z-index比B 要高。他们位置上有所重叠。点击A，A消失后，B的<code>click</code>事件也被触发了。</p>
+<h2 id="怎么解决？"><a href="#怎么解决？" class="headerlink" title="怎么解决？"></a>怎么解决？</h2><p>在touch事件的某个处理函数中 执行 <code>e.preverDefault</code>即可</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">移动端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/23/移动端适配/穿透问题/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-移动端适配/移动端适配" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/23/移动端适配/移动端适配/">适配问题</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/23/移动端适配/移动端适配/" class="archive-article-date">
+  	<time datetime="2019-04-23T11:19:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>怎么适配iphone6<br>1px问题</p>
+<h3 id="为什么页面与设计稿会出现偏差？"><a href="#为什么页面与设计稿会出现偏差？" class="headerlink" title="为什么页面与设计稿会出现偏差？"></a>为什么页面与设计稿会出现偏差？</h3><p><code>dpr=设备像素/ css像素</code>，只有dpr等于1的时候，实际效果和设计稿的尺寸比例才是1:1。</p>
+<p>因为iPhone6的DPR（设备像素比）为2，设备像素为750，所以iPhone6的理想视口尺寸为375px。</p>
+<p>因为设计稿是基于设备像素，页面是基于css像素的。css中的宽度是基于理想视口的（宽度375px），设计图上是基于设备宽度750px，所以尺寸不对。</p>
+<hr>
+<h6 id="怎么处理？"><a href="#怎么处理？" class="headerlink" title="怎么处理？"></a>怎么处理？</h6><p><code>init-scale=0.5</code> 。<br>缺陷：但是宽度不能自适应</p>
+<hr>
+<h2 id="⭐️rem大法"><a href="#⭐️rem大法" class="headerlink" title="⭐️rem大法"></a>⭐️rem大法</h2><p>基于<code>html</code>标签的<code>font-size</code>设置的</p>
+<h3 id="手淘的做法："><a href="#手淘的做法：" class="headerlink" title="手淘的做法："></a>手淘的做法：</h3><p>把缩放尺寸设置成dpr的倒数。</p>
+<p>读设备宽度，动态设置meta标签的 content属性中的<code>maximun</code>,<code>minimum</code>,<code>user-scable</code>值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;title&gt;&lt;/title&gt;</span><br><span class="line">    &lt;meta charset=&quot;utf-8&quot; /&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;&quot; /&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">    body&#123;</span><br><span class="line">        margin: 0;</span><br><span class="line">        padding: 0;</span><br><span class="line">    &#125;</span><br><span class="line">    .box&#123;</span><br><span class="line">        width: 2.66666667rem;</span><br><span class="line">        height: 2.66666667rem;</span><br><span class="line">        background: red;</span><br><span class="line">    &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">    &lt;div class=&quot;box&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script&gt;</span><br><span class="line">    var scale = 1 / window.devicePixelRatio;</span><br><span class="line">    document.querySelector(&apos;meta[name=&quot;viewport&quot;]&apos;).setAttribute(&apos;content&apos;,&apos;width=device-width,initial-scale=&apos; + scale + &apos;, maximum-scale=&apos; + scale + &apos;, minimum-scale=&apos; + scale + &apos;, user-scalable=no&apos;);</span><br><span class="line"></span><br><span class="line">    document.documentElement.style.fontSize = document.documentElement.clientWidth / 10 + &apos;px&apos;;</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="网易的做法"><a href="#网易的做法" class="headerlink" title="网易的做法"></a>网易的做法</h3><p>现在的设计稿都是750px宽度（p6的宽），那要想实现 <code>css样式：设计图=1：100</code> 这种比较方便的折算方式，font-size就要设置成7.5px；</p>
+<p>也就是说<code>1rem = 7.5px</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;title&gt;&lt;/title&gt;</span><br><span class="line">    &lt;meta charset=&quot;utf-8&quot; /&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no&quot; /&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">    body&#123;</span><br><span class="line">        margin: 0;</span><br><span class="line">        padding: 0;</span><br><span class="line">    &#125;</span><br><span class="line">    .box&#123;</span><br><span class="line">        width: 2rem;</span><br><span class="line">        height: 2rem;</span><br><span class="line">        background: red;</span><br><span class="line">    &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">    &lt;div class=&quot;box&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script&gt;</span><br><span class="line">    document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + &apos;px&apos;;</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>rem是为了实现移动端自适应布局。通过在<code>html</code>元素下设置<code>font-size</code>定义。</p>
+<p>另外，<strong>手淘的做法</strong>是通过判断设备的dpr，将缩放规模scale设置为dpr的倒数，再用js动态设置<code>meta</code>标签的<code>content</code>属性和font-size基准值的大小。</p>
+<p><strong>网易的做法</strong>是，禁用用户缩放，scale始终为1，将font-size设置为625%，即 1rem=100px。</p>
+<hr>
+<h3 id="1px问题"><a href="#1px问题" class="headerlink" title="1px问题"></a>1px问题</h3><p>如何实现移动端的1px边框</p>
+<h5 id="方法一：transformY-scale-50"><a href="#方法一：transformY-scale-50" class="headerlink" title="方法一：transformY:scale(50%)"></a>方法一：<code>transformY:scale(50%)</code></h5><h5 id="方法二："><a href="#方法二：" class="headerlink" title="方法二："></a>方法二：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">border-width:0 0 2px 0;</span><br><span class="line">border-image:url(&quot;xxx.png&quot;) 0 0 2 0 stretch // 图片地址 上下剪切 左右剪切 上下边宽 左右边宽 图片拉伸</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="vm-vh-rem大法"><a href="#vm-vh-rem大法" class="headerlink" title="vm/vh+rem大法"></a>vm/vh+rem大法</h2><p>vm/vh是未来的趋势</p>
+<h5 id="rem方式弊端：需要动态计算根字体大小"><a href="#rem方式弊端：需要动态计算根字体大小" class="headerlink" title="rem方式弊端：需要动态计算根字体大小"></a>rem方式弊端：需要动态计算根字体大小</h5><h4 id="做法：用vm-vh来计算根字体大小，剩下的自适应布局依旧按照rem的方法"><a href="#做法：用vm-vh来计算根字体大小，剩下的自适应布局依旧按照rem的方法" class="headerlink" title="做法：用vm/vh来计算根字体大小，剩下的自适应布局依旧按照rem的方法"></a>做法：用vm/vh来计算根字体大小，剩下的自适应布局依旧按照rem的方法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.wh(@width,@height)&#123;</span><br><span class="line">	width: @width/100rem;</span><br><span class="line">	height: @height/100rem;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="https://aotu.io/notes/2017/04/28/2017-4-28-CSS-viewport-units/index.html" target="_blank" rel="noopener">用vm/vh做适配页面</a></p>
+<h3 id="⭐️关于vm-vh"><a href="#⭐️关于vm-vh" class="headerlink" title="⭐️关于vm/vh"></a>⭐️关于vm/vh</h3><h5 id="1-与-百分比的区别"><a href="#1-与-百分比的区别" class="headerlink" title="1. 与%百分比的区别"></a>1. 与%百分比的区别</h5><p>vm/vh 是基于视窗的<br>%基于父元素</p>
+<h5 id="2-使用场景"><a href="#2-使用场景" class="headerlink" title="2. 使用场景"></a>2. 使用场景</h5><p>随着页面不同，文字图片缩小放大（适配页面）</p>
+<h5 id="3-与rem的区别"><a href="#3-与rem的区别" class="headerlink" title="3. 与rem的区别"></a>3. 与rem的区别</h5><p>vm/vh没有最大、最小宽大的限制（设备很小的时候，图文会缩得特别特别小……）</p>
+<h6 id="措施："><a href="#措施：" class="headerlink" title="措施："></a>措施：</h6><p>1.解决背景过小问题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">body&#123;</span><br><span class="line">    min-width:xxx px;</span><br><span class="line">    max-width: xxx px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>2.媒体查询限制根文字大小（解决文字过小问题）</p>
+<figure class="highlight html"><figcaption><span>&#123;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">    font-size: ($vw_fontsize / ($vw_design / 2)) * 100vw; </span><br><span class="line">    // 同时，通过Media Queries 限制根元素最大最小值</span><br><span class="line">    @media screen and (max-width: 320px) &#123;</span><br><span class="line">        font-size: 64px;</span><br><span class="line">    &#125;</span><br><span class="line">    @media screen and (min-width: 540px) &#123;</span><br><span class="line">        font-size: 108px;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">移动端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/23/移动端适配/移动端适配/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-移动端适配/300ms延迟" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/23/移动端适配/300ms延迟/">300ms delay</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/23/移动端适配/300ms延迟/" class="archive-article-date">
+  	<time datetime="2019-04-23T11:19:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一-什么是300ms延迟？"><a href="#一-什么是300ms延迟？" class="headerlink" title="一.什么是300ms延迟？"></a>一.什么是300ms延迟？</h2><p>我们点击页面的时候移动端浏览器并不是立即作出反应，而是会等上一小会儿才会出现点击的效果</p>
+<h2 id="二-为什么有延迟？"><a href="#二-为什么有延迟？" class="headerlink" title="二.为什么有延迟？"></a>二.为什么有延迟？</h2><p>因为移动端有双击缩放事件，所以当我们点击touch屏幕后，浏览器会等一会儿，确定是否会点击第二次形成缩放事件。</p>
+<h2 id="三-怎么解决？"><a href="#三-怎么解决？" class="headerlink" title="三.怎么解决？"></a>三.怎么解决？</h2><h4 id="方案1：禁用缩放"><a href="#方案1：禁用缩放" class="headerlink" title="方案1：禁用缩放"></a>方案1：禁用缩放</h4><p>。。。。</p>
+<h4 id="方案2-："><a href="#方案2-：" class="headerlink" title="方案2 ："></a>方案2 ：</h4><p><code>&lt;meta content=&quot;width=device-width&quot;&gt;</code><br>浏览器知道网页已经响应式布局，会自动取消缩放事件</p>
+<p>不是完全禁用缩放，只是禁用了浏览器默认的<strong>双击缩放</strong>行为，但用户仍然可以通过双指缩放操作来缩放页面。</p>
+<h4 id="方案3："><a href="#方案3：" class="headerlink" title="方案3："></a>方案3：</h4><p>在touch事件的某个处理函数中 执行 <code>e.preverDefault</code>即可</p>
+<p>touch行为比click要优先，那在touch的时候组织click事件触发，也是种思路。</p>
+<p><a href="https://github.com/n2meetu/InterviewPreparation/blob/master/%E7%A7%BB%E5%8A%A8%E7%AB%AF/delay300ms.html" target="_blank" rel="noopener">拿这个html自己试一下</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">移动端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/23/移动端适配/300ms延迟/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-移动端适配/1px问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/23/移动端适配/1px问题/">1px问题</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/23/移动端适配/1px问题/" class="archive-article-date">
+  	<time datetime="2019-04-23T11:19:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://peunzhang.cnblogs.com/" target="_blank" rel="noopener">1px问题</a><br><a href="https://github.com/AlloyTeam/Mars/blob/master/solutions/border-1px.md#%E4%B8%80%E4%BD%BF%E7%94%A8border-image%E5%AE%9E%E7%8E%B0%E7%B1%BB%E4%BC%BCios7%E7%9A%841px%E5%BA%95%E8%BE%B9" target="_blank" rel="noopener">github文章参考</a></p>
+<p><a href="https://segmentfault.com/a/1190000007604842" target="_blank" rel="noopener">推荐参考</a><br><a href="https://juejin.im/entry/584e427361ff4b006cd22c7c" target="_blank" rel="noopener">参考2</a></p>
+<p>##1、 原因<br>因为dpr = 2;我们用1px设置border的宽度，在设备上就会被放大成两倍粗的线条。</p>
+<h4 id="比如需要1px的下边框"><a href="#比如需要1px的下边框" class="headerlink" title="比如需要1px的下边框"></a>比如需要1px的下边框</h4><h2 id="2、解决方法"><a href="#2、解决方法" class="headerlink" title="2、解决方法"></a>2、解决方法</h2><h3 id="2-1-border-image"><a href="#2-1-border-image" class="headerlink" title="2.1 border-image"></a>2.1 border-image</h3><p>准备2px高度的图片，<br>一半透明，一半有颜色。<br><code>border-width: 0 0 2px 0;</code>，<code>border-image:url(&quot;xxx.png&quot; 0 0 2 0 stretch)</code></p>
+<h3 id="2-2-transform-scaleY-0-5"><a href="#2-2-transform-scaleY-0-5" class="headerlink" title="2.2 transform:scaleY(0.5)"></a>2.2 transform:scaleY(0.5)</h3>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">1px问题</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">移动端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/23/移动端适配/1px问题/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Hexo相关/hexo发布博客的日常操作" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -632,275 +988,6 @@
 
 
   
-    <article id="post-CSS3/em和rem的区别" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/27/CSS3/em和rem的区别/">em和rem的区别</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/27/CSS3/em和rem的区别/" class="archive-article-date">
-  	<time datetime="2019-03-27T08:24:28.561Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>美团面试问题之一。。</p>
-<h2 id="✨em是继承自父元素的"><a href="#✨em是继承自父元素的" class="headerlink" title="✨em是继承自父元素的"></a>✨em是继承自父元素的</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- html --&gt;</span><br><span class="line">&lt;div class=&quot;parent&quot;&gt;父元素</span><br><span class="line">  &lt;div class=&quot;child&quot;&gt;子元素</span><br><span class="line">      &lt;p class=&quot;grandson&quot;&gt;孙子&lt;/p&gt;</span><br><span class="line">   &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--css--&gt;</span><br><span class="line">.parend&#123;</span><br><span class="line">  font-size:48px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.child&#123;</span><br><span class="line">  font-size:0.9em;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.grandson&#123;</span><br><span class="line">  font-size:0.8em;</span><br><span class="line">&#125;</span><br><span class="line">/* grandson继承child，child继承parent  */</span><br></pre></td></tr></table></figure>
-<p><a href="https://codepen.io/singsingasong/pen/eLrzdQ?editors=1100" target="_blank" rel="noopener">demo</a></p>
-<hr>
-<h2 id="✨rem"><a href="#✨rem" class="headerlink" title="✨rem"></a>✨rem</h2><h5 id="html的font-size"><a href="#html的font-size" class="headerlink" title="html的font-size"></a>html的font-size</h5><h5 id="1rem-根文字大小"><a href="#1rem-根文字大小" class="headerlink" title="1rem = 根文字大小"></a>1rem = 根文字大小</h5>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">em 和 rem</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/27/CSS3/em和rem的区别/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-移动端适配/300ms延迟" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="300ms-delay"><a href="#300ms-delay" class="headerlink" title="300ms delay"></a>300ms delay</h1><h2 id="一-什么是300ms延迟？"><a href="#一-什么是300ms延迟？" class="headerlink" title="一.什么是300ms延迟？"></a>一.什么是300ms延迟？</h2><p>我们点击页面的时候移动端浏览器并不是立即作出反应，而是会等上一小会儿才会出现点击的效果</p>
-<h2 id="二-为什么有延迟？"><a href="#二-为什么有延迟？" class="headerlink" title="二.为什么有延迟？"></a>二.为什么有延迟？</h2><p>因为移动端有双击缩放事件，所以当我们点击touch屏幕后，浏览器会等一会儿，确定是否会点击第二次形成缩放事件。</p>
-<h2 id="三-怎么解决？"><a href="#三-怎么解决？" class="headerlink" title="三.怎么解决？"></a>三.怎么解决？</h2><h4 id="方案1：禁用缩放"><a href="#方案1：禁用缩放" class="headerlink" title="方案1：禁用缩放"></a>方案1：禁用缩放</h4><p>。。。。</p>
-<h4 id="方案2-："><a href="#方案2-：" class="headerlink" title="方案2 ："></a>方案2 ：</h4><p><code>&lt;meta content=&quot;width=device-width&quot;&gt;</code><br>浏览器知道网页已经响应式布局，会自动取消缩放事件</p>
-<p>不是完全禁用缩放，只是禁用了浏览器默认的<strong>双击缩放</strong>行为，但用户仍然可以通过双指缩放操作来缩放页面。</p>
-<h4 id="方案3："><a href="#方案3：" class="headerlink" title="方案3："></a>方案3：</h4><p>在touch事件的某个处理函数中 执行 <code>e.preverDefault</code>即可</p>
-<p>touch行为比click要优先，那在touch的时候组织click事件触发，也是种思路。</p>
-<p><a href="https://github.com/n2meetu/InterviewPreparation/blob/master/%E7%A7%BB%E5%8A%A8%E7%AB%AF/delay300ms.html" target="_blank" rel="noopener">拿这个html自己试一下</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/27/移动端适配/300ms延迟/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-CSS3/清除浮动的方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/27/CSS3/清除浮动的方法/">清除浮动的方法</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/27/CSS3/清除浮动的方法/" class="archive-article-date">
-  	<time datetime="2019-03-27T08:24:27.359Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="https://codepen.io/singsingasong/pen/GXejMP?editors=1100" target="_blank" rel="noopener">清除浮动的原理</a></p>
-<h3 id="方案一：clear-both"><a href="#方案一：clear-both" class="headerlink" title="方案一：clear:both"></a>方案一：<code>clear:both</code></h3><p>在包含浮动元素的父级div内，在所有div的后面加入一个没有内容的<strong><em>块级</em></strong> 元素(必须是块级）。</p>
-<h4 id="原理："><a href="#原理：" class="headerlink" title="原理："></a>原理：</h4><p>告诉浏览器，我的左右两边都要清除浮动。但是因为浮动元素的位置已经确定了，所以为了满足div.clear的需求，浏览器只能把div.clear渲染在浮动元素的下面，最后<em><strong>父级元素的高度也被撑开</strong></em>了。（因为div.clear是在正常的文档流中的，它肯定还是要待在父级元素里面，所以父级元素想要包含它，只能增加自己的高度）</p>
-<h3 id="方案二：“：after”-伪元素"><a href="#方案二：“：after”-伪元素" class="headerlink" title="方案二：“：after” 伪元素"></a>方案二：“<code>：after</code>” 伪元素</h3><p>原理同上，只不过是生成空白div的方式不同而已；<br><img src="media/15375198132528.jpg" alt="-w703"></p>
-<h3 id="方案三：overflow"><a href="#方案三：overflow" class="headerlink" title="方案三：overflow"></a>方案三：<code>overflow</code></h3><p>原理：BFC块格式化上下文<br>让父元素<code>overflow:hidden|auto</code></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">清除浮动</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/27/CSS3/清除浮动的方法/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-移动端适配/1px问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="1px问题"><a href="#1px问题" class="headerlink" title="1px问题"></a>1px问题</h1><p><a href="http://peunzhang.cnblogs.com/" target="_blank" rel="noopener">1px问题</a><br><a href="https://github.com/AlloyTeam/Mars/blob/master/solutions/border-1px.md#%E4%B8%80%E4%BD%BF%E7%94%A8border-image%E5%AE%9E%E7%8E%B0%E7%B1%BB%E4%BC%BCios7%E7%9A%841px%E5%BA%95%E8%BE%B9" target="_blank" rel="noopener">github文章参考</a></p>
-<p><a href="https://segmentfault.com/a/1190000007604842" target="_blank" rel="noopener">推荐参考</a><br><a href="https://juejin.im/entry/584e427361ff4b006cd22c7c" target="_blank" rel="noopener">参考2</a></p>
-<p>##1、 原因<br>因为dpr = 2;我们用1px设置border的宽度，在设备上就会被放大成两倍粗的线条。</p>
-<h4 id="比如需要1px的下边框"><a href="#比如需要1px的下边框" class="headerlink" title="比如需要1px的下边框"></a>比如需要1px的下边框</h4><h2 id="2、解决方法"><a href="#2、解决方法" class="headerlink" title="2、解决方法"></a>2、解决方法</h2><h3 id="2-1-border-image"><a href="#2-1-border-image" class="headerlink" title="2.1 border-image"></a>2.1 border-image</h3><p>准备2px高度的图片，<br>一半透明，一半有颜色。<br><code>border-width: 0 0 2px 0;</code>，<code>border-image:url(&quot;xxx.png&quot; 0 0 2 0 stretch)</code></p>
-<h3 id="2-2-transform-scaleY-0-5"><a href="#2-2-transform-scaleY-0-5" class="headerlink" title="2.2 transform:scaleY(0.5)"></a>2.2 transform:scaleY(0.5)</h3>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/27/移动端适配/1px问题/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -998,15 +1085,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">3d</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">em 和 rem</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">BFC</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1018,7 +1105,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BFC</a>
+                <a href="javascript:void(0)" class="js-tag color5">圣杯和双飞翼的区别</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1030,11 +1117,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">圣杯和双飞翼的区别</a>
+                <a href="javascript:void(0)" class="js-tag color2">水平垂直居中</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">水平垂直居中</a>
+                <a href="javascript:void(0)" class="js-tag color5">清除浮动</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">定位</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1050,11 +1141,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">清除浮动</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">定位</a>
+                <a href="javascript:void(0)" class="js-tag color3">3d</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1062,7 +1149,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">1px问题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">移动端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1071,10 +1174,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
             
             <div class="clearfix"></div>

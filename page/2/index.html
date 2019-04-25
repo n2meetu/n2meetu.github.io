@@ -140,6 +140,169 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-CSS3/em和rem的区别" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/27/CSS3/em和rem的区别/">em和rem的区别</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/27/CSS3/em和rem的区别/" class="archive-article-date">
+  	<time datetime="2019-03-27T08:24:28.561Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>美团面试问题之一。。</p>
+<h2 id="✨em是继承自父元素的"><a href="#✨em是继承自父元素的" class="headerlink" title="✨em是继承自父元素的"></a>✨em是继承自父元素的</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- html --&gt;</span><br><span class="line">&lt;div class=&quot;parent&quot;&gt;父元素</span><br><span class="line">  &lt;div class=&quot;child&quot;&gt;子元素</span><br><span class="line">      &lt;p class=&quot;grandson&quot;&gt;孙子&lt;/p&gt;</span><br><span class="line">   &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--css--&gt;</span><br><span class="line">.parend&#123;</span><br><span class="line">  font-size:48px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.child&#123;</span><br><span class="line">  font-size:0.9em;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.grandson&#123;</span><br><span class="line">  font-size:0.8em;</span><br><span class="line">&#125;</span><br><span class="line">/* grandson继承child，child继承parent  */</span><br></pre></td></tr></table></figure>
+<p><a href="https://codepen.io/singsingasong/pen/eLrzdQ?editors=1100" target="_blank" rel="noopener">demo</a></p>
+<hr>
+<h2 id="✨rem"><a href="#✨rem" class="headerlink" title="✨rem"></a>✨rem</h2><h5 id="html的font-size"><a href="#html的font-size" class="headerlink" title="html的font-size"></a>html的font-size</h5><h5 id="1rem-根文字大小"><a href="#1rem-根文字大小" class="headerlink" title="1rem = 根文字大小"></a>1rem = 根文字大小</h5>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">em 和 rem</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/27/CSS3/em和rem的区别/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-CSS3/清除浮动的方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/27/CSS3/清除浮动的方法/">清除浮动的方法</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/27/CSS3/清除浮动的方法/" class="archive-article-date">
+  	<time datetime="2019-03-27T08:24:27.359Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://codepen.io/singsingasong/pen/GXejMP?editors=1100" target="_blank" rel="noopener">清除浮动的原理</a></p>
+<h3 id="方案一：clear-both"><a href="#方案一：clear-both" class="headerlink" title="方案一：clear:both"></a>方案一：<code>clear:both</code></h3><p>在包含浮动元素的父级div内，在所有div的后面加入一个没有内容的<strong><em>块级</em></strong> 元素(必须是块级）。</p>
+<h4 id="原理："><a href="#原理：" class="headerlink" title="原理："></a>原理：</h4><p>告诉浏览器，我的左右两边都要清除浮动。但是因为浮动元素的位置已经确定了，所以为了满足div.clear的需求，浏览器只能把div.clear渲染在浮动元素的下面，最后<em><strong>父级元素的高度也被撑开</strong></em>了。（因为div.clear是在正常的文档流中的，它肯定还是要待在父级元素里面，所以父级元素想要包含它，只能增加自己的高度）</p>
+<h3 id="方案二：“：after”-伪元素"><a href="#方案二：“：after”-伪元素" class="headerlink" title="方案二：“：after” 伪元素"></a>方案二：“<code>：after</code>” 伪元素</h3><p>原理同上，只不过是生成空白div的方式不同而已；<br><img src="media/15375198132528.jpg" alt="-w703"></p>
+<h3 id="方案三：overflow"><a href="#方案三：overflow" class="headerlink" title="方案三：overflow"></a>方案三：<code>overflow</code></h3><p>原理：BFC块格式化上下文<br>让父元素<code>overflow:hidden|auto</code></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">清除浮动</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/27/CSS3/清除浮动的方法/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-CSS3/水平垂直居中" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -198,55 +361,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/03/27/CSS3/水平垂直居中/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-移动端适配/穿透问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="穿透问题"><a href="#穿透问题" class="headerlink" title="穿透问题"></a>穿透问题</h1><h2 id="啥事穿透？"><a href="#啥事穿透？" class="headerlink" title="啥事穿透？"></a>啥事穿透？</h2><p>两个元素，明明不是父子级关系，可能是同级的兄弟元素，A的z-index比B 要高。他们位置上有所重叠。点击A，A消失后，B的<code>click</code>事件也被触发了。</p>
-<h2 id="怎么解决？"><a href="#怎么解决？" class="headerlink" title="怎么解决？"></a>怎么解决？</h2><p>在touch事件的某个处理函数中 执行 <code>e.preverDefault</code>即可</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/27/移动端适配/穿透问题/">展开全文 >></a>
         </p>
       
 
@@ -583,19 +697,19 @@
 
 
   
-    <article id="post-跨域问题/三大类跨域问题之AJAX跨域" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-跨域问题/三大类跨域问题之iframe跨域" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/27/跨域问题/三大类跨域问题之AJAX跨域/">三大类跨域问题之AJAX跨域</a>
+      <a class="article-title" href="/2019/02/27/跨域问题/三大类跨域问题之iframe跨域/">三大类跨域问题之iframe跨域</a>
     </h1>
   
 
         
-        <a href="/2019/02/27/跨域问题/三大类跨域问题之AJAX跨域/" class="archive-article-date">
+        <a href="/2019/02/27/跨域问题/三大类跨域问题之iframe跨域/" class="archive-article-date">
   	<time datetime="2019-02-27T09:07:22.161Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
 </a>
         
@@ -606,15 +720,20 @@
         <blockquote>
 <p>跨域是浏览器的安全策略，是为了控制js不操作不同域的数据</p>
 </blockquote>
-<p>1.cookie跨域<br>2.DOM无法获得<br>3.AJAX请求不能发送</p>
-<p>本文讨论上述第3种。<br>
+<p>共四种方法：</p>
+<ol>
+<li>片段标识符</li>
+<li>window.name（内容比较少时）</li>
+<li>window.postMessage（计算量比较大时）</li>
+<li>LocalStorage（H5的。兼容低版本时不建议用）</li>
+</ol>
         
-          <a class="article-more-a" href="/2019/02/27/跨域问题/三大类跨域问题之AJAX跨域/#more">more >></a>
+          <a class="article-more-a" href="/2019/02/27/跨域问题/三大类跨域问题之iframe跨域/#more">more >></a>
         
       
 
       
-    </p></div>
+    </div>
     <div class="article-info article-info-index">
       
       
@@ -633,7 +752,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/27/跨域问题/三大类跨域问题之AJAX跨域/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/02/27/跨域问题/三大类跨域问题之iframe跨域/">展开全文 >></a>
         </p>
       
 
@@ -742,19 +861,19 @@
 
 
   
-    <article id="post-跨域问题/三大类跨域问题之iframe跨域" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-跨域问题/三大类跨域问题之AJAX跨域" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/27/跨域问题/三大类跨域问题之iframe跨域/">三大类跨域问题之iframe跨域</a>
+      <a class="article-title" href="/2019/02/27/跨域问题/三大类跨域问题之AJAX跨域/">三大类跨域问题之AJAX跨域</a>
     </h1>
   
 
         
-        <a href="/2019/02/27/跨域问题/三大类跨域问题之iframe跨域/" class="archive-article-date">
+        <a href="/2019/02/27/跨域问题/三大类跨域问题之AJAX跨域/" class="archive-article-date">
   	<time datetime="2019-02-27T09:07:22.161Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
 </a>
         
@@ -765,20 +884,15 @@
         <blockquote>
 <p>跨域是浏览器的安全策略，是为了控制js不操作不同域的数据</p>
 </blockquote>
-<p>共四种方法：</p>
-<ol>
-<li>片段标识符</li>
-<li>window.name（内容比较少时）</li>
-<li>window.postMessage（计算量比较大时）</li>
-<li>LocalStorage（H5的。兼容低版本时不建议用）</li>
-</ol>
+<p>1.cookie跨域<br>2.DOM无法获得<br>3.AJAX请求不能发送</p>
+<p>本文讨论上述第3种。<br>
         
-          <a class="article-more-a" href="/2019/02/27/跨域问题/三大类跨域问题之iframe跨域/#more">more >></a>
+          <a class="article-more-a" href="/2019/02/27/跨域问题/三大类跨域问题之AJAX跨域/#more">more >></a>
         
       
 
       
-    </div>
+    </p></div>
     <div class="article-info article-info-index">
       
       
@@ -797,81 +911,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/27/跨域问题/三大类跨域问题之iframe跨域/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-设计模式/设计模式概述" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/27/设计模式/设计模式概述/">设计模式概述</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/27/设计模式/设计模式概述/" class="archive-article-date">
-  	<time datetime="2019-02-27T09:07:22.156Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="常见问题："><a href="#常见问题：" class="headerlink" title="常见问题："></a>常见问题：</h3><p>讲一下自己了解的js设计模式。<br>单例模式：一个对象下面只有一个实例。如果已经有了，就直接用；除非没有，那才new一个。<br>比如<code>window</code>这样的全局变量。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/27/设计模式/设计模式概述/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/02/27/跨域问题/三大类跨域问题之AJAX跨域/">展开全文 >></a>
         </p>
       
 
@@ -998,15 +1038,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">3d</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">em 和 rem</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">BFC</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1018,7 +1058,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BFC</a>
+                <a href="javascript:void(0)" class="js-tag color5">圣杯和双飞翼的区别</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1030,11 +1070,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">圣杯和双飞翼的区别</a>
+                <a href="javascript:void(0)" class="js-tag color2">水平垂直居中</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">水平垂直居中</a>
+                <a href="javascript:void(0)" class="js-tag color5">清除浮动</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">定位</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1050,11 +1094,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">清除浮动</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">定位</a>
+                <a href="javascript:void(0)" class="js-tag color3">3d</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1062,7 +1102,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">1px问题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">移动端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1071,10 +1127,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
             
             <div class="clearfix"></div>

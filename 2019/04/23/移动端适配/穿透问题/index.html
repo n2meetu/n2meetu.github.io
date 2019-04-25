@@ -7,22 +7,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>BFC 块格式化上下文 | Sing Sing a Song</title>
+  <title>穿透问题 | Sing Sing a Song</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="BFC文章参考 同一个BFC中的div之间会存在外边距重合： 123456789101112&amp;lt;head&amp;gt;div&amp;#123;    width: 100px;    height: 100px;    background: lightblue;    margin: 100px;&amp;#125;&amp;lt;/head&amp;gt;&amp;lt;body&amp;gt;    &amp;lt;div&amp;gt;&amp;lt;/div">
-<meta name="keywords" content="CSS,BFC">
+  <meta name="description" content="啥事穿透？两个元素，明明不是父子级关系，可能是同级的兄弟元素，A的z-index比B 要高。他们位置上有所重叠。点击A，A消失后，B的click事件也被触发了。 怎么解决？在touch事件的某个处理函数中 执行 e.preverDefault即可">
+<meta name="keywords" content="移动端,前端">
 <meta property="og:type" content="article">
-<meta property="og:title" content="BFC 块格式化上下文">
-<meta property="og:url" content="http://yoursite.com/2019/03/27/CSS3/bfc/index.html">
+<meta property="og:title" content="穿透问题">
+<meta property="og:url" content="http://yoursite.com/2019/04/23/移动端适配/穿透问题/index.html">
 <meta property="og:site_name" content="Sing Sing a Song">
-<meta property="og:description" content="BFC文章参考 同一个BFC中的div之间会存在外边距重合： 123456789101112&amp;lt;head&amp;gt;div&amp;#123;    width: 100px;    height: 100px;    background: lightblue;    margin: 100px;&amp;#125;&amp;lt;/head&amp;gt;&amp;lt;body&amp;gt;    &amp;lt;div&amp;gt;&amp;lt;/div">
+<meta property="og:description" content="啥事穿透？两个元素，明明不是父子级关系，可能是同级的兄弟元素，A的z-index比B 要高。他们位置上有所重叠。点击A，A消失后，B的click事件也被触发了。 怎么解决？在touch事件的某个处理函数中 执行 e.preverDefault即可">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/2019/03/27/CSS3/bfc/media/15375205343584.jpg">
-<meta property="og:updated_time" content="2019-04-25T13:57:05.933Z">
+<meta property="og:updated_time" content="2019-04-25T14:07:54.958Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="BFC 块格式化上下文">
-<meta name="twitter:description" content="BFC文章参考 同一个BFC中的div之间会存在外边距重合： 123456789101112&amp;lt;head&amp;gt;div&amp;#123;    width: 100px;    height: 100px;    background: lightblue;    margin: 100px;&amp;#125;&amp;lt;/head&amp;gt;&amp;lt;body&amp;gt;    &amp;lt;div&amp;gt;&amp;lt;/div">
-<meta name="twitter:image" content="http://yoursite.com/2019/03/27/CSS3/bfc/media/15375205343584.jpg">
+<meta name="twitter:title" content="穿透问题">
+<meta name="twitter:description" content="啥事穿透？两个元素，明明不是父子级关系，可能是同级的兄弟元素，A的z-index比B 要高。他们位置上有所重叠。点击A，A消失后，B的click事件也被触发了。 怎么解决？在touch事件的某个处理函数中 执行 e.preverDefault即可">
   
   <link rel="alternative" href="/atom.xml" title="Sing Sing a Song" type="application/atom+xml">
   
@@ -142,39 +140,28 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-CSS3/bfc" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-移动端适配/穿透问题" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      BFC 块格式化上下文
+      穿透问题
     </h1>
   
 
         
-        <a href="/2019/03/27/CSS3/bfc/" class="archive-article-date">
-  	<time datetime="2019-03-27T08:24:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-27</time>
+        <a href="/2019/04/23/移动端适配/穿透问题/" class="archive-article-date">
+  	<time datetime="2019-04-23T11:19:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="https://segmentfault.com/a/1190000013647777#articleHeader0" target="_blank" rel="noopener">BFC文章参考</a></p>
-<p>同一个BFC中的div之间会存在外边距重合：<br><img src="media/15375205343584.jpg" alt></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">div&#123;</span><br><span class="line">    width: 100px;</span><br><span class="line">    height: 100px;</span><br><span class="line">    background: lightblue;</span><br><span class="line">    margin: 100px;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
-<p>因为两个 div 元素都处于同一个 BFC 容器下 (这里指 body 元素) 所以第一个 div 的下边距和第二个 div 的上边距发生了重叠，所以两个盒子之间距离只有 100px，而不是 200px。</p>
-<h4 id="解决办法-放到不同的BFC中去"><a href="#解决办法-放到不同的BFC中去" class="headerlink" title="解决办法:放到不同的BFC中去"></a>解决办法:放到不同的BFC中去</h4><p><a href="https://codepen.io/singsingasong/pen/JazbzQ" target="_blank" rel="noopener">BFC demo</a></p>
-<h3 id="BFC能清除浮动"><a href="#BFC能清除浮动" class="headerlink" title="BFC能清除浮动"></a>BFC能清除浮动</h3><p>因为BFC有一个重要的特性是，BFC区域和float元素不会发生重叠。</p>
-<p>所以在float的元素外面，包一个父级div，让这个父级div<code>overflow:hidden</code>，创建一个BFC区域，就可以解决高度塌陷问题。</p>
-<h3 id="还有哪些常见特性？"><a href="#还有哪些常见特性？" class="headerlink" title="还有哪些常见特性？"></a>还有哪些常见特性？</h3><ol>
-<li>和float不重合，可以清除浮动</li>
-<li>从上到下垂直排列，盒子间距由margin决定</li>
-<li>同一个BFC会出现<strong>垂直外边</strong>距重合问题</li>
-<li>独立的元素，BFC里面的布局不影响外面的元素</li>
-</ol>
+        <h2 id="啥事穿透？"><a href="#啥事穿透？" class="headerlink" title="啥事穿透？"></a>啥事穿透？</h2><p>两个元素，明明不是父子级关系，可能是同级的兄弟元素，A的z-index比B 要高。他们位置上有所重叠。点击A，A消失后，B的<code>click</code>事件也被触发了。</p>
+<h2 id="怎么解决？"><a href="#怎么解决？" class="headerlink" title="怎么解决？"></a>怎么解决？</h2><p>在touch事件的某个处理函数中 执行 <code>e.preverDefault</code>即可</p>
 
       
 
@@ -214,11 +201,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">移动端</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">BFC</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
         		</li>
       		
 		</ul>
@@ -274,7 +261,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/03/27/CSS3/bfc/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/04/23/移动端适配/穿透问题/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -288,18 +275,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/03/27/CSS3/预处理器/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/04/25/CSS3/bootstrap响应式布局原理/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          CSS预处理器
+          bootstrap响应式布局
         
       </div>
     </a>
   
   
-    <a href="/2019/03/27/优化/性能优化/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
+    <a href="/2019/04/23/移动端适配/移动端适配/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">适配问题</div>
       <i class="icon-circle-right"></i>
     </a>
   
