@@ -140,6 +140,529 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-CSS3/水平垂直居中" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/27/CSS3/水平垂直居中/">水平垂直居中</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/27/CSS3/水平垂直居中/" class="archive-article-date">
+  	<time datetime="2019-03-27T08:24:27.269Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、div-水平垂直居中"><a href="#一、div-水平垂直居中" class="headerlink" title="一、div 水平垂直居中"></a>一、div 水平垂直居中</h2><h3 id="1-flex方法"><a href="#1-flex方法" class="headerlink" title="1.flex方法"></a>1.flex方法</h3><p><code>display:flex</code> + <code>align-items</code> + <code>justify-content</code></p>
+<h3 id="2-绝对定位-margin-（需设置子元素宽高）"><a href="#2-绝对定位-margin-（需设置子元素宽高）" class="headerlink" title="2.绝对定位 + margin （需设置子元素宽高）"></a>2.绝对定位 + <code>margin</code> （需设置子元素宽高）</h3><p><strong><em>需要设置父元素的宽高</em></strong></p>
+<h3 id="3-绝对定位-transform-50-50"><a href="#3-绝对定位-transform-50-50" class="headerlink" title="3.绝对定位 + transform(-50%,-50%)"></a>3.绝对定位 + <code>transform(-50%,-50%)</code></h3><p><strong><em>需要设置父元素的宽高</em></strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;parent&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;child&quot;&gt;Demo&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line"> .parent &#123;</span><br><span class="line">       border:1px solid blue;</span><br><span class="line">       position: relative;</span><br><span class="line">       width:100px;</span><br><span class="line">       height:100px;</span><br><span class="line">  &#125;</span><br><span class="line">  .child &#123;</span><br><span class="line">        border:1px solid red;</span><br><span class="line">        position: absolute;</span><br><span class="line">        left: 50%;</span><br><span class="line">        top: 50%;</span><br><span class="line">        transform: translate(-50%, -50%);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="4-给父元素设置display-box-box-pack-box-align"><a href="#4-给父元素设置display-box-box-pack-box-align" class="headerlink" title="4.给父元素设置display;box + box-pack + box-align"></a>4.给父元素设置<code>display;box</code> + <code>box-pack</code> + <code>box-align</code></h3><p>适合子元素不知道宽高的情况<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;parent&quot;&gt;</span><br><span class="line">     &lt;div class=&quot;child&quot;&gt;Demo&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">.parent&#123;</span><br><span class="line">    height: 100px;</span><br><span class="line">    width:100px;</span><br><span class="line">    border:1px solid red;</span><br><span class="line">    display: -webkit-box;</span><br><span class="line">    -webkit-box-align: center;</span><br><span class="line">    -webkit-box-pack: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="5-绝对定位-把top-right-left-bottom四方向都设置为0；"><a href="#5-绝对定位-把top-right-left-bottom四方向都设置为0；" class="headerlink" title="5.绝对定位 + 把top|right|left|bottom四方向都设置为0；"></a>5.绝对定位 + 把<code>top|right|left|bottom</code>四方向都设置为0；</h3><h3 id="6-table方法"><a href="#6-table方法" class="headerlink" title="6.table方法"></a>6.table方法</h3><p><code>table-cell</code> + <code>text-align</code> + <code>vertical-align</code> + <code>inline-block</code></p>
+<pre><code>vertical-align的百分比是相对于 line-height 设置的，不是相对于字号或者别的元素的属性。切记
+</code></pre><p>注意：如果不知道子元素的宽高，用<code>1</code>、<code>4</code>种方法。</p>
+<p><a href="https://codepen.io/singsingasong/pen/MqryRd" target="_blank" rel="noopener">参考我的codepen</a></p>
+<h5 id="面试时面试官常问-不定宽、高的情况下，怎么水平、垂直居中？"><a href="#面试时面试官常问-不定宽、高的情况下，怎么水平、垂直居中？" class="headerlink" title="面试时面试官常问:不定宽、高的情况下，怎么水平、垂直居中？"></a>面试时面试官常问:不定宽、高的情况下，怎么水平、垂直居中？</h5><h2 id="二、文本-水平垂直居中"><a href="#二、文本-水平垂直居中" class="headerlink" title="二、文本 水平垂直居中"></a>二、文本 水平垂直居中</h2><p> <code>line-height</code> + <code>height</code> + <code>text-align</code><br>让 line-height = height<br><a href="https://codepen.io/singsingasong/pen/vzpyNN?editors=1100" target="_blank" rel="noopener">代码：我的codepen</a></p>
+<h3 id="多行文本"><a href="#多行文本" class="headerlink" title="多行文本"></a>多行文本</h3><p><code>table</code>+<code>verticle-align</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=&quot;display:table;height:400px;&quot;&gt;</span><br><span class="line">    &lt;span style=&quot;display:table-cell;vertical-align:middle;&quot;&gt;你要填写的内容你好&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">水平垂直居中</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/27/CSS3/水平垂直居中/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-移动端适配/穿透问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="穿透问题"><a href="#穿透问题" class="headerlink" title="穿透问题"></a>穿透问题</h1><h2 id="啥事穿透？"><a href="#啥事穿透？" class="headerlink" title="啥事穿透？"></a>啥事穿透？</h2><p>两个元素，明明不是父子级关系，可能是同级的兄弟元素，A的z-index比B 要高。他们位置上有所重叠。点击A，A消失后，B的<code>click</code>事件也被触发了。</p>
+<h2 id="怎么解决？"><a href="#怎么解决？" class="headerlink" title="怎么解决？"></a>怎么解决？</h2><p>在touch事件的某个处理函数中 执行 <code>e.preverDefault</code>即可</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/27/移动端适配/穿透问题/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-CSS3/预处理器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/27/CSS3/预处理器/">CSS预处理器</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/27/CSS3/预处理器/" class="archive-article-date">
+  	<time datetime="2019-03-27T08:24:27.173Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="media/15375413663079.jpg" alt="-w630"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">CSS预处理器</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/27/CSS3/预处理器/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-CSS3/bfc" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/27/CSS3/bfc/">BFC 块格式化上下文</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/27/CSS3/bfc/" class="archive-article-date">
+  	<time datetime="2019-03-27T08:24:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://segmentfault.com/a/1190000013647777#articleHeader0" target="_blank" rel="noopener">BFC文章参考</a></p>
+<p>同一个BFC中的div之间会存在外边距重合：<br><img src="media/15375205343584.jpg" alt></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">div&#123;</span><br><span class="line">    width: 100px;</span><br><span class="line">    height: 100px;</span><br><span class="line">    background: lightblue;</span><br><span class="line">    margin: 100px;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<p>因为两个 div 元素都处于同一个 BFC 容器下 (这里指 body 元素) 所以第一个 div 的下边距和第二个 div 的上边距发生了重叠，所以两个盒子之间距离只有 100px，而不是 200px。</p>
+<h4 id="解决办法-放到不同的BFC中去"><a href="#解决办法-放到不同的BFC中去" class="headerlink" title="解决办法:放到不同的BFC中去"></a>解决办法:放到不同的BFC中去</h4><p><a href="https://codepen.io/singsingasong/pen/JazbzQ" target="_blank" rel="noopener">BFC demo</a></p>
+<h3 id="BFC能清除浮动"><a href="#BFC能清除浮动" class="headerlink" title="BFC能清除浮动"></a>BFC能清除浮动</h3><p>因为BFC有一个重要的特性是，BFC区域和float元素不会发生重叠。</p>
+<p>所以在float的元素外面，包一个父级div，让这个父级div<code>overflow:hidden</code>，创建一个BFC区域，就可以解决高度塌陷问题。</p>
+<h3 id="还有哪些常见特性？"><a href="#还有哪些常见特性？" class="headerlink" title="还有哪些常见特性？"></a>还有哪些常见特性？</h3><ol>
+<li>和float不重合，可以清除浮动</li>
+<li>从上到下垂直排列，盒子间距由margin决定</li>
+<li>同一个BFC会出现<strong>垂直外边</strong>距重合问题</li>
+<li>独立的元素，BFC里面的布局不影响外面的元素</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">BFC</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/27/CSS3/bfc/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-优化/性能优化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h1><h3 id="一、加载优化"><a href="#一、加载优化" class="headerlink" title="一、加载优化"></a>一、加载优化</h3><h4 id="http"><a href="#http" class="headerlink" title="http"></a>http</h4><p>首次加载的时候，减少HTTP请求数量。合并css、js；小图片合并雪碧图；</p>
+<h4 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h4><p>静态资源尽量缓存；<br>用外联形式引用CSS,JS</p>
+<h4 id="压缩"><a href="#压缩" class="headerlink" title="压缩"></a>压缩</h4><p>压缩html,css,js，多余的空格、缩进和换行符</p>
+<h4 id="loading"><a href="#loading" class="headerlink" title="loading"></a>loading</h4><p>预加载的时候放一个loading动画（但是不好太长，最好控制在3s）</p>
+<h4 id="按需加载"><a href="#按需加载" class="headerlink" title="按需加载"></a>按需加载</h4><p>###二、 渲染优化</p>
+<h4 id="减少DOM节点和DOM操作"><a href="#减少DOM节点和DOM操作" class="headerlink" title="减少DOM节点和DOM操作"></a>减少DOM节点和DOM操作</h4><h4 id="动画优化"><a href="#动画优化" class="headerlink" title="动画优化"></a>动画优化</h4><p>用requestAnimationFrame代替setTImeout<br>尽量用CSS，少用JS</p>
+<h4 id="三、脚本优化"><a href="#三、脚本优化" class="headerlink" title="三、脚本优化"></a>三、脚本优化</h4><p>CSS写在头部<br>JS写在尾部或者异步</p>
+<h4 id="四、css优化"><a href="#四、css优化" class="headerlink" title="四、css优化"></a>四、css优化</h4><p>避免图片和iFrame等的空src</p>
+<h4 id="五、渲染优化"><a href="#五、渲染优化" class="headerlink" title="五、渲染优化"></a>五、渲染优化</h4><p><img src="media/15373431386544.jpg" alt></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/27/优化/性能优化/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-CSS3/动画" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/27/CSS3/动画/">动画</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/27/CSS3/动画/" class="archive-article-date">
+  	<time datetime="2019-03-27T08:24:25.941Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="transition-过渡：比如-transition-all-0-5s"><a href="#transition-过渡：比如-transition-all-0-5s" class="headerlink" title="transition 过渡：比如 transition:all 0.5s"></a>transition 过渡：比如 <code>transition:all 0.5s</code></h3><h3 id="transform-变形：缩放、旋转、移动、倾斜"><a href="#transform-变形：缩放、旋转、移动、倾斜" class="headerlink" title="transform 变形：缩放、旋转、移动、倾斜"></a>transform 变形：缩放、旋转、移动、倾斜</h3><h5 id="translate-移动：translate只是transform的一个属性值，即移动"><a href="#translate-移动：translate只是transform的一个属性值，即移动" class="headerlink" title="translate 移动：translate只是transform的一个属性值，即移动"></a><code>translate</code> 移动：translate只是transform的一个属性值，即移动</h5><h3 id="animation-动画：有6个属性"><a href="#animation-动画：有6个属性" class="headerlink" title="animation 动画：有6个属性"></a>animation 动画：有6个属性</h3><h3 id="例子1"><a href="#例子1" class="headerlink" title="例子1"></a>例子1</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;title&gt;transition&lt;/title&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">#box &#123;</span><br><span class="line">  height: 100px;</span><br><span class="line">  width: 100px;</span><br><span class="line">  background: green;</span><br><span class="line">  transition: transform 1s ease-in 1s;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#box:hover &#123;</span><br><span class="line">    transform: rotate(180deg) scale(.5, .5);</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div id=&quot;box&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>transition 产生动画的条件是 它所设置的<code>property</code>发生变化，需要<code>事件驱动</code>.</p>
+<h5 id="不足："><a href="#不足：" class="headerlink" title="不足："></a>不足：</h5><p>1.事件驱动<br>2.不会重复，除非重复触发<br>3.只能定义两个状态：开始和结束，无中间状态。</p>
+<h5 id="语法：transition-property-duration-timing-function-delay"><a href="#语法：transition-property-duration-timing-function-delay" class="headerlink" title="语法：transition: property duration timing-function delay;"></a>语法：<code>transition: property duration timing-function delay;</code></h5><h4 id="例子2"><a href="#例子2" class="headerlink" title="例子2"></a>例子2</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line"></span><br><span class="line">.box &#123;</span><br><span class="line">  height: 100px;</span><br><span class="line">  width: 100px;</span><br><span class="line">  border: 15px solid black;</span><br><span class="line">  animation: changebox 1s ease-in-out 1s infinite alternate running forwards;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.box:hover &#123;</span><br><span class="line">    animation-play-state: paused;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@keyframes changebox &#123;</span><br><span class="line"></span><br><span class="line">  10% &#123;</span><br><span class="line">      background: red;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  50% &#123;</span><br><span class="line">      width: 80px;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  70% &#123;</span><br><span class="line">      border: 15px solid yellow;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  100% &#123;</span><br><span class="line">    width: 180px;</span><br><span class="line">    height: 180px;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">    &lt;div class=&quot;box&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<p>animation就是好多个transition的叠加</p>
+<h2 id="需求：绕着某个原点旋转360"><a href="#需求：绕着某个原点旋转360" class="headerlink" title="需求：绕着某个原点旋转360"></a>需求：绕着某个原点旋转360</h2><p>页面加载完就自动旋转，不需要事件触发，且一直转–&gt;animation</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">动画</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/27/CSS3/动画/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-跨域问题/三大类跨域问题之AJAX跨域" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/27/跨域问题/三大类跨域问题之AJAX跨域/">三大类跨域问题之AJAX跨域</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/27/跨域问题/三大类跨域问题之AJAX跨域/" class="archive-article-date">
+  	<time datetime="2019-02-27T09:07:22.161Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>跨域是浏览器的安全策略，是为了控制js不操作不同域的数据</p>
+</blockquote>
+<p>1.cookie跨域<br>2.DOM无法获得<br>3.AJAX请求不能发送</p>
+<p>本文讨论上述第3种。<br>
+        
+          <a class="article-more-a" href="/2019/02/27/跨域问题/三大类跨域问题之AJAX跨域/#more">more >></a>
+        
+      
+
+      
+    </p></div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">跨域</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/27/跨域问题/三大类跨域问题之AJAX跨域/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-跨域问题/三大类跨域问题之Cookie跨域" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -378,422 +901,9 @@
 
 
   
-    <article id="post-跨域问题/CORS跨域" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/27/跨域问题/CORS跨域/">CORS跨域</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/27/跨域问题/CORS跨域/" class="archive-article-date">
-  	<time datetime="2019-02-27T09:07:22.156Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>跨域是浏览器的安全策略，是为了控制js不操作不同域的数据</p>
-</blockquote>
-<p>Cross-Origin resource sharing</p>
-<h4 id="1-需要服务器和浏览器同时支持"><a href="#1-需要服务器和浏览器同时支持" class="headerlink" title="1.需要服务器和浏览器同时支持"></a>1.需要服务器和浏览器同时支持</h4><h4 id="2-CORS通信与同源的Ajax通信代码一样"><a href="#2-CORS通信与同源的Ajax通信代码一样" class="headerlink" title="2.CORS通信与同源的Ajax通信代码一样"></a>2.CORS通信与同源的Ajax通信代码一样</h4><h4 id="3-实现的关键：服务器"><a href="#3-实现的关键：服务器" class="headerlink" title="3.实现的关键：服务器"></a>3.实现的关键：服务器</h4><h4 id="4-简单请求："><a href="#4-简单请求：" class="headerlink" title="4.简单请求："></a>4.简单请求：</h4><ul>
-<li><p>在头信息中，加<code>Origin</code>字段</p>
-</li>
-<li><p><code>Origin</code>字段作用：说明请求来自哪个源（端口+协议+域名）</p>
-</li>
-<li><p>服务器根据👆，决定是否同意这个请求</p>
-</li>
-</ul>
-<h6 id="不同意：返回正常的HTTP响应"><a href="#不同意：返回正常的HTTP响应" class="headerlink" title="不同意：返回正常的HTTP响应"></a>不同意：返回正常的HTTP响应</h6><pre><code>浏览器在头字段中没找到`Access-Control-Allow-Origin`字段，抛出错误，由`XMLHttpRequest`的`onerror`回调函数捕获。
-</code></pre><h6 id="同意：多几个头信息字段。"><a href="#同意：多几个头信息字段。" class="headerlink" title="同意：多几个头信息字段。"></a>同意：多几个头信息字段。</h6><p><code>Access-Control-Allow-Origin</code>(必选）:<br>接受任意域名的请求</p>
-<p><code>Access-Control-Allow-Credentials</code>(可选，布尔值）:<br>是否允许发送cookie</p>
-<p><code>Access-Control-Expose-Headers</code>(可选):<br><img src="media/15348149310409/15348159599128.jpg" alt></p>
-<h4 id="5-发送cookie："><a href="#5-发送cookie：" class="headerlink" title="5.发送cookie："></a>5.发送cookie：</h4><p><strong>服务器:</strong><br>设置<code>Access-Control-Allow-Credentials:true</code></p>
-<p><strong>前端：</strong><br>在Ajax中</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 允许跨域</span><br><span class="line">crossDomain: true,</span><br><span class="line">// 下面这句话允许跨域的cookie访问</span><br><span class="line">xhrFields: &#123;</span><br><span class="line">    withCredentials: true // 带本地的一些cookie信息</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">跨域</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/27/跨域问题/CORS跨域/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-设计模式/单例模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/27/设计模式/单例模式/">单例模式</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/27/设计模式/单例模式/" class="archive-article-date">
-  	<time datetime="2019-02-27T09:07:22.155Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>1、单例类只能有一个实例。<br>2、单例类必须自己创建自己的唯一实例。<br>3、单例类必须给所有其他对象提供这一实例。</p>
-</blockquote>
-<h3 id="1-如何理解："><a href="#1-如何理解：" class="headerlink" title="1.如何理解："></a>1.如何理解：</h3><p>一个班只有一个班长</p>
-<p><strong>怎么保证在班级中只有一个班长（被称为单例的特殊类）？</strong></p>
-<h3 id="2-一个类只有一个实例"><a href="#2-一个类只有一个实例" class="headerlink" title="2.一个类只有一个实例"></a>2.一个类只有一个实例</h3><p><code>班长</code>这个类底下只有<code>李明</code>一个人。<br>想new一个班长，首先判断一下现在班级是否有班长，如果还没有，可以new；如果有了，尊重班长，不可以随便换人……</p>
-<h3 id="3-适用场景"><a href="#3-适用场景" class="headerlink" title="3.适用场景"></a>3.适用场景</h3><p>希望在某个系统中，某个类的对象只有一个</p>
-<h3 id="4-用js实现一个单例模式"><a href="#4-用js实现一个单例模式" class="headerlink" title="4.用js实现一个单例模式"></a>4.用js实现一个单例模式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">// 方案一：字面量对象</span><br><span class="line">var singleTon=&#123;</span><br><span class="line">    attr1:true,</span><br><span class="line">    attr2:10,</span><br><span class="line">    method:function()&#123;  </span><br><span class="line">        console.log(&quot;A single singleton example&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 方案二：利用闭包实现一个拥有私有变量的单例对象</span><br><span class="line">var singleTon1=(function()&#123;</span><br><span class="line">    var instance;</span><br><span class="line">    function initInstance()&#123;</span><br><span class="line">        var object=new Object();</span><br><span class="line">        object.msg=&quot;单例模式&quot;;</span><br><span class="line">        return Object;</span><br><span class="line">    &#125;</span><br><span class="line">    return&#123;</span><br><span class="line">        getInstance:function()&#123;</span><br><span class="line">            if(!instance)&#123;</span><br><span class="line">                instance=initInstance();</span><br><span class="line">            &#125;</span><br><span class="line">            return instance;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/27/设计模式/单例模式/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-数据结构/排序算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/27/数据结构/排序算法/">排序算法</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/27/数据结构/排序算法/" class="archive-article-date">
-  	<time datetime="2019-02-27T09:07:22.146Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="插入排序："><a href="#插入排序：" class="headerlink" title="插入排序："></a>插入排序：</h3><ul>
-<li>直接插入排序</li>
-<li>折半插入排序：适合原序列已经有序的情况</li>
-</ul>
-<p>如果无序情况下，就考虑用快速排序。</p>
-<h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><blockquote>
-<p>step1:找一个基准值<br>step2:把所有比基准值大的关键值挪到基准值右侧，比它小的挪到左侧。<br>step3:对右侧和左侧两个子集，不断重复第一步和第二步，知道所有子集只剩下一个元素为止。</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">function quickSort(arr)&#123;</span><br><span class="line">    if(arr.length&lt;=1)&#123;</span><br><span class="line">        return arr;//如果数组只有一个数，就直接返回；</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    var pivot = Math.floor(arr.length/2);//找到中间数的索引值，如果是浮点数，则向下取整</span><br><span class="line">    var pivotVal = arr.splice(pivot,1);//找到中间数的值</span><br><span class="line">    var left = [];</span><br><span class="line">    var right = [];</span><br><span class="line"></span><br><span class="line">    for(var i=0;i&lt;arr.length;i++)&#123;</span><br><span class="line">        if(arr[i]&lt;pivotVal)&#123;</span><br><span class="line">            left.push(arr[i]);//基准点的左边的数传到左边数组</span><br><span class="line">        &#125;</span><br><span class="line">        else&#123;</span><br><span class="line">            right.push(arr[i]);//基准点的右边的数传到右边数组</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return quickSort(left).concat(pivotVal,quickSort(right));//递归不断重复比较</span><br><span class="line">&#125;</span><br><span class="line">console.log(quickSort([32,45,37,16,2,87]));//弹出“2,16,32,37,45,87”</span><br></pre></td></tr></table></figure>
-<h3 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h3><p>1.建大顶堆<br>2.调整完全二叉树为大顶堆</p>
-<p>遍历非叶子结点，从下到上、从右到左。<br>选择当前非叶子结点的最大孩子结点。如果当前结点小于它最大的子结点，那么二者交换。否则，满足大顶堆的要求，不用操作。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">function heapSort(arr) &#123;</span><br><span class="line">    // 建堆</span><br><span class="line">    for (var i = Math.floor(arr.length/2 - 1); i &gt;= 0; i--) &#123;</span><br><span class="line">        heapify(arr, i,arr.length);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 排序</span><br><span class="line">    for (var j = arr.length - 1; j &gt;= 0; j--) &#123;</span><br><span class="line">        swap(arr, 0, j);</span><br><span class="line">        heapify(arr,0,j);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function heapify(arr, i,heapsize) &#123;</span><br><span class="line">    var temp = arr[i];</span><br><span class="line"></span><br><span class="line">    for (var j = 2 * i + 1; j &lt; heapsize; j = 2 * j + 1) &#123;</span><br><span class="line">        if (arr[j] &lt; arr[j + 1] &amp;&amp; j + 1 &lt; heapsize) j++;</span><br><span class="line"></span><br><span class="line">        if(temp&lt;arr[j])&#123;</span><br><span class="line">            swap(arr,i,j);</span><br><span class="line">            i=j;</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function swap(arr, i, j) &#123;</span><br><span class="line">    var temp = arr[i];</span><br><span class="line">    arr[i] = arr[j];</span><br><span class="line">    arr[j] = temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let Arr = [1, 4, 3, 5, 6];</span><br><span class="line">heapSort(Arr);</span><br><span class="line">console.log(Arr);</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/27/数据结构/排序算法/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-工具/Debugger for Chrome" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/27/工具/Debugger for Chrome/">Debugger for Chrome插件</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/27/工具/Debugger for Chrome/" class="archive-article-date">
-  	<time datetime="2019-02-27T09:07:22.133Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h3><p><img src="media/15396754152990-2.jpg" alt="15396754152990"></p>
-<h3 id="解决方式："><a href="#解决方式：" class="headerlink" title="解决方式："></a>解决方式：</h3><p><img src="media/15396755164839-2.jpg" alt="15396755164839"></p>
-<h4 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h4><p>在 <code>launch.json</code>文件中设置：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    // 使用 IntelliSense 了解相关属性。 </span><br><span class="line">    // 悬停以查看现有属性的描述。</span><br><span class="line">    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387</span><br><span class="line">    &quot;version&quot;: &quot;0.2.0&quot;,</span><br><span class="line">    &quot;configurations&quot;: [</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;type&quot;: &quot;chrome&quot;,</span><br><span class="line">            &quot;request&quot;: &quot;launch&quot;,</span><br><span class="line">            &quot;name&quot;: &quot;Launch Chrome against localhost&quot;,</span><br><span class="line">            &quot;url&quot;: &quot;http://localhost:8080&quot;,</span><br><span class="line">            &quot;webRoot&quot;: &quot;$&#123;workspaceRoot&#125;&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;type&quot;: &quot;chrome&quot;,</span><br><span class="line">            &quot;request&quot;: &quot;attach&quot;,</span><br><span class="line">            &quot;name&quot;: &quot;Attach to Chrome&quot;,</span><br><span class="line">            &quot;port&quot;: 9222,</span><br><span class="line">            &quot;webRoot&quot;: &quot;$&#123;workspaceRoot&#125;&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;name&quot;: &quot;debug *.html&quot;,</span><br><span class="line">            &quot;type&quot;: &quot;chrome&quot;,</span><br><span class="line">            &quot;request&quot;: &quot;launch&quot;,</span><br><span class="line">            &quot;sourceMaps&quot;: false,</span><br><span class="line">            &quot;file&quot;: &quot;$&#123;workspaceRoot&#125;/yield.html&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;type&quot;: &quot;node&quot;,</span><br><span class="line">            &quot;request&quot;: &quot;launch&quot;,</span><br><span class="line">            &quot;name&quot;: &quot;启动程序&quot;,</span><br><span class="line">            &quot;program&quot;: &quot;$&#123;workspaceFolder&#125;/yield.js&quot;</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vscode插件</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/27/工具/Debugger for Chrome/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-3D/3D问题搞一波" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/27/3D/3D问题搞一波/">3d学习总结</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/27/3D/3D问题搞一波/" class="archive-article-date">
-  	<time datetime="2019-02-27T09:07:21.806Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="1-有哪些基本要素？"><a href="#1-有哪些基本要素？" class="headerlink" title="1.有哪些基本要素？"></a>1.有哪些基本要素？</h4><p>场景、贴图、相机</p>
-<h4 id="2-threejs组成一个场景需要哪些元素？"><a href="#2-threejs组成一个场景需要哪些元素？" class="headerlink" title="2.threejs组成一个场景需要哪些元素？"></a>2.threejs组成一个场景需要哪些元素？</h4><h4 id="3-threejs中怎样让一个物体不受光照的影响。"><a href="#3-threejs中怎样让一个物体不受光照的影响。" class="headerlink" title="3.threejs中怎样让一个物体不受光照的影响。"></a>3.threejs中怎样让一个物体不受光照的影响。</h4><p>方法1：设置环境光为白色，emmissive也为白色。</p>
-<p>方法2：设置其他光线与物体的夹角为0.，怎么计算法向量？怎么计算夹角？</p>
-<h4 id="4-webGL中，生成一个模型，比如立方体，八个顶点各自都是三个面公用的，怎么计算？"><a href="#4-webGL中，生成一个模型，比如立方体，八个顶点各自都是三个面公用的，怎么计算？" class="headerlink" title="4.webGL中，生成一个模型，比如立方体，八个顶点各自都是三个面公用的，怎么计算？"></a>4.webGL中，生成一个模型，比如立方体，八个顶点各自都是三个面公用的，怎么计算？</h4><h4 id="5-讲讲片元着色器和和顶点着色器，以及一个object的渲染过程。"><a href="#5-讲讲片元着色器和和顶点着色器，以及一个object的渲染过程。" class="headerlink" title="5.讲讲片元着色器和和顶点着色器，以及一个object的渲染过程。"></a>5.讲讲片元着色器和和顶点着色器，以及一个object的渲染过程。</h4><h4 id="6-怎么把屏幕坐标系转换为webgl坐标系？世界坐标系、本地坐标系、视觉坐标系之间的转换方法？还有什么坐标系？"><a href="#6-怎么把屏幕坐标系转换为webgl坐标系？世界坐标系、本地坐标系、视觉坐标系之间的转换方法？还有什么坐标系？" class="headerlink" title="6.怎么把屏幕坐标系转换为webgl坐标系？世界坐标系、本地坐标系、视觉坐标系之间的转换方法？还有什么坐标系？"></a>6.怎么把屏幕坐标系转换为webgl坐标系？世界坐标系、本地坐标系、视觉坐标系之间的转换方法？还有什么坐标系？</h4><h4 id="7-threejs的raycaster的原理是什么，除了intersect-数组之外还会返回那些值？"><a href="#7-threejs的raycaster的原理是什么，除了intersect-数组之外还会返回那些值？" class="headerlink" title="7.threejs的raycaster的原理是什么，除了intersect[ ]数组之外还会返回那些值？"></a>7.threejs的raycaster的原理是什么，除了intersect[ ]数组之外还会返回那些值？</h4><h4 id="8-怎么优化3D页面的加载或者渲染速度？加载不出来怎么办"><a href="#8-怎么优化3D页面的加载或者渲染速度？加载不出来怎么办" class="headerlink" title="8.怎么优化3D页面的加载或者渲染速度？加载不出来怎么办?"></a>8.怎么优化3D页面的加载或者渲染速度？加载不出来怎么办?</h4><p>图片太多的时候，就不能初始化的时候一次性加载。<br>比如这次的项目，有多个场景，每个场景的贴图特别大，那么其中一种处理方法先加载一部分，剩下的场景，只能切换的时候再加载。</p>
-<h4 id="10-webgl怎么生成一个模型？具体怎么实现？怎么定义坐标？index？着色器？"><a href="#10-webgl怎么生成一个模型？具体怎么实现？怎么定义坐标？index？着色器？" class="headerlink" title="10.webgl怎么生成一个模型？具体怎么实现？怎么定义坐标？index？着色器？"></a>10.webgl怎么生成一个模型？具体怎么实现？怎么定义坐标？index？着色器？</h4><p><strong>步骤：</strong><br>1.获取定点坐标<br>2.图元装配（画出一个个小三角形）<br>3.光栅化（生成片元，即一个个像素点）<br><img src="media/15373418515303.jpg" alt></p>
-<h4 id="补充：three-js完整运行流程"><a href="#补充：three-js完整运行流程" class="headerlink" title="补充：three.js完整运行流程"></a>补充：three.js完整运行流程</h4><p><img src="media/15373425277371.jpg" alt></p>
-<p><a href="https://juejin.im/entry/59098a0b61ff4b0066f0ea22" target="_blank" rel="noopener">参考</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">3d</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/27/3D/3D问题搞一波/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 
@@ -888,19 +998,67 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">3d</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">em 和 rem</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">bootstrap</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">响应式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">BFC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">动画</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">标准盒模型&怪异盒模型</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">圣杯和双飞翼的区别</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">水平垂直居中</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">CSS预处理器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">个人博客</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">清除浮动</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">定位</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vscode插件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">3d</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -913,6 +1071,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
             
             <div class="clearfix"></div>
