@@ -9,20 +9,19 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>清楚浮动的方法 | Sing Sing a Song</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="清除浮动的原理 方案一：clear:both在包含浮动元素的父级div内，在所有div的后面加入一个没有内容的块级 元素(必须是块级）。 原理：告诉浏览器，我的左右两边都要清除浮动。但是因为浮动元素的位置已经确定了，所以为了满足div.clear的需求，浏览器只能把div.clear渲染在浮动元素的下面，最后父级元素的高度也被撑开了。（因为div.clear是在正常的文档流中的，它肯定还是要待在父">
+  <meta name="description" content="清除浮动的原理 方案一：clear:both在包含浮动元素的父级div内，在所有div的后面加入一个没有内容的块级 元素(必须是块级）。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="清楚浮动的方法">
 <meta property="og:url" content="http://yoursite.com/2019/04/25/CSS3/清楚浮动的方法/index.html">
 <meta property="og:site_name" content="Sing Sing a Song">
-<meta property="og:description" content="清除浮动的原理 方案一：clear:both在包含浮动元素的父级div内，在所有div的后面加入一个没有内容的块级 元素(必须是块级）。 原理：告诉浏览器，我的左右两边都要清除浮动。但是因为浮动元素的位置已经确定了，所以为了满足div.clear的需求，浏览器只能把div.clear渲染在浮动元素的下面，最后父级元素的高度也被撑开了。（因为div.clear是在正常的文档流中的，它肯定还是要待在父">
+<meta property="og:description" content="清除浮动的原理 方案一：clear:both在包含浮动元素的父级div内，在所有div的后面加入一个没有内容的块级 元素(必须是块级）。">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/2019/04/25/CSS3/清楚浮动的方法/media/15375198132528.jpg">
 <meta property="og:image" content="http://yoursite.com/2019/04/25/CSS3/清楚浮动的方法/15375198132528.jpg">
-<meta property="og:updated_time" content="2019-04-25T14:15:51.566Z">
+<meta property="og:updated_time" content="2019-04-25T14:22:36.806Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="清楚浮动的方法">
-<meta name="twitter:description" content="清除浮动的原理 方案一：clear:both在包含浮动元素的父级div内，在所有div的后面加入一个没有内容的块级 元素(必须是块级）。 原理：告诉浏览器，我的左右两边都要清除浮动。但是因为浮动元素的位置已经确定了，所以为了满足div.clear的需求，浏览器只能把div.clear渲染在浮动元素的下面，最后父级元素的高度也被撑开了。（因为div.clear是在正常的文档流中的，它肯定还是要待在父">
-<meta name="twitter:image" content="http://yoursite.com/2019/04/25/CSS3/清楚浮动的方法/media/15375198132528.jpg">
+<meta name="twitter:description" content="清除浮动的原理 方案一：clear:both在包含浮动元素的父级div内，在所有div的后面加入一个没有内容的块级 元素(必须是块级）。">
+<meta name="twitter:image" content="http://yoursite.com/2019/04/25/CSS3/清楚浮动的方法/15375198132528.jpg">
   
   <link rel="alternative" href="/atom.xml" title="Sing Sing a Song" type="application/atom+xml">
   
@@ -163,9 +162,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><a href="https://codepen.io/singsingasong/pen/GXejMP?editors=1100" target="_blank" rel="noopener">清除浮动的原理</a></p>
-<h3 id="方案一：clear-both"><a href="#方案一：clear-both" class="headerlink" title="方案一：clear:both"></a>方案一：<code>clear:both</code></h3><p>在包含浮动元素的父级div内，在所有div的后面加入一个没有内容的<strong><em>块级</em></strong> 元素(必须是块级）。</p>
+<h3 id="方案一：clear-both"><a href="#方案一：clear-both" class="headerlink" title="方案一：clear:both"></a>方案一：<code>clear:both</code></h3><p>在包含浮动元素的父级div内，在所有div的后面加入一个没有内容的<strong><em>块级</em></strong> 元素(必须是块级）。<br><a id="more"></a></p>
 <h4 id="原理："><a href="#原理：" class="headerlink" title="原理："></a>原理：</h4><p>告诉浏览器，我的左右两边都要清除浮动。但是因为浮动元素的位置已经确定了，所以为了满足div.clear的需求，浏览器只能把div.clear渲染在浮动元素的下面，最后<em><strong>父级元素的高度也被撑开</strong></em>了。（因为div.clear是在正常的文档流中的，它肯定还是要待在父级元素里面，所以父级元素想要包含它，只能增加自己的高度）</p>
-<h3 id="方案二：“：after”-伪元素"><a href="#方案二：“：after”-伪元素" class="headerlink" title="方案二：“：after” 伪元素"></a>方案二：“<code>：after</code>” 伪元素</h3><p>原理同上，只不过是生成空白div的方式不同而已；<br><img src="media/15375198132528.jpg" alt="-w703"><br><img src="/2019/04/25/CSS3/清楚浮动的方法/15375198132528.jpg" title="This is an example image"></p>
+<h3 id="方案二：“：after”-伪元素"><a href="#方案二：“：after”-伪元素" class="headerlink" title="方案二：“：after” 伪元素"></a>方案二：“<code>：after</code>” 伪元素</h3><p>原理同上，只不过是生成空白div的方式不同而已；</p>
+<img src="/2019/04/25/CSS3/清楚浮动的方法/15375198132528.jpg" title="This is an example image">
 <h3 id="方案三：overflow"><a href="#方案三：overflow" class="headerlink" title="方案三：overflow"></a>方案三：<code>overflow</code></h3><p>原理：BFC块格式化上下文<br>让父元素<code>overflow:hidden|auto</code></p>
 
       
@@ -423,19 +423,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">3d</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">个人博客</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BFC</a>
+                <a href="javascript:void(0)" class="js-tag color5">bootstrap</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -443,15 +431,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">em 和 rem</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">bootstrap</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">响应式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">BFC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">3d</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">em 和 rem</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -471,19 +463,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">CSS预处理器</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">定位</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vscode插件</a>
+                <a href="javascript:void(0)" class="js-tag color3">CSS预处理器</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">个人博客</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vscode插件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -496,6 +492,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">

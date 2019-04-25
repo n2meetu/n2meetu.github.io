@@ -140,91 +140,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-CSS3/标准盒模型&amp;怪异盒模型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/27/CSS3/标准盒模型&怪异盒模型/">标准盒模型&amp;怪异盒模型</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/27/CSS3/标准盒模型&怪异盒模型/" class="archive-article-date">
-  	<time datetime="2019-03-27T08:24:28.682Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="1-标准盒模型："><a href="#1-标准盒模型：" class="headerlink" title="1 标准盒模型："></a>1 标准盒模型：</h2><p>一个块的总宽度：<strong>width = width + 2margin + 2padding + 2*border</strong></p>
-<p>盒子真正的width = width + 2padding + 2border。 margin不算！margin可以改变盒子占位的大小，但是盒子的宽高并没有改变，而是位置的改变！</p>
-<h4 id="1-1适用场景：pc端"><a href="#1-1适用场景：pc端" class="headerlink" title="1.1适用场景：pc端"></a>1.1适用场景：pc端</h4><hr>
-<p>##2  怪异盒模型：<br>一个块的总宽度=width+margin，width已经包含了padding和border值</p>
-<h4 id="2-1-适用场景：移动端"><a href="#2-1-适用场景：移动端" class="headerlink" title="2.1 适用场景：移动端"></a>2.1 适用场景：移动端</h4><p>border-box 非常有用，尤其当我们在使用 100% 来规定宽高的时候，如果元素存在 border 或 padding，将直接导致元素的实际大小大于 100%，</p>
-<h4 id="2-2-用法：box-sizing-border-box"><a href="#2-2-用法：box-sizing-border-box" class="headerlink" title="2.2 用法：box-sizing: border-box;"></a>2.2 用法：<code>box-sizing: border-box;</code></h4><p>只需要将盒子的 box-sizing设置为border-box，这是我们发现盒子的大小不在随盒子（内容）的大小而改变，而是必须由盒子自己来控制它的大小。</p>
-<p><a href="https://codepen.io/singsingasong/pen/LJmLmp?editors=1111" target="_blank" rel="noopener">一图胜千言</a><br><a href="https://github.com/Monine/study/issues/9" target="_blank" rel="noopener">box-sizing应用场景</a></p>
-<h4 id="个人理解："><a href="#个人理解：" class="headerlink" title="个人理解："></a>个人理解：</h4><p>适用于总宽度不变，需要设置<code>padding</code>、<code>border</code>的情况下。比如栅格布局，表单元素等</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">标准盒模型&怪异盒模型</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/27/CSS3/标准盒模型&怪异盒模型/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-CSS3/绝对定位和fixed" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -681,11 +596,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">BFC</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">BFC</a>
         		</li>
       		
 		</ul>
@@ -893,6 +808,85 @@
 
 
   
+    <article id="post-跨域问题/三大类跨域问题之Cookie跨域" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/27/跨域问题/三大类跨域问题之Cookie跨域/">三大类跨域问题之Cookie跨域</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/27/跨域问题/三大类跨域问题之Cookie跨域/" class="archive-article-date">
+  	<time datetime="2019-02-27T09:07:22.161Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>跨域是浏览器的安全策略，是为了控制js不操作不同域的数据</p>
+</blockquote>
+<p><strong><em><em>注意：cookie 的不区分协议与端口</em></em></strong></p>
+        
+          <a class="article-more-a" href="/2019/02/27/跨域问题/三大类跨域问题之Cookie跨域/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">跨域</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/27/跨域问题/三大类跨域问题之Cookie跨域/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-跨域问题/三大类跨域问题之AJAX跨域" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1070,19 +1064,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">3d</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">个人博客</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BFC</a>
+                <a href="javascript:void(0)" class="js-tag color5">bootstrap</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1090,15 +1072,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">em 和 rem</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">bootstrap</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">响应式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">BFC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">3d</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">em 和 rem</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1118,19 +1104,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">CSS预处理器</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">定位</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vscode插件</a>
+                <a href="javascript:void(0)" class="js-tag color3">CSS预处理器</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">个人博客</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vscode插件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1143,6 +1133,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
