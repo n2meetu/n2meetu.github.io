@@ -140,407 +140,30 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-优化/性能优化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-ES6/Generate" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/25/优化/性能优化/">性能优化</a>
+      <a class="article-title" href="/2019/04/26/ES6/Generate/">Generate</a>
     </h1>
   
 
         
-        <a href="/2019/04/25/优化/性能优化/" class="archive-article-date">
-  	<time datetime="2019-04-25T14:16:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-25</time>
+        <a href="/2019/04/26/ES6/Generate/" class="archive-article-date">
+  	<time datetime="2019-04-26T12:41:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="一、加载优化"><a href="#一、加载优化" class="headerlink" title="一、加载优化"></a>一、加载优化</h3><ol>
-<li>http<br>首次加载的时候，减少HTTP请求数量。合并css、js；小图片合并雪碧图；</li>
-<li>缓存<br>静态资源尽量缓存；<br>用外联形式引用CSS,JS</li>
-</ol>
+        <h3 id="怎么实现【暂停】效果的？"><a href="#怎么实现【暂停】效果的？" class="headerlink" title="怎么实现【暂停】效果的？"></a>怎么实现【暂停】效果的？</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 普通的函数执行后不可以暂停</span><br><span class="line">// generate函数中间可以停顿</span><br><span class="line">function* show() &#123;</span><br><span class="line">    yield console.log(&apos;a&apos;);</span><br><span class="line"></span><br><span class="line">    yield console.log(&apos;b&apos;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let genObj = show();</span><br><span class="line">genObj.next(); </span><br><span class="line">genObj.next();</span><br></pre></td></tr></table></figure>
+<p>实际上是把<code>show()</code>分成两部分执行：<br>
         
-          <a class="article-more-a" href="/2019/04/25/优化/性能优化/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/25/优化/性能优化/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-CSS3/清楚浮动的方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/25/CSS3/清楚浮动的方法/">清楚浮动的方法</a>
-    </h1>
-  
-
-        
-        <a href="/2019/04/25/CSS3/清楚浮动的方法/" class="archive-article-date">
-  	<time datetime="2019-04-25T14:14:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="https://codepen.io/singsingasong/pen/GXejMP?editors=1100" target="_blank" rel="noopener">清除浮动的原理</a></p>
-<h3 id="方案一：clear-both"><a href="#方案一：clear-both" class="headerlink" title="方案一：clear:both"></a>方案一：<code>clear:both</code></h3><p>在包含浮动元素的父级div内，在所有div的后面加入一个没有内容的<strong><em>块级</em></strong> 元素(必须是块级）。<br>
-        
-          <a class="article-more-a" href="/2019/04/25/CSS3/清楚浮动的方法/#more">more >></a>
-        
-      
-
-      
-    </p></div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/25/CSS3/清楚浮动的方法/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-CSS3/bootstrap响应式布局原理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/25/CSS3/bootstrap响应式布局原理/">bootstrap响应式布局</a>
-    </h1>
-  
-
-        
-        <a href="/2019/04/25/CSS3/bootstrap响应式布局原理/" class="archive-article-date">
-  	<time datetime="2019-04-25T11:19:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>通过媒体查询，设置最外层容器的宽度，再控制DOM元素的百分比，比如一列col的宽度。一行有12个。</p>
-<h2 id="与怪异盒模型有什么不同？"><a href="#与怪异盒模型有什么不同？" class="headerlink" title="与怪异盒模型有什么不同？"></a>与怪异盒模型有什么不同？</h2><p>使用border-box只需要控制宽度即可，否则需要控制宽度和padding，实现上过于麻烦，而且padding容易被修改，一旦被修改就会影响其他的布局。所以bootstrap才选择了border-box作为框架的统一的盒模型。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">bootstrap</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">响应式</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/25/CSS3/bootstrap响应式布局原理/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-移动端适配/穿透问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/23/移动端适配/穿透问题/">穿透问题</a>
-    </h1>
-  
-
-        
-        <a href="/2019/04/23/移动端适配/穿透问题/" class="archive-article-date">
-  	<time datetime="2019-04-23T11:19:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="啥事穿透？"><a href="#啥事穿透？" class="headerlink" title="啥事穿透？"></a>啥事穿透？</h2><p>两个元素，明明不是父子级关系，可能是同级的兄弟元素，A的z-index比B 要高。他们位置上有所重叠。点击A，A消失后，B的<code>click</code>事件也被触发了。</p>
-<h2 id="怎么解决？"><a href="#怎么解决？" class="headerlink" title="怎么解决？"></a>怎么解决？</h2><p>在touch事件的某个处理函数中 执行 <code>e.preverDefault</code>即可</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">移动端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/23/移动端适配/穿透问题/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-移动端适配/移动端适配" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/23/移动端适配/移动端适配/">适配问题</a>
-    </h1>
-  
-
-        
-        <a href="/2019/04/23/移动端适配/移动端适配/" class="archive-article-date">
-  	<time datetime="2019-04-23T11:19:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>怎么适配iphone6<br>1px问题</p>
-<h3 id="为什么页面与设计稿会出现偏差？"><a href="#为什么页面与设计稿会出现偏差？" class="headerlink" title="为什么页面与设计稿会出现偏差？"></a>为什么页面与设计稿会出现偏差？</h3>
-        
-          <a class="article-more-a" href="/2019/04/23/移动端适配/移动端适配/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">移动端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/23/移动端适配/移动端适配/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-移动端适配/300ms延迟" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/23/移动端适配/300ms延迟/">300ms delay</a>
-    </h1>
-  
-
-        
-        <a href="/2019/04/23/移动端适配/300ms延迟/" class="archive-article-date">
-  	<time datetime="2019-04-23T11:19:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一-什么是300ms延迟？"><a href="#一-什么是300ms延迟？" class="headerlink" title="一.什么是300ms延迟？"></a>一.什么是300ms延迟？</h2><p>我们点击页面的时候移动端浏览器并不是立即作出反应，而是会等上一小会儿才会出现点击的效果</p>
-<h2 id="二-为什么有延迟？"><a href="#二-为什么有延迟？" class="headerlink" title="二.为什么有延迟？"></a>二.为什么有延迟？</h2><p>因为移动端有双击缩放事件，所以当我们点击touch屏幕后，浏览器会等一会儿，确定是否会点击第二次形成缩放事件。<br>
-        
-          <a class="article-more-a" href="/2019/04/23/移动端适配/300ms延迟/#more">more >></a>
+          <a class="article-more-a" href="/2019/04/26/ES6/Generate/#more">more >></a>
         
       
 
@@ -554,11 +177,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">移动端</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
         		</li>
       		
 		</ul>
@@ -568,7 +191,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/23/移动端适配/300ms延迟/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/04/26/ES6/Generate/">展开全文 >></a>
         </p>
       
 
@@ -598,31 +221,32 @@
 
 
   
-    <article id="post-移动端适配/1px问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-ES6/面向对象" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/23/移动端适配/1px问题/">1px问题</a>
+      <a class="article-title" href="/2019/04/26/ES6/面向对象/">面向对象</a>
     </h1>
   
 
         
-        <a href="/2019/04/23/移动端适配/1px问题/" class="archive-article-date">
-  	<time datetime="2019-04-23T11:19:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-23</time>
+        <a href="/2019/04/26/ES6/面向对象/" class="archive-article-date">
+  	<time datetime="2019-04-26T12:41:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="http://peunzhang.cnblogs.com/" target="_blank" rel="noopener">1px问题</a><br><a href="https://github.com/AlloyTeam/Mars/blob/master/solutions/border-1px.md#%E4%B8%80%E4%BD%BF%E7%94%A8border-image%E5%AE%9E%E7%8E%B0%E7%B1%BB%E4%BC%BCios7%E7%9A%841px%E5%BA%95%E8%BE%B9" target="_blank" rel="noopener">github文章参考</a></p>
-<p><a href="https://segmentfault.com/a/1190000007604842" target="_blank" rel="noopener">推荐参考</a><br><a href="https://juejin.im/entry/584e427361ff4b006cd22c7c" target="_blank" rel="noopener">参考2</a></p>
-<p>##1、 原因<br>因为dpr = 2;我们用1px设置border的宽度，在设备上就会被放大成两倍粗的线条。<br>
+        <h3 id="💡面向对象的意义是什么？"><a href="#💡面向对象的意义是什么？" class="headerlink" title="💡面向对象的意义是什么？"></a>💡面向对象的意义是什么？</h3><blockquote>
+<p>继承</p>
+</blockquote>
+<p>每次不用从零开始，而是直接在原有的基础上增加方法<br>
         
-          <a class="article-more-a" href="/2019/04/23/移动端适配/1px问题/#more">more >></a>
+          <a class="article-more-a" href="/2019/04/26/ES6/面向对象/#more">more >></a>
         
       
 
@@ -636,16 +260,95 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">1px问题</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">移动端</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
         		</li>
-      		 
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/26/ES6/面向对象/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-ES6/字符串" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/26/ES6/字符串/">字符串</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/26/ES6/字符串/" class="archive-article-date">
+  	<time datetime="2019-04-26T12:41:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="多了两个新方法："><a href="#多了两个新方法：" class="headerlink" title="多了两个新方法："></a>多了两个新方法：</h3><ul>
+<li>startsWith()</li>
+<li>endsWith()</li>
+</ul>
+        
+          <a class="article-more-a" href="/2019/04/26/ES6/字符串/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
         		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
+        		</li>
       		
 		</ul>
 	</div>
@@ -654,7 +357,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/23/移动端适配/1px问题/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/04/26/ES6/字符串/">展开全文 >></a>
         </p>
       
 
@@ -684,33 +387,32 @@
 
 
   
-    <article id="post-Hexo相关/hexo发布博客的日常操作" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-ES6/箭头函数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/23/Hexo相关/hexo发布博客的日常操作/">hexo发布博客的日常操作</a>
+      <a class="article-title" href="/2019/04/26/ES6/箭头函数/">箭头函数</a>
     </h1>
   
 
         
-        <a href="/2019/04/23/Hexo相关/hexo发布博客的日常操作/" class="archive-article-date">
-  	<time datetime="2019-04-23T11:19:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-23</time>
+        <a href="/2019/04/26/ES6/箭头函数/" class="archive-article-date">
+  	<time datetime="2019-04-26T12:41:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p> 首先，我的博客采用的主题是：<strong>yilia</strong></p>
-<p>下面说一下常用操作：</p>
-<h3 id="1-文章的tag（标签）"><a href="#1-文章的tag（标签）" class="headerlink" title="1.文章的tag（标签）"></a>1.文章的tag（标签）</h3><img src="/2019/04/23/Hexo相关/hexo发布博客的日常操作/15560184669271.jpg" title="This is an example image">
-<p>【注意】：- 后面有空格</p>
-<h3 id="2-文章中包含本地图片"><a href="#2-文章中包含本地图片" class="headerlink" title="2.文章中包含本地图片"></a>2.文章中包含本地图片</h3><p><a href="http://www.xinxiaoyang.com/programming/2016-11-25-hexo-image-bug/" target="_blank" rel="noopener">参考这个博客</a></p>
+        <p>箭头函数是ES6对函数的扩展这一部分的内容。</p>
+<blockquote>
+<p>1.基本用法<br>2.this指向<br>3.箭头函数与普通函数的区别？（为什么）<br>4.形参问题<br>5.使用场景</p>
+</blockquote>
         
-          <a class="article-more-a" href="/2019/04/23/Hexo相关/hexo发布博客的日常操作/#more">more >></a>
+          <a class="article-more-a" href="/2019/04/26/ES6/箭头函数/#more">more >></a>
         
       
 
@@ -724,11 +426,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">个人博客</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
         		</li>
       		
 		</ul>
@@ -738,7 +440,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/23/Hexo相关/hexo发布博客的日常操作/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/04/26/ES6/箭头函数/">展开全文 >></a>
         </p>
       
 
@@ -768,29 +470,27 @@
 
 
   
-    <article id="post-随笔/“过期”食品" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-ES6/数组的常用方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/27/随笔/“过期”食品/">“过期”食品</a>
+      <a class="article-title" href="/2019/04/26/ES6/数组的常用方法/">数组的常用API</a>
     </h1>
   
 
         
-        <a href="/2019/03/27/随笔/“过期”食品/" class="archive-article-date">
-  	<time datetime="2019-03-27T13:52:36.908Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-27</time>
+        <a href="/2019/04/26/ES6/数组的常用方法/" class="archive-article-date">
+  	<time datetime="2019-04-26T02:35:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>周五拍毕业照。尚未做好走上社会的准备</p>
-<p>前方狼豺虎豹穷凶极恶都已就位</p>
-<p>只愿保初心</p>
+        <h3 id="ES5"><a href="#ES5" class="headerlink" title="ES5"></a>ES5</h3><p>map 映射<br>reduce 汇总 从一堆数据中找出符合条件的，返回一个新数组（不改变原数组）<br>flter 过滤器<br>foreach 循环（迭代）  没有返回值</p>
 
       
 
@@ -804,7 +504,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
         		</li>
       		
 		</ul>
@@ -814,7 +518,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/27/随笔/“过期”食品/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/04/26/ES6/数组的常用方法/">展开全文 >></a>
         </p>
       
 
@@ -844,30 +548,30 @@
 
 
   
-    <article id="post-CSS3/标准盒模型&amp;怪异盒模型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-ES6/async" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/27/CSS3/标准盒模型&怪异盒模型/">标准盒模型&amp;怪异盒模型</a>
+      <a class="article-title" href="/2019/04/26/ES6/async/">async</a>
     </h1>
   
 
         
-        <a href="/2019/03/27/CSS3/标准盒模型&怪异盒模型/" class="archive-article-date">
-  	<time datetime="2019-03-27T08:24:28.682Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-27</time>
+        <a href="/2019/04/26/ES6/async/" class="archive-article-date">
+  	<time datetime="2019-04-26T02:35:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="1-标准盒模型："><a href="#1-标准盒模型：" class="headerlink" title="1 标准盒模型："></a>1 标准盒模型：</h2><p>一个块的总宽度：<strong>width = width + 2margin + 2padding + 2*border</strong></p>
-<p>盒子真正的width = width + 2padding + 2border。 margin不算！margin可以改变盒子占位的大小，但是盒子的宽高并没有改变，而是位置的改变！<br>
+        <img src="/2019/04/26/ES6/async/15395956406876.jpg">
+<p>对比它们的区别，感受async的用法：<br>
         
-          <a class="article-more-a" href="/2019/03/27/CSS3/标准盒模型&怪异盒模型/#more">more >></a>
+          <a class="article-more-a" href="/2019/04/26/ES6/async/#more">more >></a>
         
       
 
@@ -881,11 +585,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">标准盒模型&怪异盒模型</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
         		</li>
       		
 		</ul>
@@ -895,7 +599,329 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/27/CSS3/标准盒模型&怪异盒模型/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/04/26/ES6/async/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-ES6/Promise" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/26/ES6/Promise/">Promise</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/26/ES6/Promise/" class="archive-article-date">
+  	<time datetime="2019-04-26T02:35:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>解决函数内部嵌套函数（回调地狱）的问题；<br>生成一个Promise的实例对象的时候，会被立即执行。</p>
+<h3 id="一、Promise-then："><a href="#一、Promise-then：" class="headerlink" title="一、Promise.then："></a>一、Promise.then：</h3><h4 id="定义："><a href="#定义：" class="headerlink" title="定义："></a>定义：</h4><p>在Promise的原型对象上<br>
+        
+          <a class="article-more-a" href="/2019/04/26/ES6/Promise/#more">more >></a>
+        
+      
+
+      
+    </p></div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/26/ES6/Promise/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-ES6/ES6学习目标" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/26/ES6/ES6学习目标/">ES6学习目标</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/26/ES6/ES6学习目标/" class="archive-article-date">
+  	<time datetime="2019-04-26T02:35:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>这一次review之后，至少要能回答这几个问题：</p>
+<h4 id="1-有什么新特性？"><a href="#1-有什么新特性？" class="headerlink" title="1. 有什么新特性？"></a>1. 有什么新特性？</h4><h4 id="2-let和const的区别？"><a href="#2-let和const的区别？" class="headerlink" title="2. let和const的区别？"></a>2. let和const的区别？</h4><h4 id="3-字符串的常用api"><a href="#3-字符串的常用api" class="headerlink" title="3. 字符串的常用api"></a>3. 字符串的常用api</h4><h4 id="4-模板字符串的用法"><a href="#4-模板字符串的用法" class="headerlink" title="4. 模板字符串的用法"></a>4. 模板字符串的用法</h4><h4 id="5-数组的常用api"><a href="#5-数组的常用api" class="headerlink" title="5. 数组的常用api"></a>5. 数组的常用api</h4>
+        
+          <a class="article-more-a" href="/2019/04/26/ES6/ES6学习目标/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/26/ES6/ES6学习目标/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-CSS3/CSS预处理器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/26/CSS3/CSS预处理器/">CSS预处理器</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/26/CSS3/CSS预处理器/" class="archive-article-date">
+  	<time datetime="2019-04-26T02:35:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>如图：<br>
+        
+          <a class="article-more-a" href="/2019/04/26/CSS3/CSS预处理器/#more">more >></a>
+        
+      
+
+      
+    </p></div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/26/CSS3/CSS预处理器/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-工具/Debugger-for-Chrome插件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/26/工具/Debugger-for-Chrome插件/">Debugger for Chrome插件</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/26/工具/Debugger-for-Chrome插件/" class="archive-article-date">
+  	<time datetime="2019-04-26T02:27:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h3>
+        
+          <a class="article-more-a" href="/2019/04/26/工具/Debugger-for-Chrome插件/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">插件</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/26/工具/Debugger-for-Chrome插件/">展开全文 >></a>
         </p>
       
 
@@ -927,7 +953,7 @@
   
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -1026,6 +1052,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">BFC</a>
               </li>
              
@@ -1042,11 +1076,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">个人博客</a>
+                <a href="javascript:void(0)" class="js-tag color3">动画</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1058,10 +1088,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">动画</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">标准盒模型&怪异盒模型</a>
               </li>
              
@@ -1070,19 +1096,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">定位</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">CSS预处理器</a>
+                <a href="javascript:void(0)" class="js-tag color3">插件</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vscode插件</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color5">个人博客</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1091,10 +1121,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">移动端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
              
               <li class="article-tag-list-item">

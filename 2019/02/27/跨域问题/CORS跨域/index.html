@@ -9,19 +9,19 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>CORS跨域 | Sing Sing a Song</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="跨域是浏览器的安全策略，是为了控制js不操作不同域的数据  Cross-Origin resource sharing 1.需要服务器和浏览器同时支持2.CORS通信与同源的Ajax通信代码一样3.实现的关键：服务器4.简单请求： 在头信息中，加Origin字段  Origin字段作用：说明请求来自哪个源（端口+协议+域名）  服务器根据👆，决定是否同意这个请求   不同意：返回正常的HTTP">
+  <meta name="description" content="跨域是浏览器的安全策略，是为了控制js不操作不同域的数据  Cross-Origin resource sharing 1.需要服务器和浏览器同时支持2.CORS通信与同源的Ajax通信代码一样3.实现的关键：服务器4.简单请求： 在头信息中，加Origin字段  Origin字段作用：说明请求来自哪个源（端口+协议+域名）  服务器根据👆，决定是否同意这个请求">
 <meta name="keywords" content="跨域">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CORS跨域">
 <meta property="og:url" content="http://yoursite.com/2019/02/27/跨域问题/CORS跨域/index.html">
 <meta property="og:site_name" content="Sing Sing a Song">
-<meta property="og:description" content="跨域是浏览器的安全策略，是为了控制js不操作不同域的数据  Cross-Origin resource sharing 1.需要服务器和浏览器同时支持2.CORS通信与同源的Ajax通信代码一样3.实现的关键：服务器4.简单请求： 在头信息中，加Origin字段  Origin字段作用：说明请求来自哪个源（端口+协议+域名）  服务器根据👆，决定是否同意这个请求   不同意：返回正常的HTTP">
+<meta property="og:description" content="跨域是浏览器的安全策略，是为了控制js不操作不同域的数据  Cross-Origin resource sharing 1.需要服务器和浏览器同时支持2.CORS通信与同源的Ajax通信代码一样3.实现的关键：服务器4.简单请求： 在头信息中，加Origin字段  Origin字段作用：说明请求来自哪个源（端口+协议+域名）  服务器根据👆，决定是否同意这个请求">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/2019/02/27/跨域问题/CORS跨域/media/15348149310409/15348159599128.jpg">
-<meta property="og:updated_time" content="2019-03-11T05:32:06.195Z">
+<meta property="og:updated_time" content="2019-04-26T02:25:51.004Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CORS跨域">
-<meta name="twitter:description" content="跨域是浏览器的安全策略，是为了控制js不操作不同域的数据  Cross-Origin resource sharing 1.需要服务器和浏览器同时支持2.CORS通信与同源的Ajax通信代码一样3.实现的关键：服务器4.简单请求： 在头信息中，加Origin字段  Origin字段作用：说明请求来自哪个源（端口+协议+域名）  服务器根据👆，决定是否同意这个请求   不同意：返回正常的HTTP">
+<meta name="twitter:description" content="跨域是浏览器的安全策略，是为了控制js不操作不同域的数据  Cross-Origin resource sharing 1.需要服务器和浏览器同时支持2.CORS通信与同源的Ajax通信代码一样3.实现的关键：服务器4.简单请求： 在头信息中，加Origin字段  Origin字段作用：说明请求来自哪个源（端口+协议+域名）  服务器根据👆，决定是否同意这个请求">
 <meta name="twitter:image" content="http://yoursite.com/2019/02/27/跨域问题/CORS跨域/media/15348149310409/15348159599128.jpg">
   
   <link rel="alternative" href="/atom.xml" title="Sing Sing a Song" type="application/atom+xml">
@@ -174,6 +174,7 @@
 <li><p>服务器根据👆，决定是否同意这个请求</p>
 </li>
 </ul>
+<a id="more"></a>
 <h6 id="不同意：返回正常的HTTP响应"><a href="#不同意：返回正常的HTTP响应" class="headerlink" title="不同意：返回正常的HTTP响应"></a>不同意：返回正常的HTTP响应</h6><pre><code>浏览器在头字段中没找到`Access-Control-Allow-Origin`字段，抛出错误，由`XMLHttpRequest`的`onerror`回调函数捕获。
 </code></pre><h6 id="同意：多几个头信息字段。"><a href="#同意：多几个头信息字段。" class="headerlink" title="同意：多几个头信息字段。"></a>同意：多几个头信息字段。</h6><p><code>Access-Control-Allow-Origin</code>(必选）:<br>接受任意域名的请求</p>
 <p><code>Access-Control-Allow-Credentials</code>(可选，布尔值）:<br>是否允许发送cookie</p>
@@ -290,18 +291,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/02/27/设计模式/设计模式概述/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/02/27/跨域问题/三大类跨域问题之AJAX跨域/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          设计模式概述
+          三大类跨域问题之AJAX跨域
         
       </div>
     </a>
   
   
-    <a href="/2019/02/27/设计模式/单例模式/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">单例模式</div>
+    <a href="/2019/02/27/设计模式/设计模式概述/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">设计模式概述</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -452,6 +453,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">BFC</a>
               </li>
              
@@ -468,11 +477,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">个人博客</a>
+                <a href="javascript:void(0)" class="js-tag color3">动画</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -484,10 +489,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">动画</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">标准盒模型&怪异盒模型</a>
               </li>
              
@@ -496,19 +497,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">定位</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">CSS预处理器</a>
+                <a href="javascript:void(0)" class="js-tag color3">插件</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vscode插件</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color5">个人博客</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -517,10 +522,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">移动端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
              
               <li class="article-tag-list-item">

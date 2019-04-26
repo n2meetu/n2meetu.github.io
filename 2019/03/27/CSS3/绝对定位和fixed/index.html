@@ -9,18 +9,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>绝对定位和fixed | Sing Sing a Song</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这两个货分别是相对于哪个标签进行定位？？ ##场景：css：1234567891011.a&amp;#123;    position: relative;&amp;#125;.b&amp;#123;    position: fixed;&amp;#125;.c&amp;#123;    position: absolute;&amp;#125;">
+  <meta name="description" content="这两个货分别是相对于哪个标签进行定位？？ 场景：css：1234567891011.a&amp;#123;    position: relative;&amp;#125;.b&amp;#123;    position: fixed;&amp;#125;.c&amp;#123;    position: absolute;&amp;#125;">
 <meta name="keywords" content="CSS,定位">
 <meta property="og:type" content="article">
 <meta property="og:title" content="绝对定位和fixed">
 <meta property="og:url" content="http://yoursite.com/2019/03/27/CSS3/绝对定位和fixed/index.html">
 <meta property="og:site_name" content="Sing Sing a Song">
-<meta property="og:description" content="这两个货分别是相对于哪个标签进行定位？？ ##场景：css：1234567891011.a&amp;#123;    position: relative;&amp;#125;.b&amp;#123;    position: fixed;&amp;#125;.c&amp;#123;    position: absolute;&amp;#125;">
+<meta property="og:description" content="这两个货分别是相对于哪个标签进行定位？？ 场景：css：1234567891011.a&amp;#123;    position: relative;&amp;#125;.b&amp;#123;    position: fixed;&amp;#125;.c&amp;#123;    position: absolute;&amp;#125;">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-25T14:34:36.482Z">
+<meta property="og:updated_time" content="2019-04-26T02:23:24.340Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="绝对定位和fixed">
-<meta name="twitter:description" content="这两个货分别是相对于哪个标签进行定位？？ ##场景：css：1234567891011.a&amp;#123;    position: relative;&amp;#125;.b&amp;#123;    position: fixed;&amp;#125;.c&amp;#123;    position: absolute;&amp;#125;">
+<meta name="twitter:description" content="这两个货分别是相对于哪个标签进行定位？？ 场景：css：1234567891011.a&amp;#123;    position: relative;&amp;#125;.b&amp;#123;    position: fixed;&amp;#125;.c&amp;#123;    position: absolute;&amp;#125;">
   
   <link rel="alternative" href="/atom.xml" title="Sing Sing a Song" type="application/atom+xml">
   
@@ -161,7 +161,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>这两个货分别是相对于哪个标签进行定位？？</p>
-<p>##场景：<br>css：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.a&#123;</span><br><span class="line">    position: relative;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.b&#123;</span><br><span class="line">    position: fixed;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.c&#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="场景："><a href="#场景：" class="headerlink" title="场景："></a>场景：</h2><p>css：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.a&#123;</span><br><span class="line">    position: relative;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.b&#123;</span><br><span class="line">    position: fixed;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.c&#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <a id="more"></a>
 <p>html:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;a&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;b&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;c&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
 <h4 id="问-div-c相对于-a还是b进行定位？？"><a href="#问-div-c相对于-a还是b进行定位？？" class="headerlink" title="问: div.c相对于 a还是b进行定位？？"></a>问: div.c相对于 a还是b进行定位？？</h4><h2 id="demo"><a href="#demo" class="headerlink" title="demo"></a><a href="https://codepen.io/singsingasong/pen/EebeEe?editors=1100" target="_blank" rel="noopener">demo</a></h2><h3 id="1-absolute"><a href="#1-absolute" class="headerlink" title="1.absolute"></a>1.absolute</h3><p>相对于static定位以外的第一个父元素进行定位。</p>
@@ -443,6 +443,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">BFC</a>
               </li>
              
@@ -459,11 +467,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">个人博客</a>
+                <a href="javascript:void(0)" class="js-tag color3">动画</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -475,10 +479,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">动画</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">标准盒模型&怪异盒模型</a>
               </li>
              
@@ -487,19 +487,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">定位</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">CSS预处理器</a>
+                <a href="javascript:void(0)" class="js-tag color3">插件</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vscode插件</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color5">个人博客</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -508,10 +512,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">移动端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
              
               <li class="article-tag-list-item">

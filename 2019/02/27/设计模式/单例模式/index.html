@@ -9,18 +9,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>单例模式 | Sing Sing a Song</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1、单例类只能有一个实例。2、单例类必须自己创建自己的唯一实例。3、单例类必须给所有其他对象提供这一实例。  1.如何理解：一个班只有一个班长 怎么保证在班级中只有一个班长（被称为单例的特殊类）？ 2.一个类只有一个实例班长这个类底下只有李明一个人。想new一个班长，首先判断一下现在班级是否有班长，如果还没有，可以new；如果有了，尊重班长，不可以随便换人…… 3.适用场景希望在某个系统中，某个">
+  <meta name="description" content="1、单例类只能有一个实例。2、单例类必须自己创建自己的唯一实例。3、单例类必须给所有其他对象提供这一实例。  1.如何理解：一个班只有一个班长 怎么保证在班级中只有一个班长（被称为单例的特殊类）？">
 <meta name="keywords" content="设计模式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="单例模式">
 <meta property="og:url" content="http://yoursite.com/2019/02/27/设计模式/单例模式/index.html">
 <meta property="og:site_name" content="Sing Sing a Song">
-<meta property="og:description" content="1、单例类只能有一个实例。2、单例类必须自己创建自己的唯一实例。3、单例类必须给所有其他对象提供这一实例。  1.如何理解：一个班只有一个班长 怎么保证在班级中只有一个班长（被称为单例的特殊类）？ 2.一个类只有一个实例班长这个类底下只有李明一个人。想new一个班长，首先判断一下现在班级是否有班长，如果还没有，可以new；如果有了，尊重班长，不可以随便换人…… 3.适用场景希望在某个系统中，某个">
+<meta property="og:description" content="1、单例类只能有一个实例。2、单例类必须自己创建自己的唯一实例。3、单例类必须给所有其他对象提供这一实例。  1.如何理解：一个班只有一个班长 怎么保证在班级中只有一个班长（被称为单例的特殊类）？">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-11T05:32:06.933Z">
+<meta property="og:updated_time" content="2019-04-26T02:26:06.078Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="单例模式">
-<meta name="twitter:description" content="1、单例类只能有一个实例。2、单例类必须自己创建自己的唯一实例。3、单例类必须给所有其他对象提供这一实例。  1.如何理解：一个班只有一个班长 怎么保证在班级中只有一个班长（被称为单例的特殊类）？ 2.一个类只有一个实例班长这个类底下只有李明一个人。想new一个班长，首先判断一下现在班级是否有班长，如果还没有，可以new；如果有了，尊重班长，不可以随便换人…… 3.适用场景希望在某个系统中，某个">
+<meta name="twitter:description" content="1、单例类只能有一个实例。2、单例类必须自己创建自己的唯一实例。3、单例类必须给所有其他对象提供这一实例。  1.如何理解：一个班只有一个班长 怎么保证在班级中只有一个班长（被称为单例的特殊类）？">
   
   <link rel="alternative" href="/atom.xml" title="Sing Sing a Song" type="application/atom+xml">
   
@@ -165,6 +165,7 @@
 </blockquote>
 <h3 id="1-如何理解："><a href="#1-如何理解：" class="headerlink" title="1.如何理解："></a>1.如何理解：</h3><p>一个班只有一个班长</p>
 <p><strong>怎么保证在班级中只有一个班长（被称为单例的特殊类）？</strong></p>
+<a id="more"></a>
 <h3 id="2-一个类只有一个实例"><a href="#2-一个类只有一个实例" class="headerlink" title="2.一个类只有一个实例"></a>2.一个类只有一个实例</h3><p><code>班长</code>这个类底下只有<code>李明</code>一个人。<br>想new一个班长，首先判断一下现在班级是否有班长，如果还没有，可以new；如果有了，尊重班长，不可以随便换人……</p>
 <h3 id="3-适用场景"><a href="#3-适用场景" class="headerlink" title="3.适用场景"></a>3.适用场景</h3><p>希望在某个系统中，某个类的对象只有一个</p>
 <h3 id="4-用js实现一个单例模式"><a href="#4-用js实现一个单例模式" class="headerlink" title="4.用js实现一个单例模式"></a>4.用js实现一个单例模式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">// 方案一：字面量对象</span><br><span class="line">var singleTon=&#123;</span><br><span class="line">    attr1:true,</span><br><span class="line">    attr2:10,</span><br><span class="line">    method:function()&#123;  </span><br><span class="line">        console.log(&quot;A single singleton example&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 方案二：利用闭包实现一个拥有私有变量的单例对象</span><br><span class="line">var singleTon1=(function()&#123;</span><br><span class="line">    var instance;</span><br><span class="line">    function initInstance()&#123;</span><br><span class="line">        var object=new Object();</span><br><span class="line">        object.msg=&quot;单例模式&quot;;</span><br><span class="line">        return Object;</span><br><span class="line">    &#125;</span><br><span class="line">    return&#123;</span><br><span class="line">        getInstance:function()&#123;</span><br><span class="line">            if(!instance)&#123;</span><br><span class="line">                instance=initInstance();</span><br><span class="line">            &#125;</span><br><span class="line">            return instance;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
@@ -276,18 +277,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/02/27/跨域问题/CORS跨域/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/02/27/设计模式/设计模式概述/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          CORS跨域
+          设计模式概述
         
       </div>
     </a>
   
   
-    <a href="/2019/02/27/数据结构/排序算法/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">排序算法</div>
+    <a href="/2019/02/27/3D/3D问题搞一波/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">3d学习总结</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -438,6 +439,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">BFC</a>
               </li>
              
@@ -454,11 +463,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">个人博客</a>
+                <a href="javascript:void(0)" class="js-tag color3">动画</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -470,10 +475,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">动画</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">标准盒模型&怪异盒模型</a>
               </li>
              
@@ -482,19 +483,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">定位</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">CSS预处理器</a>
+                <a href="javascript:void(0)" class="js-tag color3">插件</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vscode插件</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color5">个人博客</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -503,10 +508,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">移动端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
              
               <li class="article-tag-list-item">
