@@ -145,6 +145,103 @@
     
     <div class="article-entry" itemprop="articleBody">
       
+        <!DOCTYPE html>
+<html lang="en">
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>cookie的基本使用</title>
+    <script src></script>
+</head>
+
+<body>
+    <script>
+        // 设置cookie 名字，值，过期时间expires
+        // 日期对象设置过期时间：先get，再set
+        function setCookie(name, value, iDay) {
+            var oDate = new Date();
+            oDate.setDate(oDate.getDate() + iDay);
+
+            document.cookie = name + "=" + value + ";expires=" + oDate;
+        }
+
+        setCookie("username", "zhang", 14);
+        setCookie("password", "123123", 34);
+        alert(document.cookie);
+
+        // 读取cookie
+        function getCookie(name) {  // 比如我要从cookie中查找用户名 name = "username"
+            var cookie = document.cookie;
+            var arr = cookie.split("; ");
+            for (var i = 0; i < arr.length; i++) {
+                var arr2 = arr[i].split("=");
+                if (arr2[0] == name) {
+                    return arr2[1];
+                }
+            }
+            return ' '; //每找到
+        }
+        alert(getCookie("username"));
+
+
+        // cookie的大小和容量都有限，不用的时候请赶紧删掉
+        function removeCookie(name) {
+            setCookie(name, 1, -1); // -1天过期，就是昨天过期。
+        }
+        removeCookie("username");
+        alert(document.cookie);
+    </script>
+</body>
+
+</html>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/27/HTTP/Cookie/cookie/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-HTTP/Cookie/cookie" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
         <h1 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h1><h3 id="1-特点："><a href="#1-特点：" class="headerlink" title="1.特点："></a>1.特点：</h3><p>名，值，有效期<br>数量和大小都有限：4k，一般50个<br>如果没有设置有效期，浏览器关闭后就失效</p>
 <h3 id="2-基本使用"><a href="#2-基本使用" class="headerlink" title="2.基本使用"></a>2.基本使用</h3><p><a href="https://github.com/n2meetu/InterviewPreparation/blob/master/Cookie/cookie.html" target="_blank" rel="noopener">cooke操作.html</a></p>
 <p><code>document.cookie</code></p>
@@ -847,93 +944,6 @@
 
 
   
-    <article id="post-JS/继承" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/27/JS/继承/">继承</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/27/JS/继承/" class="archive-article-date">
-  	<time datetime="2019-03-27T08:24:25.868Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="ES5"><a href="#ES5" class="headerlink" title="ES5"></a>ES5</h3><p>想加一个新方法，特别麻烦。。。</p>
-<p>把想要继承的方法写在<strong>原型对象</strong>上。</p>
-<p>每次new一个新的实例，都让新实例的<code>prototype</code>指向构造器；<br>而<code>constructor</code>又指向<code>prototype</code>。</p>
-<h3 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h3><ul>
-<li>construct属性</li>
-<li>super()方法；</li>
-<li>extends()方法；</li>
-</ul>
-        
-          <a class="article-more-a" href="/2019/03/27/JS/继承/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/27/JS/继承/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
@@ -1035,7 +1045,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1043,11 +1053,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">bootstrap</a>
+                <a href="javascript:void(0)" class="js-tag color4">BFC</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+                <a href="javascript:void(0)" class="js-tag color4">em 和 rem</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">动画</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">bootstrap</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1063,14 +1081,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BFC</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">em 和 rem</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">水平垂直居中</a>
               </li>
              
@@ -1079,27 +1089,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">动画</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">插件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">优化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">JS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1111,11 +1109,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color3">JS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">排序</a>
+                <a href="javascript:void(0)" class="js-tag color3">优化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">插件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1124,6 +1126,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">移动端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">排序</a>
               </li>
              
               <li class="article-tag-list-item">
