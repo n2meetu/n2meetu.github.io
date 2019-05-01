@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="Sing Sing a Song">
 <meta property="og:description" content="方法一：循环+递归挨个判断每一个数组，是不是嵌套了一个子数组。如果是，递归。否则，推入空数组中保存下来。1234567891011121314function flatten(arr) &amp;#123;    var res = [];    for (var i = 0; i &amp;lt; arr.length; i++) &amp;#123;        if (Array.isArray(arr[i]))">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-01T02:04:54.460Z">
+<meta property="og:updated_time" content="2019-05-01T02:17:20.510Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数组扁平化">
 <meta name="twitter:description" content="方法一：循环+递归挨个判断每一个数组，是不是嵌套了一个子数组。如果是，递归。否则，推入空数组中保存下来。1234567891011121314function flatten(arr) &amp;#123;    var res = [];    for (var i = 0; i &amp;lt; arr.length; i++) &amp;#123;        if (Array.isArray(arr[i]))">
@@ -161,6 +161,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="方法一：循环-递归"><a href="#方法一：循环-递归" class="headerlink" title="方法一：循环+递归"></a>方法一：循环+递归</h3><p>挨个判断每一个数组，是不是嵌套了一个子数组。如果是，递归。否则，推入空数组中保存下来。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">function flatten(arr) &#123;</span><br><span class="line">    var res = [];</span><br><span class="line">    for (var i = 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">        if (Array.isArray(arr[i])) &#123;  // 如果是数组</span><br><span class="line">            res = res.concat(flatten(arr[i]));</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            res.push(arr[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return res;</span><br><span class="line">&#125;</span><br><span class="line">var arr = [1, &quot;b&quot;, [&quot;c&quot;, &quot;d&quot;], [[&quot;d&quot;], &quot;e&quot;], &quot;f&quot;];</span><br><span class="line">var new_arr = flatten(arr);  // [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;d&quot;, &quot;e&quot;, &quot;f&quot;]</span><br><span class="line">console.log(new_arr);</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <p>输出：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Array(7) [1, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;d&quot;, &quot;e&quot;, &quot;f&quot;]</span><br></pre></td></tr></table></figure>
 <h3 id="方法2：toString-（字符串转字符串）"><a href="#方法2：toString-（字符串转字符串）" class="headerlink" title="方法2：toString()（字符串转字符串）"></a>方法2：toString()（字符串转字符串）</h3><p><code>toString</code> 可以把数组的所有元素都转换成用逗号相隔的<em><strong><em>字符串</em></strong></em>。</p>
@@ -460,6 +461,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">标准盒模型&怪异盒模型</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">bootstrap</a>
               </li>
              
@@ -468,23 +473,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">圣杯和双飞翼的区别</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">标准盒模型&怪异盒模型</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">水平垂直居中</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">定位</a>
+                <a href="javascript:void(0)" class="js-tag color5">圣杯和双飞翼的区别</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">定位</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -516,19 +517,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">1px问题</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">移动端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">排序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">1px问题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">移动端</a>
               </li>
              
               <li class="article-tag-list-item">

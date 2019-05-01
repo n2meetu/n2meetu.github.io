@@ -161,20 +161,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="方法一：循环-递归"><a href="#方法一：循环-递归" class="headerlink" title="方法一：循环+递归"></a>方法一：循环+递归</h3><p>挨个判断每一个数组，是不是嵌套了一个子数组。如果是，递归。否则，推入空数组中保存下来。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">function flatten(arr) &#123;</span><br><span class="line">    var res = [];</span><br><span class="line">    for (var i = 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">        if (Array.isArray(arr[i])) &#123;  // 如果是数组</span><br><span class="line">            res = res.concat(flatten(arr[i]));</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            res.push(arr[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return res;</span><br><span class="line">&#125;</span><br><span class="line">var arr = [1, &quot;b&quot;, [&quot;c&quot;, &quot;d&quot;], [[&quot;d&quot;], &quot;e&quot;], &quot;f&quot;];</span><br><span class="line">var new_arr = flatten(arr);  // [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;d&quot;, &quot;e&quot;, &quot;f&quot;]</span><br><span class="line">console.log(new_arr);</span><br></pre></td></tr></table></figure></p>
-<p>输出：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Array(7) [1, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;d&quot;, &quot;e&quot;, &quot;f&quot;]</span><br></pre></td></tr></table></figure>
-<h3 id="方法2：toString-（字符串转字符串）"><a href="#方法2：toString-（字符串转字符串）" class="headerlink" title="方法2：toString()（字符串转字符串）"></a>方法2：toString()（字符串转字符串）</h3><p><code>toString</code> 可以把数组的所有元素都转换成用逗号相隔的<em><strong><em>字符串</em></strong></em>。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var arr = [&quot;a&quot;, &quot;b&quot;, [&quot;c&quot;, &quot;d&quot;], [[&quot;d&quot;], &quot;e&quot;], &quot;f&quot;];</span><br><span class="line">var new_arr = arr.toString();  // [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;d&quot;, &quot;e&quot;, &quot;f&quot;]</span><br><span class="line">console.log(new_arr);</span><br></pre></td></tr></table></figure>
-<p>输出：<br><code>a,b,c,d,d,e,f</code><br>变成<strong>字符串</strong>了类型，这时候，需要再想办法把<strong>字符串</strong>转换成<strong>数组</strong>。<br>方法——&gt; 用 <code>split()</code>方法。因为<code>split()</code>的返回值是字符串数组。</p>
-<p>改善后的写法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var arr = [&quot;a&quot;, &quot;b&quot;, [&quot;c&quot;, &quot;d&quot;], [[&quot;d&quot;], &quot;e&quot;], &quot;f&quot;];</span><br><span class="line">var new_arr = arr.toString().split(&apos;,&apos;);  // [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;d&quot;, &quot;e&quot;, &quot;f&quot;]</span><br><span class="line"></span><br><span class="line">console.log(new_arr);</span><br></pre></td></tr></table></figure></p>
-<p>输出：<br><code>Array(7) [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;d&quot;, &quot;e&quot;, &quot;f&quot;]</code></p>
-<p>ES6的写法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const flatten = (arr) =&gt; arr.toString().split(&apos;,&apos;);  // [&quot;1&quot;, &quot;2&quot;, &quot;3&quot;, &quot;4&quot;, &quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;d&quot;, &quot;e&quot;, &quot;f&quot;]</span><br><span class="line">console.log(flatten(arr));</span><br></pre></td></tr></table></figure>
-<h6 id="注意：这种方法，如果嵌套了数字，转换后会变成字符串。没办法区分数字和字符串。"><a href="#注意：这种方法，如果嵌套了数字，转换后会变成字符串。没办法区分数字和字符串。" class="headerlink" title="注意：这种方法，如果嵌套了数字，转换后会变成字符串。没办法区分数字和字符串。"></a>注意：这种方法，如果嵌套了数字，转换后会变成字符串。没办法区分数字和字符串。</h6><h3 id="方法3-join-‘-’-和split-‘-’"><a href="#方法3-join-‘-’-和split-‘-’" class="headerlink" title="方法3: join(‘,’)和split(‘,’)"></a>方法3: join(‘,’)和split(‘,’)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const flatten = (arr) =&gt; arr.join(&apos;,&apos;).split(&apos;,&apos;);  // [&quot;1&quot;, &quot;2&quot;, &quot;3&quot;, &quot;4&quot;, &quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;d&quot;, &quot;e&quot;, &quot;f&quot;]</span><br><span class="line">console.log(flatten(arr));</span><br></pre></td></tr></table></figure>
-<p>输出：<br><code>Array(7) [&quot;1&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;d&quot;, &quot;e&quot;, &quot;f&quot;]</code></p>
-<h3 id="方法4：扩展运算符-some"><a href="#方法4：扩展运算符-some" class="headerlink" title="方法4：扩展运算符+some()"></a>方法4：扩展运算符+some()</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function flatten(arr) &#123;</span><br><span class="line">    while(arr.some(isArray))&#123;  // 如果数组中包含嵌套数组，就用扩展运算符展开。直到检测不到嵌套数组为止。</span><br><span class="line">        arr = [].concat(...arr);</span><br><span class="line">    &#125;</span><br><span class="line">    return arr;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function isArray(item)&#123;</span><br><span class="line">   return Array.isArray(item);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var arr = [1, [2, 3, [4]], &quot;a&quot;, &quot;b&quot;, [&quot;c&quot;, &quot;d&quot;], [[&quot;d&quot;], &quot;e&quot;], &quot;f&quot;];</span><br><span class="line">console.log(flatten(arr)) // [1, 2, 3, 4, &quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;d&quot;, &quot;e&quot;, &quot;f&quot;]</span><br></pre></td></tr></table></figure>
-<p>输出：<br><code>Array(11) [1, 2, 3, 4, &quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, …]</code></p>
-
+        
+          <a class="article-more-a" href="/2019/05/01/JS/数组扁平化/#more">more >></a>
+        
       
 
       
@@ -472,6 +461,253 @@
 
 
   
+    <article id="post-JS/闭包" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/27/JS/闭包/">闭包</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/27/JS/闭包/" class="archive-article-date">
+  	<time datetime="2019-04-27T02:52:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function a()&#123;</span><br><span class="line">    let a =1;</span><br><span class="line">    function b()&#123;</span><br><span class="line">        console.log(a);</span><br><span class="line">    &#125;</span><br><span class="line">    return b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var closure = a();  // 引用</span><br><span class="line">closure();   // 1</span><br></pre></td></tr></table></figure>
+<p>a的作用域在<code>a()</code>里面</p>
+<p>一般，函数体内定义的变量在函数体外是无法访问的；<br>
+        
+          <a class="article-more-a" href="/2019/04/27/JS/闭包/#more">more >></a>
+        
+      
+
+      
+    </p></div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/27/JS/闭包/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-JS/判断对象类型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/27/JS/判断对象类型/">js如何判断数据类型</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/27/JS/判断对象类型/" class="archive-article-date">
+  	<time datetime="2019-04-27T02:52:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>基本类型：Number，String，Boolean，undefined, null ,symbol<br>对象类型（引用类型）：Function, Object, Array</p>
+<p>区别：嫩不能添加属性和方法；是否通过引用的方式进行比较；</p>
+<p>判断数据类型的方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function is(type, obj) &#123;</span><br><span class="line">    var clas = Object.prototype.toString.call(obj).slice(8, -1);</span><br><span class="line">    return obj !== undefined &amp;&amp; obj !== null &amp;&amp; clas === type;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">is(&apos;String&apos;, &apos;test&apos;); // true</span><br><span class="line">is(&apos;String&apos;, new String(&apos;test&apos;)); // true</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2019/04/27/JS/判断对象类型/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/27/JS/判断对象类型/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-JS/apply和call" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/27/JS/apply和call/">apply和call</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/27/JS/apply和call/" class="archive-article-date">
+  	<time datetime="2019-04-27T02:52:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>apply:方法能劫持另外一个对象的方法，继承另外一个对象的属性.</p>
+<img src="/2019/04/27/JS/apply和call/15563338472798.jpg" title="This is an example image">
+<p>注解：this指的是，调用函数的那个对象 都是因为object没有某个方法，但是别的对象有，可以借助apply或call像别的对象借方法来操作。</p>
+        
+          <a class="article-more-a" href="/2019/04/27/JS/apply和call/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/27/JS/apply和call/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-HTTP/浏览器缓存机制" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -639,253 +875,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/04/27/HTTP/浏览器缓存机制/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JS/apply和call" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/27/JS/apply和call/">apply和call</a>
-    </h1>
-  
-
-        
-        <a href="/2019/04/27/JS/apply和call/" class="archive-article-date">
-  	<time datetime="2019-04-27T02:52:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>apply:方法能劫持另外一个对象的方法，继承另外一个对象的属性.</p>
-<img src="/2019/04/27/JS/apply和call/15563338472798.jpg" title="This is an example image">
-<p>注解：this指的是，调用函数的那个对象 都是因为object没有某个方法，但是别的对象有，可以借助apply或call像别的对象借方法来操作。</p>
-        
-          <a class="article-more-a" href="/2019/04/27/JS/apply和call/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/27/JS/apply和call/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JS/判断对象类型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/27/JS/判断对象类型/">js如何判断数据类型</a>
-    </h1>
-  
-
-        
-        <a href="/2019/04/27/JS/判断对象类型/" class="archive-article-date">
-  	<time datetime="2019-04-27T02:52:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>基本类型：Number，String，Boolean，undefined, null ,symbol<br>对象类型（引用类型）：Function, Object, Array</p>
-<p>区别：嫩不能添加属性和方法；是否通过引用的方式进行比较；</p>
-<p>判断数据类型的方法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function is(type, obj) &#123;</span><br><span class="line">    var clas = Object.prototype.toString.call(obj).slice(8, -1);</span><br><span class="line">    return obj !== undefined &amp;&amp; obj !== null &amp;&amp; clas === type;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">is(&apos;String&apos;, &apos;test&apos;); // true</span><br><span class="line">is(&apos;String&apos;, new String(&apos;test&apos;)); // true</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2019/04/27/JS/判断对象类型/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/27/JS/判断对象类型/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JS/闭包" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/27/JS/闭包/">闭包</a>
-    </h1>
-  
-
-        
-        <a href="/2019/04/27/JS/闭包/" class="archive-article-date">
-  	<time datetime="2019-04-27T02:52:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function a()&#123;</span><br><span class="line">    let a =1;</span><br><span class="line">    function b()&#123;</span><br><span class="line">        console.log(a);</span><br><span class="line">    &#125;</span><br><span class="line">    return b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var closure = a();  // 引用</span><br><span class="line">closure();   // 1</span><br></pre></td></tr></table></figure>
-<p>a的作用域在<code>a()</code>里面</p>
-<p>一般，函数体内定义的变量在函数体外是无法访问的；<br>
-        
-          <a class="article-more-a" href="/2019/04/27/JS/闭包/#more">more >></a>
-        
-      
-
-      
-    </p></div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/27/JS/闭包/">展开全文 >></a>
         </p>
       
 
@@ -1197,6 +1186,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">标准盒模型&怪异盒模型</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">bootstrap</a>
               </li>
              
@@ -1205,23 +1198,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">圣杯和双飞翼的区别</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">标准盒模型&怪异盒模型</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">水平垂直居中</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">定位</a>
+                <a href="javascript:void(0)" class="js-tag color5">圣杯和双飞翼的区别</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">定位</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1253,19 +1242,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">1px问题</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">移动端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">排序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">1px问题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">移动端</a>
               </li>
              
               <li class="article-tag-list-item">
