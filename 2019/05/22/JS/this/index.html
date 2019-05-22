@@ -19,7 +19,7 @@
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006tNc79ly1g39xh17uepj30wn0dn0sr.jpg">
 <meta property="og:image" content="http://ww3.sinaimg.cn/large/006tNc79ly1g39xlecyquj30ko0erwes.jpg">
-<meta property="og:updated_time" content="2019-05-22T03:26:31.421Z">
+<meta property="og:updated_time" content="2019-05-22T07:55:25.980Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="this">
 <meta name="twitter:description" content="主要分为几种情况：  直接调用 对象调用 new 箭头函数 bind()  规律： 首先，new 的方式优先级最高，接下来是 bind 这些函数，然后是 obj.foo()这种调用方式，最后是 foo()这种调用方式，同时，箭头函数的 this 一旦被绑定，就不会再被任何方式所改变。">
@@ -188,7 +188,7 @@
 <h3 id="bind"><a href="#bind" class="headerlink" title="bind()"></a>bind()</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let a = &#123;&#125;</span><br><span class="line">let fn = function () &#123; console.log(this) &#125;</span><br><span class="line">fn.bind().bind(a)() // =&gt; ?</span><br></pre></td></tr></table></figure>
 <p>等价于</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// fn.bind().bind(a) 等于</span><br><span class="line">let fn2 = function fn1() &#123;</span><br><span class="line">  return function() &#123;</span><br><span class="line">    return fn.apply()</span><br><span class="line">  &#125;.apply(a)</span><br><span class="line">&#125;</span><br><span class="line">fn2()</span><br></pre></td></tr></table></figure>
-<p><img src="http://ww1.sinaimg.cn/large/006tNc79ly1g39xh17uepj30wn0dn0sr.jpg" alt></p>
+<p><img src="http://ww1.sinaimg.cn/large/006tNc79ly1g39xh17uepj30wn0dn0sr.jpg" alt="-w240"></p>
 <p>从上述代码中发现，不管我们给函数 <code>bind</code> 几次，<strong><code>fn</code> 中的 <code>this</code> 永远由第一次 <code>bind</code> 决定</strong>，所以结果永远是 <code>window</code>。</p>
 <p>一共五个规则。如果多个规则同时出现，则按照优先级来决定<code>this:</code>new &gt; bind() &gt; obj.foo() &gt; foo() `，箭头函数一旦被绑定，就不会再被任何方式改变。</p>
 <p>下图是只出现单一规则时的判断过程：<br><img src="http://ww3.sinaimg.cn/large/006tNc79ly1g39xlecyquj30ko0erwes.jpg" alt></p>
@@ -474,23 +474,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">em 和 rem</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">水平垂直居中</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">动画</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">bootstrap</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">响应式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">em 和 rem</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">动画</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -502,6 +498,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">水平垂直居中</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">定位</a>
               </li>
              
@@ -510,11 +510,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">个人博客</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -538,19 +546,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">个人博客</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">插件</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">1px问题</a>
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -558,7 +558,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color1">1px问题</a>
               </li>
              
               <li class="article-tag-list-item">
