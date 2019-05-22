@@ -140,6 +140,100 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-JS/this" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/22/JS/this/">this</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/22/JS/this/" class="archive-article-date">
+  	<time datetime="2019-05-22T02:35:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>主要分为几种情况：</p>
+<ul>
+<li>直接调用</li>
+<li>对象调用</li>
+<li>new</li>
+<li>箭头函数</li>
+<li>bind()</li>
+</ul>
+<h4 id="规律："><a href="#规律：" class="headerlink" title="规律："></a>规律：</h4><blockquote>
+<p>首先，new 的方式优先级最高，接下来是 bind 这些函数，然后是 <code>obj.foo()</code>这种调用方式，最后是 <code>foo()</code>这种调用方式，同时，箭头函数的 this 一旦被绑定，就不会再被任何方式所改变。</p>
+</blockquote>
+        
+          <a class="article-more-a" href="/2019/05/22/JS/this/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">this</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/22/JS/this/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-JS/数据类型转换" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -342,11 +436,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
         		</li>
       		
 		</ul>
@@ -357,86 +451,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/04/27/HTML/DOCTYPE有哪些类型/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JS/事件监听" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/27/JS/事件监听/">事件监听</a>
-    </h1>
-  
-
-        
-        <a href="/2019/04/27/JS/事件监听/" class="archive-article-date">
-  	<time datetime="2019-04-27T03:36:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="冒泡传递（从内到外）"><a href="#冒泡传递（从内到外）" class="headerlink" title="冒泡传递（从内到外）"></a>冒泡传递（从内到外）</h3><h3 id="捕获传递（从外到内）"><a href="#捕获传递（从外到内）" class="headerlink" title="捕获传递（从外到内）"></a>捕获传递（从外到内）</h3><img src="/2019/04/27/JS/事件监听/15373747100639.jpg">
-        
-          <a class="article-more-a" href="/2019/04/27/JS/事件监听/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/27/JS/事件监听/">展开全文 >></a>
         </p>
       
 
@@ -544,31 +558,29 @@
 
 
   
-    <article id="post-JS/apply和call" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-JS/事件监听" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/27/JS/apply和call/">apply和call</a>
+      <a class="article-title" href="/2019/04/27/JS/事件监听/">事件监听</a>
     </h1>
   
 
         
-        <a href="/2019/04/27/JS/apply和call/" class="archive-article-date">
-  	<time datetime="2019-04-27T02:52:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-27</time>
+        <a href="/2019/04/27/JS/事件监听/" class="archive-article-date">
+  	<time datetime="2019-04-27T03:36:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-27</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>apply:方法能劫持另外一个对象的方法，继承另外一个对象的属性.</p>
-<img src="/2019/04/27/JS/apply和call/15563338472798.jpg" title="This is an example image">
-<p>注解：this指的是，调用函数的那个对象 都是因为object没有某个方法，但是别的对象有，可以借助apply或call像别的对象借方法来操作。</p>
+        <h3 id="冒泡传递（从内到外）"><a href="#冒泡传递（从内到外）" class="headerlink" title="冒泡传递（从内到外）"></a>冒泡传递（从内到外）</h3><h3 id="捕获传递（从外到内）"><a href="#捕获传递（从外到内）" class="headerlink" title="捕获传递（从外到内）"></a>捕获传递（从外到内）</h3><img src="/2019/04/27/JS/事件监听/15373747100639.jpg">
         
-          <a class="article-more-a" href="/2019/04/27/JS/apply和call/#more">more >></a>
+          <a class="article-more-a" href="/2019/04/27/JS/事件监听/#more">more >></a>
         
       
 
@@ -596,7 +608,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/27/JS/apply和call/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/04/27/JS/事件监听/">展开全文 >></a>
         </p>
       
 
@@ -822,88 +834,6 @@
 
 
   
-    <article id="post-JS/闭包" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/27/JS/闭包/">闭包</a>
-    </h1>
-  
-
-        
-        <a href="/2019/04/27/JS/闭包/" class="archive-article-date">
-  	<time datetime="2019-04-27T02:52:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function a()&#123;</span><br><span class="line">    let a =1;</span><br><span class="line">    function b()&#123;</span><br><span class="line">        console.log(a);</span><br><span class="line">    &#125;</span><br><span class="line">    return b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var closure = a();  // 引用</span><br><span class="line">closure();   // 1</span><br></pre></td></tr></table></figure>
-<p>a的作用域在<code>a()</code>里面</p>
-<p>一般，函数体内定义的变量在函数体外是无法访问的；<br>
-        
-          <a class="article-more-a" href="/2019/04/27/JS/闭包/#more">more >></a>
-        
-      
-
-      
-    </p></div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/27/JS/闭包/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-JS/判断对象类型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -987,29 +917,31 @@
 
 
   
-    <article id="post-HTTP/三次握手和四次挥手" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-JS/apply和call" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/27/HTTP/三次握手和四次挥手/">三次握手和四次挥手</a>
+      <a class="article-title" href="/2019/04/27/JS/apply和call/">apply和call</a>
     </h1>
   
 
         
-        <a href="/2019/04/27/HTTP/三次握手和四次挥手/" class="archive-article-date">
-  	<time datetime="2019-04-27T01:57:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-27</time>
+        <a href="/2019/04/27/JS/apply和call/" class="archive-article-date">
+  	<time datetime="2019-04-27T02:52:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-27</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <img src="/2019/04/27/HTTP/三次握手和四次挥手/15563325685279.jpg" title="This is an example image">
+        <p>apply:方法能劫持另外一个对象的方法，继承另外一个对象的属性.</p>
+<img src="/2019/04/27/JS/apply和call/15563338472798.jpg" title="This is an example image">
+<p>注解：this指的是，调用函数的那个对象 都是因为object没有某个方法，但是别的对象有，可以借助apply或call像别的对象借方法来操作。</p>
         
-          <a class="article-more-a" href="/2019/04/27/HTTP/三次握手和四次挥手/#more">more >></a>
+          <a class="article-more-a" href="/2019/04/27/JS/apply和call/#more">more >></a>
         
       
 
@@ -1027,7 +959,7 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTTP</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
         		</li>
       		
 		</ul>
@@ -1037,7 +969,89 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/27/HTTP/三次握手和四次挥手/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/04/27/JS/apply和call/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-JS/闭包" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/27/JS/闭包/">闭包</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/27/JS/闭包/" class="archive-article-date">
+  	<time datetime="2019-04-27T02:52:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function a()&#123;</span><br><span class="line">    let a =1;</span><br><span class="line">    function b()&#123;</span><br><span class="line">        console.log(a);</span><br><span class="line">    &#125;</span><br><span class="line">    return b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var closure = a();  // 引用</span><br><span class="line">closure();   // 1</span><br></pre></td></tr></table></figure>
+<p>a的作用域在<code>a()</code>里面</p>
+<p>一般，函数体内定义的变量在函数体外是无法访问的；<br>
+        
+          <a class="article-more-a" href="/2019/04/27/JS/闭包/#more">more >></a>
+        
+      
+
+      
+    </p></div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/27/JS/闭包/">展开全文 >></a>
         </p>
       
 
@@ -1069,7 +1083,7 @@
   
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -1168,7 +1182,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1180,19 +1194,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BFC</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">em 和 rem</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">水平垂直居中</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">动画</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1204,7 +1206,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">动画</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">BFC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">圣杯和双飞翼的区别</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">标准盒模型&怪异盒模型</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1212,7 +1226,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">标准盒模型&怪异盒模型</a>
+                <a href="javascript:void(0)" class="js-tag color2">水平垂直居中</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">JS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">this</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1224,23 +1246,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">移动端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">1px问题</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">JS</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1249,6 +1255,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">个人博客</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">1px问题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">移动端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
               </li>
              
               <li class="article-tag-list-item">
