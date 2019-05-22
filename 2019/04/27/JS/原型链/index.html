@@ -9,20 +9,20 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>原型链 | Sing Sing a Song</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="理解这个图就可以了">
+  <meta name="description" content="理解这个图就可以了 每个函数都有 prototype 属性，除了 Function.prototype.bind()，该属性指向原型。 每个对象都有 __proto__ 属性，指向了创建该对象的构造函数的原型。其实这个属性指向了[[prototype]]，但是 [[prototype]]是内部属性，我们并不能访问到，所以使用_proto_来访问。 对象可以通过 __proto__来寻找不属于该对象">
 <meta name="keywords" content="前端,JS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="原型链">
 <meta property="og:url" content="http://yoursite.com/2019/04/27/JS/原型链/index.html">
 <meta property="og:site_name" content="Sing Sing a Song">
-<meta property="og:description" content="理解这个图就可以了">
+<meta property="og:description" content="理解这个图就可以了 每个函数都有 prototype 属性，除了 Function.prototype.bind()，该属性指向原型。 每个对象都有 __proto__ 属性，指向了创建该对象的构造函数的原型。其实这个属性指向了[[prototype]]，但是 [[prototype]]是内部属性，我们并不能访问到，所以使用_proto_来访问。 对象可以通过 __proto__来寻找不属于该对象">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/2019/04/27/JS/原型链/yuanxinglian.jpg">
-<meta property="og:updated_time" content="2019-04-27T03:39:12.284Z">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006tNc79ly1g3a4zhh0l4j30fj0cnjs5.jpg">
+<meta property="og:updated_time" content="2019-05-22T07:42:56.904Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="原型链">
-<meta name="twitter:description" content="理解这个图就可以了">
-<meta name="twitter:image" content="http://yoursite.com/2019/04/27/JS/原型链/yuanxinglian.jpg">
+<meta name="twitter:description" content="理解这个图就可以了 每个函数都有 prototype 属性，除了 Function.prototype.bind()，该属性指向原型。 每个对象都有 __proto__ 属性，指向了创建该对象的构造函数的原型。其实这个属性指向了[[prototype]]，但是 [[prototype]]是内部属性，我们并不能访问到，所以使用_proto_来访问。 对象可以通过 __proto__来寻找不属于该对象">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/006tNc79ly1g3a4zhh0l4j30fj0cnjs5.jpg">
   
   <link rel="alternative" href="/atom.xml" title="Sing Sing a Song" type="application/atom+xml">
   
@@ -162,7 +162,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>理解这个图就可以了<br><img src="/2019/04/27/JS/原型链/yuanxinglian.jpg" title="This is an example image"></p>
+        <p>理解这个图就可以了<br><img src="http://ww1.sinaimg.cn/large/006tNc79ly1g3a4zhh0l4j30fj0cnjs5.jpg" alt></p>
+<p>每个函数都有 <code>prototype</code> 属性，除了 <code>Function.prototype.bind()</code>，该属性指向原型。</p>
+<p>每个对象都有 <code>__proto__</code> 属性，指向了创建该对象的构造函数的原型。其实这个属性指向了<code>[[prototype]]</code>，但是 <code>[[prototype]]</code>是内部属性，我们并不能访问到，所以使用<code>_proto_</code>来访问。</p>
+<p>对象可以通过 <code>__proto__</code>来寻找不属于该对象的属性，<code>__proto__</code>将对象连接起来组成了原型链。</p>
 
       
 
@@ -446,15 +449,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">em 和 rem</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">BFC</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">动画</a>
+                <a href="javascript:void(0)" class="js-tag color4">em 和 rem</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -462,11 +461,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">圣杯和双飞翼的区别</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">标准盒模型&怪异盒模型</a>
+                <a href="javascript:void(0)" class="js-tag color3">动画</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -478,6 +473,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">圣杯和双飞翼的区别</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">标准盒模型&怪异盒模型</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">定位</a>
               </li>
              
@@ -486,11 +489,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -503,6 +506,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">优化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">排序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -531,14 +542,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">跨域</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">排序</a>
               </li>
              
               <li class="article-tag-list-item">

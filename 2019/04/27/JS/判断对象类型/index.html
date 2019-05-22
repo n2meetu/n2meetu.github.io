@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="Sing Sing a Song">
 <meta property="og:description" content="基本类型：Number，String，Boolean，undefined, null ,symbol对象类型（引用类型）：Function, Object, Array 区别：嫩不能添加属性和方法；是否通过引用的方式进行比较； 判断数据类型的方法： 1234567function is(type, obj) &amp;#123;    var clas = Object.prototype.toStrin">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-27T03:43:28.519Z">
+<meta property="og:updated_time" content="2019-05-22T07:29:05.598Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js如何判断数据类型">
 <meta name="twitter:description" content="基本类型：Number，String，Boolean，undefined, null ,symbol对象类型（引用类型）：Function, Object, Array 区别：嫩不能添加属性和方法；是否通过引用的方式进行比较； 判断数据类型的方法： 1234567function is(type, obj) &amp;#123;    var clas = Object.prototype.toStrin">
@@ -178,13 +178,13 @@
 <tr>
 <td style="text-align:center">typeof</td>
 <td style="text-align:center"><code>typeof xxx</code></td>
-<td style="text-align:center">null不适用（object）</td>
+<td style="text-align:center">null和Array类型不适用（object）</td>
 <td style="text-align:center">检测对象是否已经被赋值</td>
 </tr>
 <tr>
 <td style="text-align:center">instanceof</td>
 <td style="text-align:center"><code>xxx instanceof XXX</code></td>
-<td style="text-align:center">检测内置对象的实例，null和undefined（object）</td>
+<td style="text-align:center">检测内置对象的实例（即原始类型），null和undefined（object）</td>
 <td style="text-align:center">判断A对象是不是B类型</td>
 </tr>
 <tr>
@@ -200,6 +200,7 @@
 </tr>
 </tbody>
 </table>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var toString = Object.prototype.toString;</span><br><span class="line"></span><br><span class="line">toString.call(new Date); // [object Date]</span><br><span class="line">toString.call(new String); // [object String]</span><br><span class="line">toString.call(Math); // [object Math]</span><br><span class="line"></span><br><span class="line">//Since JavaScript 1.8.5</span><br><span class="line">toString.call(undefined); // [object Undefined]</span><br><span class="line">toString.call(null); // [object Null]</span><br></pre></td></tr></table></figure>
 <p><a href="https://segmentfault.com/a/1190000005174193" target="_blank" rel="noopener">参考文章</a></p>
 <p>试着自己实现一个 <code>typeof</code>方法。<br>思路: 分两大类进行判断，内置的和飞原生的。其中内置的又分成null,undefined和Number，String，Boolean，function两大类。<br>不知道对错</p>
 
@@ -325,8 +326,8 @@
     </a>
   
   
-    <a href="/2019/04/27/HTTP/浏览器缓存机制/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">浏览器缓存机制</div>
+    <a href="/2019/04/27/JS/apply和call/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">apply和call</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -485,15 +486,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">em 和 rem</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">BFC</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">动画</a>
+                <a href="javascript:void(0)" class="js-tag color4">em 和 rem</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -501,11 +498,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">圣杯和双飞翼的区别</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">标准盒模型&怪异盒模型</a>
+                <a href="javascript:void(0)" class="js-tag color3">动画</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -517,6 +510,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">圣杯和双飞翼的区别</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">标准盒模型&怪异盒模型</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">定位</a>
               </li>
              
@@ -525,11 +526,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -542,6 +543,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">优化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">排序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -570,14 +579,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">跨域</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">排序</a>
               </li>
              
               <li class="article-tag-list-item">
