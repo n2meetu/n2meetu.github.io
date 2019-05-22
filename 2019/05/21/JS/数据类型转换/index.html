@@ -7,20 +7,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>圣杯和双飞翼的区别 | Sing Sing a Song</title>
+  <title>数据类型转换 | Sing Sing a Song</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="两者的区别 双飞翼不用相对定位，用子div+margin的方式 圣杯布局用相对定位，在外层div上设置padding-left，padding-right；">
-<meta name="keywords" content="CSS,圣杯和双飞翼的区别">
+  <meta name="description" content="主要分为强制转换和自动转换两类。 一、强制转换 强制转换主要指使用Number()、String()和Boolean()三个函数，手动将各种类型的值，分别转换成数字、字符串或者布尔值。">
+<meta name="keywords" content="前端,JS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="圣杯和双飞翼的区别">
-<meta property="og:url" content="http://yoursite.com/2019/03/27/CSS3/圣杯布局和双飞翼布局/index.html">
+<meta property="og:title" content="数据类型转换">
+<meta property="og:url" content="http://yoursite.com/2019/05/21/JS/数据类型转换/index.html">
 <meta property="og:site_name" content="Sing Sing a Song">
-<meta property="og:description" content="两者的区别 双飞翼不用相对定位，用子div+margin的方式 圣杯布局用相对定位，在外层div上设置padding-left，padding-right；">
+<meta property="og:description" content="主要分为强制转换和自动转换两类。 一、强制转换 强制转换主要指使用Number()、String()和Boolean()三个函数，手动将各种类型的值，分别转换成数字、字符串或者布尔值。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-25T13:55:38.420Z">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/006tNc79ly1g39c6fptcxj30ig0ket91.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/006tNc79ly1g39c6rg4kej30z40u0wj7.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/006tNc79ly1g39c2rdogqj30u00yddu4.jpg">
+<meta property="og:updated_time" content="2019-05-21T15:05:28.680Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="圣杯和双飞翼的区别">
-<meta name="twitter:description" content="两者的区别 双飞翼不用相对定位，用子div+margin的方式 圣杯布局用相对定位，在外层div上设置padding-left，padding-right；">
+<meta name="twitter:title" content="数据类型转换">
+<meta name="twitter:description" content="主要分为强制转换和自动转换两类。 一、强制转换 强制转换主要指使用Number()、String()和Boolean()三个函数，手动将各种类型的值，分别转换成数字、字符串或者布尔值。">
+<meta name="twitter:image" content="http://ww4.sinaimg.cn/large/006tNc79ly1g39c6fptcxj30ig0ket91.jpg">
   
   <link rel="alternative" href="/atom.xml" title="Sing Sing a Song" type="application/atom+xml">
   
@@ -140,29 +144,57 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-CSS3/圣杯布局和双飞翼布局" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-JS/数据类型转换" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      圣杯和双飞翼的区别
+      数据类型转换
     </h1>
   
 
         
-        <a href="/2019/03/27/CSS3/圣杯布局和双飞翼布局/" class="archive-article-date">
-  	<time datetime="2019-03-27T08:24:28.632Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-27</time>
+        <a href="/2019/05/21/JS/数据类型转换/" class="archive-article-date">
+  	<time datetime="2019-05-21T02:03:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-21</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="http://wiki.jikexueyuan.com/project/liujinsheng/note/grail_lyout.html" target="_blank" rel="noopener">两者的区别</a></p>
-<p>双飞翼不用相对定位，用子div+margin的方式</p>
-<p>圣杯布局用相对定位，在外层div上设置padding-left，padding-right；</p>
+        <p>主要分为<code>强制转换</code>和<code>自动转换</code>两类。</p>
+<h1 id="一、强制转换"><a href="#一、强制转换" class="headerlink" title="一、强制转换"></a>一、强制转换</h1><blockquote>
+<p>强制转换主要指使用Number()、String()和Boolean()三个函数，手动将各种类型的值，分别转换成数字、字符串或者布尔值。</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="Number"><a href="#Number" class="headerlink" title="Number"></a>Number</h2><h3 id="1-原始类型"><a href="#1-原始类型" class="headerlink" title="1.原始类型"></a>1.原始类型</h3><h4 id="Number-1"><a href="#Number-1" class="headerlink" title="Number()"></a>Number()</h4><p><img src="http://ww4.sinaimg.cn/large/006tNc79ly1g39c6fptcxj30ig0ket91.jpg" alt></p>
+<p>只要有个一字符不能转成数值，整个字符就会被转为NaN。</p>
+<h3 id="parseInt"><a href="#parseInt" class="headerlink" title="parseInt()"></a>parseInt()</h3><p><code>parseInt(&#39;42 cats&#39;) // 42
+Number(&#39;42 cats&#39;) // NaN</code><br>parseInt逐个解析字符，而Number函数整体转换字符串的类型。</p>
+<h3 id="2-对象"><a href="#2-对象" class="headerlink" title="2.对象"></a>2.对象</h3><p>Number方法的参数是对象时，将返回NaN，除非是包含单个数值的数组。</p>
+<p>过程（原理）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">if(typeof obj.valueOf() === &apos;object&apos;))&#123;</span><br><span class="line">    Number(obj.toString());</span><br><span class="line">&#125;else&#123;</span><br><span class="line">    Number(obj.valueOf());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>参考《你不知道的JavaScript》👇：<br><img src="http://ww2.sinaimg.cn/large/006tNc79ly1g39c6rg4kej30z40u0wj7.jpg" alt></p>
+<p>对象转换的过程和原理：<br><img src="http://ww4.sinaimg.cn/large/006tNc79ly1g39c2rdogqj30u00yddu4.jpg" alt="对象转换的过程和原理"></p>
+<h2 id="String"><a href="#String" class="headerlink" title="String"></a>String</h2><p>String()函数可以将任意类型的值转化成字符串，转换后都变成相应的字符串。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">String(123) // &quot;123&quot;</span><br><span class="line">String(&apos;abc&apos;) // &quot;abc&quot;</span><br><span class="line">String(true) // &quot;true&quot;</span><br><span class="line">String(undefined) // &quot;undefined&quot;</span><br><span class="line">String(null) // &quot;null&quot;</span><br></pre></td></tr></table></figure>
+<p>特殊情况：<br><code>String({a: 1}) // &quot;[object Object]&quot;
+String([1, 2, 3]) // &quot;1,2,3&quot;</code></p>
+<h2 id="Boolean"><a href="#Boolean" class="headerlink" title="Boolean"></a>Boolean</h2><p>Boolean()可以将任意类型的值转为布尔值。</p>
+<p>除了以下五个值的转换结果为false，其他的值全部为true</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Boolean(undefined) // false</span><br><span class="line">Boolean(null) // false</span><br><span class="line">Boolean(0) // false</span><br><span class="line">Boolean(NaN) // false</span><br><span class="line">Boolean(&apos;&apos;) // false</span><br></pre></td></tr></table></figure>
+<p>值得注意的是，所有对象的布尔值也都是true<br><code>const test = new Boolean(false);
+Boolean(test);  //true</code></p>
+<p>甚至是Boolean对象。</p>
+<h1 id="二、自动转换"><a href="#二、自动转换" class="headerlink" title="二、自动转换"></a>二、自动转换</h1><h2 id="Number-2"><a href="#Number-2" class="headerlink" title="Number"></a>Number</h2><p>除了加法运算符（+）有可能把运算子转为字符串，其他运算符都会把运算子自动转成数值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&apos;5&apos; - &apos;2&apos; // 3</span><br><span class="line">&apos;5&apos; * &apos;2&apos; // 10</span><br><span class="line">true - 1  // 0</span><br><span class="line">false - 1 // -1</span><br><span class="line">&apos;1&apos; - 1   // 0</span><br><span class="line">&apos;5&apos; * []    // 0</span><br><span class="line">false / &apos;5&apos; // 0</span><br><span class="line">&apos;abc&apos; - 1   // NaN</span><br><span class="line">null + 1 // 1</span><br><span class="line">undefined + 1 // NaN</span><br></pre></td></tr></table></figure>
+<h2 id="String-1"><a href="#String-1" class="headerlink" title="String"></a>String</h2><p>具体规则是，先将复合类型的值转为原始类型的值，再将原始类型的值转为字符串。<br>加法运算时，任何类型遇到字符串类型，都会自动转成字符串。<br>值得注意的是：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&apos;5&apos; + &#123;&#125; // &quot;5[object Object]&quot;</span><br><span class="line">&apos;5&apos; + [] // &quot;5&quot;</span><br><span class="line">&apos;5&apos; + function ()&#123;&#125; // &quot;5function ()&#123;&#125;&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="Boolean-1"><a href="#Boolean-1" class="headerlink" title="Boolean"></a>Boolean</h2><p>需要稍微注意写法二的用法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 写法一</span><br><span class="line">expression ? true : false</span><br><span class="line"></span><br><span class="line">// 写法二</span><br><span class="line">!! expression</span><br></pre></td></tr></table></figure>
+<p>参考：<a href="https://wangdoc.com/javascript/features/conversion.html#string" target="_blank" rel="noopener">https://wangdoc.com/javascript/features/conversion.html#string</a></p>
 
       
 
@@ -202,11 +234,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">圣杯和双飞翼的区别</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
         		</li>
       		
 		</ul>
@@ -262,7 +294,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/03/27/CSS3/圣杯布局和双飞翼布局/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/05/21/JS/数据类型转换/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -276,18 +308,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/03/27/CSS3/绝对定位和fixed/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          绝对定位和fixed
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/03/27/HTTP/TCP & UDP/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">TCP &amp; UDP</div>
+    <a href="/2019/05/01/JS/数组扁平化/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数组扁平化</div>
       <i class="icon-circle-right"></i>
     </a>
   
